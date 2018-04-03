@@ -1,0 +1,38 @@
+<view>
+    <example title="buton" desc="按钮" _pid="{{_pid}}">
+
+        <example-demo title="默认用法" desc="" _pid="{{_pid}}">
+           <brj-button value='按钮'></brj-button>
+        </example-demo>
+
+        <example-demo title="appearance" desc="" _pid="{{_pid}}">
+           <brj-button value='default'  appearance='default'></brj-button>
+           <brj-button value='primary'  appearance='primary'></brj-button>
+           <brj-button value='secondary'  appearance='secondary'></brj-button>
+           <brj-button value='danger'  appearance='danger'></brj-button>
+           <brj-button value='warn'  appearance='warn'></brj-button>
+           <brj-button value='info'  appearance='info'></brj-button>
+           <brj-button value='light'  appearance='light'></brj-button>
+           <brj-button value='dark'  appearance='dark'></brj-button>
+           <brj-button value='link'  appearance='link'></brj-button>
+        </example-demo>
+
+        <example-demo title="size" desc="" _pid="{{_pid}}">
+            <brj-button value='default' appearance='primary' size="default" ></brj-button>
+            <brj-button value='mini' appearance='primary' size="mini" ></brj-button>
+            <brj-button value='small' appearance='primary' size="small" ></brj-button>
+            <brj-button value='large' appearance='primary' size="large" ></brj-button>
+        </example-demo>
+
+        <example-demo title="plain" desc="" _pid="{{_pid}}">
+            <brj-button value='镂空' appearance='outline-primary' ></brj-button>
+        </example-demo>
+
+        
+        <example-demo title="active" desc="" _pid="{{_pid}}">
+            <brj-button value='激活' appearance='primary' active='true'></brj-button>
+        </example-demo>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

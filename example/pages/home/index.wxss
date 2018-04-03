@@ -1,0 +1,19 @@
+@import '../../common/assets/style/layout.wxss';
+
+  .index-ft {
+    margin-top: -25rpx;
+  }
+  .github__icon {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+  }
+  .github__url {
+    font-family: Monaco;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #888;
+    font-size: 26rpx;
+    vertical-align: middle;
+  }

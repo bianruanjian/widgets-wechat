@@ -1,0 +1,11 @@
+<view class="example--box">
+    <view class="example--demo demo">
+        <view class="demo-inner">
+            <slot></slot>
+        </view>
+    </view>
+    <view class="example--meta meta">
+        <view class="meta-title">{{title}}</view>
+        <view class="meta-desc">{{desc}}</view>
+    </view>
+</view>
