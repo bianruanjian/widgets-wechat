@@ -18,15 +18,6 @@
   border-color: #6c757d;
 }
 
-.zan-btn--success {
-  color: #fff;
-  background-color: #28a745;
-}
-
-.zan-btn--success::after {
-  border-color: #28a745;
-}
-
 .zan-btn--danger {
   color: #fff;
   background-color: #dc3545;
