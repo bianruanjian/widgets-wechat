@@ -7,7 +7,7 @@ export default Component({
     },
     value: {
       type: String,
-      value: ''
+      value: '按钮'
     },
     appearance: {
       type: String,

@@ -9,6 +9,7 @@
            <brj-button value='default'  appearance='default'></brj-button>
            <brj-button value='primary'  appearance='primary'></brj-button>
            <brj-button value='secondary'  appearance='secondary'></brj-button>
+           <brj-button value='success'  appearance='success'></brj-button>
            <brj-button value='danger'  appearance='danger'></brj-button>
            <brj-button value='warn'  appearance='warn'></brj-button>
            <brj-button value='info'  appearance='info'></brj-button>
