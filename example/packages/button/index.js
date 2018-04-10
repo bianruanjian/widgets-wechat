@@ -1,10 +1,7 @@
+var base = require('../common/base')
 export default Component({
-  behaviors: [],
+  behaviors: [base],
   properties: {
-    id: {
-      type: String,
-      value: ''
-    },
     value: {
       type: String,
       value: '按钮'
@@ -47,15 +44,5 @@ export default Component({
     }
   },
   data: {},
-  methods: {},
-  attached: function () {
-    let host = this;
-    wx.getSystemInfo && wx.getSystemInfo({
-      success: function (res) {
-        host.setData({
-          _system_: !!~res.system.indexOf('Android') ? 'android' : 'ios'
-        });
-      }
-    });
-  }
+  methods: {}
 });

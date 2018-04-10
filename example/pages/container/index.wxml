@@ -1,0 +1,13 @@
+<view>
+  <example title="container" desc="容器" _pid="{{_pid}}">
+
+    <example-demo title="默认用法" desc="" _pid="{{_pid}}">
+      <db-container widgetId="1">
+        <view>text1</view>
+        <view>text1</view>
+      </db-container>
+    </example-demo>
+  </example>
+
+  <!--<layout-foot></layout-foot>-->
+</view>

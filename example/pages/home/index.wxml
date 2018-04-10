@@ -5,7 +5,7 @@
     <view class="index">
         <view class="index-hd">
             <image class="index-logo" src="https://avatars1.githubusercontent.com/u/33917699?s=400&u=17384b78428e7d0fdc8f8967cabb9e18c9f7006b&v=4"></image>
-            <view class="index-desc">基于规范的小程序组件库，简洁、易用、工具化</view>
+            <view class="index-desc">基于 bootstrap、zanui 规范的小程序组件库，简洁，语义化</view>
         </view>
 
         <view class="index-bd">

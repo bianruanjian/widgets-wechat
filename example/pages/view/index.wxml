@@ -1,0 +1,23 @@
+<view>
+  <example title="view" desc="视图" _pid="{{_pid}}">
+
+    <example-demo title="默认用法" desc="" _pid="{{_pid}}">
+      <db-view borderLeft="true">
+        左边框
+      </db-view>
+      <db-view borderTop="true">
+        顶边框
+      </db-view>
+      <db-view borderRight="true">
+        右边框
+      </db-view>
+      <db-view borderBottom="true">
+        底边框
+      </db-view>
+      <db-view border="true">
+        全边框
+      </db-view>
+    </example-demo>
+  </example>
+
+</view>

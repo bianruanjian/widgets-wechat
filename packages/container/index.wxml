@@ -1,0 +1,3 @@
+<view class="container {{customClass}}" style="{{customStyle}}" id="{{widgetId}}">
+  <slot></slot>
+</view>
