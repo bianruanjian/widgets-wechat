@@ -3,10 +3,13 @@
 
     <example-demo title="默认用法" desc="" _pid="{{_pid}}">
       <db-container widgetId="1" custom-class='bg-primary'>
-        默认width：80%
+        默认用法
       </db-container>
+    </example-demo>
+
+      <example-demo title="fluidWidth" desc="" _pid="{{_pid}}">
       <db-container fluidWidth="true" widgetId="1" custom-class='mt-1 bg-primary'>
-        width：100%
+       fluidWidth
       </db-container>
     </example-demo>
   </example>
