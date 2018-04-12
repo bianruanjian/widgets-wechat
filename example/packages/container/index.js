@@ -1,9 +1,23 @@
 var base = require('../common/base')
-export default Component({
+Component({
+  externalClasses: ['custom-class'],
   behaviors: [base],
   properties: {
-
+    fluidWidth: {
+      type: Boolean,
+      value: false
+    }
   },
   data: {},
-  methods: {}
-});
+  methods: {
+    getCssClass: function () {
+      let cssClass = []
+      cssClass.push(this._getFluidWidth())
+      return cssClass.join(" ")
+    },
+
+    _getFluidWidth: function () {
+      return this.data.fluidWidth ? 'container-fluid' : ''
+    }
+  }
+})

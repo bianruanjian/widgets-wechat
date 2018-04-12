@@ -1,7 +1,7 @@
 import config from "./config.js";
 let { menus } = config;
 
-export default Page({
+Page({
   data: {
     "__code__": {
       readme: ""
@@ -11,7 +11,7 @@ export default Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '基于规范的小程序组件库，简洁、易用、工具化',
+      title: '基于 bootstrap 和 zanui 的微信小程序语义化组件库',
       desc: '',
       path: '/pages/home/index',
       imageUrl: 'https://avatars2.githubusercontent.com/u/33917699?s=60&v=4'

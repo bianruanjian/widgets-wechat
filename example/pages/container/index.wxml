@@ -2,12 +2,13 @@
   <example title="container" desc="容器" _pid="{{_pid}}">
 
     <example-demo title="默认用法" desc="" _pid="{{_pid}}">
-      <db-container widgetId="1">
-        <view>text1</view>
-        <view>text1</view>
+      <db-container widgetId="1" custom-class='bg-primary'>
+        默认width：80%
+      </db-container>
+      <db-container fluidWidth="true" widgetId="1" custom-class='mt-1 bg-primary'>
+        width：100%
       </db-container>
     </example-demo>
   </example>
-
-  <!--<layout-foot></layout-foot>-->
+  
 </view>

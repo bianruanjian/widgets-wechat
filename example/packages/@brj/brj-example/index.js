@@ -1,4 +1,4 @@
-export default Component({
+Component({
   properties: {
     title: {
       type: String,
@@ -9,4 +9,4 @@ export default Component({
       value: ''
     }
   }
-});
+})

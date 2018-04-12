@@ -3,6 +3,5 @@
     "example": "../../packages/@brj/brj-example/index",
     "example-demo": "../../packages/@brj/brj-example-demo/index",
     "db-button": "../../packages/button/index"
-  },
-  "component": true
+  }
 }

@@ -11,7 +11,7 @@ module.exports = {
       "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_1ik5352h7834dh63l5fj23e3i8ldd_480x480.jpg"
     }]
   },{
-    id: 'layut',
+    id: 'layout',
     name: '布局元素',
     open: false,
     icon: 'https://s10.mogucdn.com/mlcdn/c45406/171025_475f8k3db3kblfbia4i44ej214cjf_68x68.png',
