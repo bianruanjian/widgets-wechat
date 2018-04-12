@@ -22,7 +22,7 @@ module.exports = Behavior({
       value: ''
     },
     truncate: {
-      type: Number,
+      type: String,
       value: null
     },
     wrap: {
@@ -53,17 +53,13 @@ module.exports = Behavior({
 
       if (data.truncate) {
         let truncate = "width: " + data.truncate
-        if (typeof data.truncate == 'number') {
+        if (data.truncate.indexOf("%") == -1) {
           truncate += "px"
         }
         textStyle.push(truncate)
       }
       if (data.wrap) {
-        let wrap = "width: " + data.wrap
-        if (typeof data.wrap == 'number') {
-          wrap += "px"
-        }
-        textStyle.push(wrap)
+        textStyle.push("width: " + data.wrap + "rem")
       }
 
       return textStyle.join("")
