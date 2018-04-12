@@ -1,3 +1,3 @@
-<view id="{{widgetId}}" class="{{customClass}}" style="{{customStyle}}">
+<view id="{{widgetId}}" class="custom-class {{cssClass}}" style="{{cssStyle}}">
   <slot></slot>
 </view>

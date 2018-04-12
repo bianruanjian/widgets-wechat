@@ -17,7 +17,7 @@ Component({
     },
 
     _getFluidWidth: function () {
-      return this.data.fluidWidth ? 'container-fluid' : ''
+      return this.data.fluidWidth ? 'container-fluid' : 'container'
     }
   }
 })

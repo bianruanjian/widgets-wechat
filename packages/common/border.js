@@ -23,34 +23,57 @@ module.exports = Behavior({
     },
     borderColor: {
       type: String,
-      value: false
+      value: ''
     },
-    borderRadius: {
+    borderRound: {
       type: String,
-      value: false
+      value: ''
     }
   },
   methods: {
     getBorderClass: function () {
-      let data = this.data;
-      let borderClass = '';
-      if (data.border) {
-        borderClass = "border";
-        return borderClass;
-      }
+      let borderClass = []
+      borderClass = borderClass.concat(this._getBorder())
+      borderClass = borderClass.concat(this._getBorderClolor())
+      borderClass = borderClass.concat(this._getBorderRound())
+      return borderClass.join(' ')
+    },
+
+    _getBorder: function () {
+      let data = this.data
+      let border = []
       if (data.borderLeft) {
-        borderClass = "border-left";
+        border.push("border-left")
       }
       if (data.borderTop) {
-        borderClass += " border-top";
+        border.push("border-top")
       }
       if (data.borderRight) {
-        borderClass += " border-right";
+        border.push("border-right")
       }
       if (data.borderBottom) {
-        borderClass += " border-bottom";
+        border.push("border-bottom")
       }
-      return borderClass;
-    }
+      if (border.length == 4) {
+        border = ["border"]
+      }
+      return border
+    },
+
+    _getBorderClolor: function () {
+      let borderColor = []
+      if (this.data.borderColor) {
+        borderColor.push("border-" + this.data.borderColor)
+      }
+      return borderColor
+    },
+
+    _getBorderRound: function () {
+      let borderRound = []
+      if (this.data.borderColor) {
+        borderRound.push("rounded-" + this.data.borderRound)
+      }
+      return borderRound
+    },
   }
 })

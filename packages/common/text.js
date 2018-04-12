@@ -9,13 +9,9 @@ module.exports = Behavior({
       type: Boolean,
       value: false
     },
-    underLine: {
-      type: Boolean,
-      value: false
-    },
-    strikeThrough: {
-      type: Boolean,
-      value: false
+    textDecoration: {
+      type: String,
+      value: ''
     },
     alignment: {
       type: String,
@@ -27,42 +23,101 @@ module.exports = Behavior({
     },
     truncate: {
       type: Number,
-      value: 0
+      value: null
     },
     wrap: {
       type: Number,
       value: 0
     }
   },
+
   methods: {
     getTextClass: function () {
-      let data = this.data;
-      let textClass = '';
-      if (data.fontWeight) {
-        textClass = "font-weight-" + data.fontWeight;
-      }
-      if (data.fontItalic) {
-        textClass += " font-italic";
-      }
-      if (data.underLine) {
-        textClass += " mt-" + data.marginLeft;
-      }
-      if (data.strikeThrough) {
-        textClass += " mt-" + data.marginRight;
-      }
-      if (data.alignment) {
-        textClass += " text-" + data.alignment;
-      }
-      if (data.transform) {
-        textClass += " text-" + data.transform;
-      }
+
+      let textClass = []
+
+      textClass = textClass.concat(this._getFontWeight())
+      textClass = textClass.concat(this._getFontItalic())
+      textClass = textClass.concat(this._getAlignment())
+      textClass = textClass.concat(this._getTransform())
+      textClass = textClass.concat(this._getTruncate())
+      textClass = textClass.concat(this._getWrap())
+      textClass = textClass.concat(this._getTextDecoration())
+
+      return textClass.join(' ')
+    },
+
+    getTextStyle: function () {
+      let data = this.data
+      let textStyle = []
+
       if (data.truncate) {
-        textClass += " text-truncate";
+        let truncate = "width: " + data.truncate
+        if (typeof data.truncate == 'number') {
+          truncate += "px"
+        }
+        textStyle.push(truncate)
       }
       if (data.wrap) {
-        textClass += " text-nowrap";
+        let wrap = "width: " + data.wrap
+        if (typeof data.wrap == 'number') {
+          wrap += "px"
+        }
+        textStyle.push(wrap)
       }
-      return textClass;
+
+      return textStyle.join("")
+
+    },
+
+    _getFontWeight: function () {
+      let fontWeight = []
+      if (this.data.fontWeight) {
+        fontWeight.push("font-weight-" + this.data.fontWeight)
+      }
+      return fontWeight
+    },
+    _getFontItalic: function () {
+      let fontItalic = []
+      if (this.data.fontItalic) {
+        fontItalic.push("font-italic")
+      }
+      return fontItalic
+    },
+    _getAlignment: function () {
+      let alignment = []
+      if (this.data.alignment) {
+        alignment.push("text-" + this.data.alignment)
+      }
+      return alignment
+    },
+    _getTransform: function () {
+      let transform = []
+      if (this.data.transform) {
+        transform.push("text-" + this.data.transform.toLowerCase())
+      }
+      return transform
+    },
+    _getTruncate: function () {
+      let truncate = []
+      if (this.data.truncate) {
+        truncate.push("text-truncate")
+      }
+      return truncate
+    },
+    _getWrap: function () {
+      let wrap = []
+      if (this.data.wrap) {
+        wrap.push("text-nowrap")
+      }
+      return wrap
+    },
+    _getTextDecoration: function () {
+      let textDecoration = []
+      if (this.data.textDecoration) {
+        textDecoration.push("text-decoration-" + this.data.textDecoration.toLowerCase())
+      }
+      return textDecoration
     }
   }
 })

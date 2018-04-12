@@ -4,23 +4,14 @@ module.exports = Behavior({
     widgetId: {
       type: String,
       value: ''
-    }, customStyle: {
-      type: String,
-      value: ''
-    }, customClass: {
-      type: String,
-      value: ''
-    },
-    _system_: {
-      type: String,
-      value: ''
     }
   },
+  data: {
+    _system_: null,
+    cssStyle: '',
+    cssClass: ''
+  },
   methods: {
-    setClass: function () {
-    },
-    setStyle: function () {
-    },
     setSystem: function () {
       let host = this;
       wx.getSystemInfo && wx.getSystemInfo({
@@ -30,11 +21,24 @@ module.exports = Behavior({
           });
         }
       });
-    }
+    },
+    setCssClass: function () {
+      this.setData({
+        cssClass: this.getCssClass()
+      })
+    },
+    setCssStyle: function () {
+      this.setData({
+        cssStyle: this.getCssStyle()
+      })
+    },
+    getCssClass: function () { return '' },
+    getCssStyle: function () { return '' }
+
   },
   attached: function () {
     this.setSystem();
-    this.setClass();
-    this.setStyle();
+    this.setCssClass();
+    this.setCssStyle();
   }
 })

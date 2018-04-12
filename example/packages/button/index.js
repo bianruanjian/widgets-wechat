@@ -45,7 +45,7 @@ Component({
     getCssClass: function () {
       let cssClass = []
       cssClass.push(this._getAppearance())
-      cssClass.push(this._getSie())
+      cssClass.push(this._getSize())
       cssClass.push(this._isPlain())
       cssClass.push(this._isActive())
       return cssClass.join(' ')
@@ -56,7 +56,7 @@ Component({
       return "zan-btn--" + appearance + " btn btn-" + appearance;
     },
 
-    _getSie: function () {
+    _getSize: function () {
       let size = this.data.size
       return size == 'small' ? 'zan-btn--small' : size == 'large' ? 'zan-btn--large' : size == 'mini' ? 'zan-btn--mini' : ''
     },

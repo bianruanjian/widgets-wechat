@@ -7,11 +7,11 @@
       </db-container>
     </example-demo>
 
-      <example-demo title="fluidWidth" desc="" _pid="{{_pid}}">
+    <example-demo title="fluidWidth" desc="" _pid="{{_pid}}">
       <db-container fluidWidth="true" widgetId="1" custom-class='mt-1 bg-primary'>
-       fluidWidth
+        铺满
       </db-container>
     </example-demo>
   </example>
-  
+
 </view>

@@ -1,5 +1,6 @@
 var base = require('../common/base')
-export default Component({
+Component({
+  externalClasses: ['custom-class'],
   behaviors: [base],
   properties: {
     value: {
@@ -8,11 +9,11 @@ export default Component({
     },
     appearance: {
       type: String,
-      value: 'default'
+      value: ''
     },
     size: {
       type: String,
-      value: 'default'
+      value: ''
     },
     disabled: {
       type: Boolean,
@@ -37,12 +38,39 @@ export default Component({
     target: {
       type: String,
       value: 'self'
-    },
-    _system_: {
-      type: String,
-      value: ''
     }
   },
   data: {},
-  methods: {}
-});
+  methods: {
+    getCssClass: function () {
+      let cssClass = []
+      cssClass.push(this._getAppearance())
+      cssClass.push(this._getSize())
+      cssClass.push(this._isPlain())
+      cssClass.push(this._isActive())
+      return cssClass.join(' ')
+    },
+
+    _getAppearance: function () {
+      let appearance = this.data.appearance
+      return "zan-btn--" + appearance + " btn btn-" + appearance;
+    },
+
+    _getSize: function () {
+      let size = this.data.size
+      return size == 'small' ? 'zan-btn--small' : size == 'large' ? 'zan-btn--large' : size == 'mini' ? 'zan-btn--mini' : ''
+    },
+
+    _isPlain: function () {
+      let appearance = this.data.appearance
+      if (appearance && appearance.indexOf('outline') > -1) {
+        return 'btn-outline';
+      }
+      return '';
+    },
+
+    _isActive: function () {
+      return this.data.active ? 'active' : ''
+    }
+  }
+})
