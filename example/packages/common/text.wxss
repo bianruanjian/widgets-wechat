@@ -1,0 +1,69 @@
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.text-decoration-linethrough {
+  text-decoration: line-through;
+}
+
+.text-decoration-overline {
+  text-decoration: overline;
+}
+
+.text-monospace {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono", "Courier New",monospace;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-italic {
+  font-style: italic !important;
+}

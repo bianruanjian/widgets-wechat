@@ -1,0 +1,12 @@
+<view>
+  <example title="container" desc="容器" _pid="{{_pid}}">
+
+    <example-demo title="默认" desc="" _pid="{{_pid}}">
+      <db-container widgetId="1" custom-class='bg-primary'>
+        水平铺满
+      </db-container>
+    </example-demo>
+
+  </example>
+
+</view>

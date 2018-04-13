@@ -1,74 +1,7 @@
-@import 'zanui.wxss';
+@import '../vendor/zanui/button.wxss';
+@import '../vendor/bootstrap/button.wxss';
 
-.zan-btn--primary {
-  color: #fff;
-  background-color: #007bff;
-}
-
-.zan-btn--primary::after {
-  border-color: #007bff;
-}
-
-.zan-btn--secondary {
-  color: #fff;
-  background-color: #6c757d;
-}
-
-.zan-btn--secondary::after {
-  border-color: #6c757d;
-}
-
-.zan-btn--success {
-  color: #fff;
-  background-color: #28a745;
-}
-
-.zan-btn--success::after {
-  border-color: #28a745;
-}
-
-.zan-btn--danger {
-  color: #fff;
-  background-color: #dc3545;
-}
-
-.zan-btn--danger::after {
-  border-color: #dc3545;
-}
-
-.zan-btn--info {
-  color: #fff;
-  background-color: #138496;
-}
-
-.zan-btn--info::after {
-  border-color: #138496;
-}
-
-.zan-btn--dark {
-  color: #fff;
-  background-color: #343a40;
-}
-
-.zan-btn--info::dark {
-  border-color: #343a40;
-}
-
-.zan-btn--link {
-  color: #007bff;
-  background-color: transparent;
-}
-
-.zan-btn--info::link {
-  border-color: #007bff;
-}
-
-.zan-btn--primary:not(:disabled):not(.disabled).active{
-    color: #fff;
-    background-color: #0062cc;
-    border-color: #005cbf;
-}
-
-.zan-btn:active {
-    background-image: none;
+.btn-outline {
+  border-width: 1px;
+  border-style: solid;
 }

@@ -1,28 +1,4 @@
-<wxs module="util">
-  var isPlain = function(appearance) {
-    if (appearance && appearance.indexOf('outline') > -1) {
-      return true;
-    }
-    return false;
-  };
-  var getApperance = function(appearance) {
-    if (appearance && appearance.indexOf('outline') > -1) {
-      return "zan-btn--" + appearance.split("outline-")[1];
-    }
-    return "zan-btn--" + appearance;
-  }
-
-  var getSie = function(size){
-    return size=='small'?'zan-btn--small':size=='large'?'zan-btn--large':size=='mini'?'zan-btn--mini':''
-  }
-
-  module.exports = {
-    isPlain: isPlain,
-    getApperance: getApperance,
-    getSie: getSie
-  }
-</wxs>
-<button id="{{id}}" plain="{{util.isPlain(appearance)}}" class="zan-btn {{util.getApperance(appearance)}} {{util.getSie(size)}} {{active?'active':''}}" disabled="{{disabled}}">
+<button id="{{id}}" class="custom-class {{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
   <slot></slot>
   {{value?value:''}}
 </button>

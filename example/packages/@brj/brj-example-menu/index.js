@@ -1,4 +1,4 @@
-export default Component({
+Component({
   behaviors: [],
   properties: {
     menus: {
@@ -24,4 +24,4 @@ export default Component({
       });
     }
   }
-});
+})

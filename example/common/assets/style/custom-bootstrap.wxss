@@ -1,0 +1,4 @@
+@import '../../../packages/common/border.wxss';
+@import '../../../packages/common/spacing.wxss';
+@import '../../../packages/common/text.wxss';
+@import '../../../packages/common/colors.wxss';
