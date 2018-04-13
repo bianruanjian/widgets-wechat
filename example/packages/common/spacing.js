@@ -40,24 +40,40 @@ module.exports = Behavior({
       let spacingClass = []
       spacingClass = spacingClass.concat(this._getMargin())
       spacingClass = spacingClass.concat(this._getPadding())
-      return spacingClass.join(' ')
+      return spacingClass.length > 0 ? spacingClass.join(' ') : ''
     },
 
     _getMargin: function () {
       let data = this.data
       let margin = []
+      let marginMap = {}
 
-      if (data.marginTop) {
-        margin.push("mt-" + data.marginTop)
+      marginMap.ml = data.marginLeft
+      marginMap.mt = data.marginTop
+      marginMap.mr = data.marginRight
+      marginMap.mb = data.marginBottom
+
+      if (data.marginLeft && data.marginLeft == data.marginRight) {
+        marginMap.mx = data.marginLeft
+        delete marginMap.ml
+        delete marginMap.mr
       }
-      if (data.marginBottom) {
-        margin.push("mb-" + data.marginBottom)
+
+      if (data.marginTop && data.marginTop == data.marginBottom) {
+        marginMap.my = data.marginTop
+        delete marginMap.mt
+        delete marginMap.mb
       }
-      if (data.marginLeft) {
-        margin.push("ml-" + data.marginLeft)
+
+      if (data.marginLeft && marginMap.mx == marginMap.my) {
+        marginMap = {}
+        marginMap.m = data.marginLeft
       }
-      if (data.marginRight) {
-        margin.push("mr-" + data.marginRight)
+
+      for (let key in marginMap) {
+        if (marginMap[key]) {
+          margin.push(key + "-" + marginMap[key])
+        }
       }
 
       return margin
@@ -66,20 +82,35 @@ module.exports = Behavior({
     _getPadding: function () {
       let data = this.data
       let padding = []
+      let paddingMap = {}
 
-      if (data.paddingTop) {
-        padding.push("pt-" + data.paddingTop)
+      paddingMap.pl = data.paddingLeft
+      paddingMap.pt = data.paddingTop
+      paddingMap.pr = data.paddingRight
+      paddingMap.pb = data.paddingBottom
+
+      if (data.paddingLeft && data.paddingLeft == data.paddingRight) {
+        paddingMap.px = data.paddingLeft
+        delete paddingMap.pl
+        delete paddingMap.pr
       }
-      if (data.paddingBottom) {
-        padding.push("pb-" + data.paddingBottom)
+
+      if (data.paddingTop && data.paddingTop == data.paddingBottom) {
+        paddingMap.py = data.paddingTop
+        delete paddingMap.pt
+        delete paddingMap.pb
       }
-      if (data.paddingLeft) {
-        padding.push("pl-" + data.paddingLeft)
+
+      if (data.paddingLeft && paddingMap.px == paddingMap.py) {
+        paddingMap = {}
+        paddingMap.p = data.paddingLeft
       }
-      if (data.paddingRight) {
-        padding.push("pr-" + data.paddingRight)
+
+      for (let key in paddingMap) {
+        if (paddingMap[key]) {
+          padding.push(key + "-" + paddingMap[key])
+        }
       }
-      
       return padding
     }
 

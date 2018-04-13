@@ -10,7 +10,7 @@ module.exports = Behavior({
     getFloatClass: function () {
       let floatClass = []
       floatClass = floatClass.concat(this._getFloat())
-      return floatClass.join(' ')
+      return floatClass.length > 0 ? floatClass.join(" ") : ''
     },
 
     _getFloat: function () {

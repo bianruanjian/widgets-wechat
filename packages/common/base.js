@@ -7,12 +7,12 @@ module.exports = Behavior({
     }
   },
   data: {
-    _system_: null,
-    cssStyle: '',
-    cssClass: ''
+    _system_: '',
+    cssStyles: '',
+    cssClasses: ''
   },
   methods: {
-    setSystem: function () {
+    _setSystem: function () {
       let host = this;
       wx.getSystemInfo && wx.getSystemInfo({
         success: function (res) {
@@ -22,23 +22,23 @@ module.exports = Behavior({
         }
       });
     },
-    setCssClass: function () {
-      this.setData({
-        cssClass: this.getCssClass()
-      })
-    },
-    setCssStyle: function () {
-      this.setData({
-        cssStyle: this.getCssStyle()
-      })
-    },
-    getCssClass: function () { return '' },
-    getCssStyle: function () { return '' }
+    getCssClasses: function () { return '' },
+    getCssStyles: function () { return '' }
 
   },
   attached: function () {
-    this.setSystem();
-    this.setCssClass();
-    this.setCssStyle();
+    this._setSystem();
+    let cssClasses = this.getCssClasses()
+    let cssStyles = this.getCssStyles()
+    if (cssClasses){
+      this.setData({
+        cssClasses: this.getCssClasses()
+      })
+    }
+    if (cssStyles){
+      this.setData({
+        cssStyles: this.getCssStyles()
+      })
+    }
   }
 })

@@ -16,21 +16,21 @@ Component({
     },
   },
   methods: {
-    getCssClass: function () {
-      let cssClass = []
-      cssClass.push(this.getBorderClass())
-      cssClass.push(this.getSpacingClass())
-      cssClass.push(this.getTextClass())
-      cssClass.push(this.getColorClass())
-      cssClass.push(this.getFloatClass())
-      return cssClass.join(' ')
+    getCssClasses: function () {
+      let cssClasses = []
+      cssClasses.push(this.getBorderClass())
+      cssClasses.push(this.getSpacingClass())
+      cssClasses.push(this.getTextClass())
+      cssClasses.push(this.getColorClass())
+      cssClasses.push(this.getFloatClass())
+      return cssClasses.length > 0 ? cssClasses.join(' ') : ''
     },
 
-    getCssStyle: function () {
-      let cssStyle = []
-      cssStyle.push(this.getTextStyle())
-      cssStyle.push(this._getMaxWidth())
-      return cssStyle.join(';')
+    getCssStyles: function () {
+      let cssStyles = []
+      cssStyles.push(this.getTextStyle())
+      cssStyles.push(this._getMaxWidth())
+      return cssStyles.length > 0 ? cssStyles.join(';') : ''
     },
 
     _getMaxWidth: function () {

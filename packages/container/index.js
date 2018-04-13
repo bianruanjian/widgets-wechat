@@ -10,10 +10,10 @@ Component({
   },
   data: {},
   methods: {
-    getCssClass: function () {
-      let cssClass = []
-      cssClass.push(this._getFluidWidth())
-      return cssClass.join(" ")
+    getCssClasses: function () {
+      let cssClasses = []
+      cssClasses.push(this._getFluidWidth())
+      return cssClasses.join(" ")
     },
 
     _getFluidWidth: function () {

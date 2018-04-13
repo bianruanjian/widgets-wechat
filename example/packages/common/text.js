@@ -62,7 +62,7 @@ module.exports = Behavior({
         textStyle.push("width: " + data.wrap + "rem")
       }
 
-      return textStyle.join("")
+      return textStyle.length > 0 ? textStyle.join(";") : ''
 
     },
 

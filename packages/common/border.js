@@ -36,7 +36,7 @@ module.exports = Behavior({
       borderClass = borderClass.concat(this._getBorder())
       borderClass = borderClass.concat(this._getBorderClolor())
       borderClass = borderClass.concat(this._getBorderRound())
-      return borderClass.join(' ')
+      return borderClass.length > 0 ? borderClass.join(' ') : ''
     },
 
     _getBorder: function () {
@@ -54,7 +54,7 @@ module.exports = Behavior({
       if (data.borderBottom) {
         border.push("border-bottom")
       }
-      if (border.length == 4) {
+      if (border.length === 4) {
         border = ["border"]
       }
       return border

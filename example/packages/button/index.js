@@ -1,4 +1,5 @@
 var base = require('../common/base')
+var zanui = require('../vendor/zanui/zanui')
 Component({
   externalClasses: ['custom-class'],
   behaviors: [base],
@@ -42,31 +43,31 @@ Component({
   },
   data: {},
   methods: {
-    getCssClass: function () {
-      let cssClass = []
-      cssClass.push(this._getAppearance())
-      cssClass.push(this._getSize())
-      cssClass.push(this._isPlain())
-      cssClass.push(this._isActive())
-      return cssClass.join(' ')
+    getCssClasses: function () {
+      let cssClasses = []
+      cssClasses.push(this._getAppearance())
+      cssClasses.push(this._getSize())
+      cssClasses.push(this._isActive())
+      return cssClasses.join(' ')
     },
 
     _getAppearance: function () {
+      let appearanceClasses = []
       let appearance = this.data.appearance
-      return "zan-btn--" + appearance + " btn btn-" + appearance;
+      if (appearance && appearance.indexOf('outline') > -1) {
+        appearanceClasses.push('btn-outline')
+      }
+      appearanceClasses.push('zan-btn--' + appearance)
+      //因为 zanui 样式不全，因此我们单独补充了不全的样式，但不以 zan 开头，不以 zan 的风格来写
+      appearanceClasses.push('btn btn-' + appearance)
+      return appearanceClasses.join(' ');
     },
 
     _getSize: function () {
-      let size = this.data.size
-      return size == 'small' ? 'zan-btn--small' : size == 'large' ? 'zan-btn--large' : size == 'mini' ? 'zan-btn--mini' : ''
-    },
-
-    _isPlain: function () {
-      let appearance = this.data.appearance
-      if (appearance && appearance.indexOf('outline') > -1) {
-        return 'btn-outline';
+      if (this.data.size){
+        return zanui.btnSize[this.data.size]
       }
-      return '';
+      return ''
     },
 
     _isActive: function () {

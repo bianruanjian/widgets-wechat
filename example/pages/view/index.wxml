@@ -5,11 +5,11 @@
         默认
       </db-view>
       <db-view maxWidth='150' custom-class='mt-1 bg-secondary'>
-        maxWidth 为 150px
+        maxWidth-150px
       </db-view>
     </example-demo>
 
-    <view class='title'>展示 border、spacing、text、colors 等辅助效果</view>
+    <view class='title'>展示 border、spacing、text、colors 等效果</view>
     <example-demo title="border" desc="" _pid="{{_pid}}">
       <db-view borderLeft="true" custom-class='mt-1'>
         左边框
@@ -29,31 +29,57 @@
     </example-demo>
 
     <example-demo title="spacing" desc="" _pid="{{_pid}}">
-      <db-view marginTop="2" custom-class='mt-1'>
+      <db-view custom-class='border text-success'>
+        无外边距
+      </db-view>
+      <db-view marginRight="2" marginLeft="2" custom-class='border'>
+        x 轴外边距
+      </db-view>
+      <db-view marginTop="2" marginBottom="2" custom-class='border'>
+        y 轴外边距
+      </db-view>
+      <db-view marginRight="2" marginLeft="2" marginTop="2" marginBottom="2" custom-class='border'>
+        xy 轴外边距
+      </db-view>
+      <db-view custom-class='padding-width border text-success'>
+        无内边距
+      </db-view>
+      <db-view paddingRight="2" paddingLeft="2" custom-class='padding-width border'>
+        x 轴内边距
+      </db-view>
+      <db-view paddingTop="2" paddingBottom="2" custom-class='padding-width border'>
+        y 轴内边距
+      </db-view>
+      <db-view paddingRight="2" paddingLeft="2" paddingTop="2" paddingBottom="2" custom-class='padding-width border'>
+        xy 轴内边距
+      </db-view>
+
+      <db-view marginTop="2" custom-class='border'>
         顶外边距
       </db-view>
-      <db-view marginBottom="2" custom-class='mt-1'>
+      <db-view marginBottom="2" custom-class='border'>
         底外边距
       </db-view>
-      <db-view marginLeft="2" custom-class='mt-1'>
+      <db-view marginLeft="2" custom-class='border'>
         左外边距
       </db-view>
-      <db-view marginRight="2" custom-class='mt-1'>
+      <db-view marginRight="2" custom-class='border'>
         右外边距
       </db-view>
 
-      <db-view paddingTop="2" custom-class='mt-1'>
+      <db-view paddingTop="2" custom-class='border padding-width'>
         顶内边距
       </db-view>
-      <db-view paddingBottom="2" custom-class='mt-1'>
+      <db-view paddingBottom="2" custom-class='border padding-width'>
         底内边距
       </db-view>
-      <db-view paddingLeft="2" custom-class='mt-1'>
+      <db-view paddingLeft="2" custom-class='border padding-width'>
         左内边距
       </db-view>
-      <db-view paddingRight="2" custom-class='mt-1'>
+      <db-view paddingRight="2" custom-class='border padding-width'>
         右内边距
       </db-view>
+
 
     </example-demo>
 
@@ -77,9 +103,6 @@
 
       <db-view truncate="48" custom-class='mt-1'>
         truncate 数字
-      </db-view>
-      <db-view truncate="16%" custom-class='mt-1'>
-        百分比
       </db-view>
       <db-view wrap="1" custom-class='mt-1  bg-secondary'>
         wrap
