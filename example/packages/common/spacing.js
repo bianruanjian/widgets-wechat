@@ -40,7 +40,7 @@ module.exports = Behavior({
       let spacingClass = []
       spacingClass = spacingClass.concat(this._getMargin())
       spacingClass = spacingClass.concat(this._getPadding())
-      return spacingClass.length > 0 ? spacingClass.join(' ') : ''
+      return spacingClass.join(' ')
     },
 
     _getMargin: function () {

@@ -23,7 +23,7 @@ Component({
       cssClasses.push(this.getTextClass())
       cssClasses.push(this.getColorClass())
       cssClasses.push(this.getFloatClass())
-      return cssClasses.length > 0 ? cssClasses.join(' ') : ''
+      return cssClasses.join(' ')
     },
 
     getCssStyles: function () {

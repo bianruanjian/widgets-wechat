@@ -15,7 +15,7 @@ module.exports = Behavior({
       let colorClass = []
       colorClass = colorClass.concat(this._getTextClolor())
       colorClass = colorClass.concat(this._getBackgroundColor())
-      return colorClass.length > 0 ? colorClass.join(' ') : ''
+      return colorClass.join(' ')
     },
 
     _getTextClolor: function () {

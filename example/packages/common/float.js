@@ -10,13 +10,13 @@ module.exports = Behavior({
     getFloatClass: function () {
       let floatClass = []
       floatClass = floatClass.concat(this._getFloat())
-      return floatClass.length > 0 ? floatClass.join(" ") : ''
+      return floatClass.join(' ')
     },
 
     _getFloat: function () {
       let float = []
       if (this.data.float) {
-        float.push("float-" + this.data.float)
+        float.push('float-' + this.data.float)
       }
       return float
     }

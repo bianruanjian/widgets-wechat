@@ -28,14 +28,16 @@ module.exports = Behavior({
   },
   attached: function () {
     this._setSystem();
-    let cssClasses = this.getCssClasses()
-    let cssStyles = this.getCssStyles()
-    if (cssClasses){
+    let cssClasses = this.getCssClasses() || ''
+    let cssStyles = this.getCssStyles() || ''
+    cssClasses = cssClasses.trim()
+    cssStyles = cssStyles.trim()
+    if (cssClasses) {
       this.setData({
         cssClasses: this.getCssClasses()
       })
     }
-    if (cssStyles){
+    if (cssStyles) {
       this.setData({
         cssStyles: this.getCssStyles()
       })

@@ -13,7 +13,7 @@ Component({
     getCssClasses: function () {
       let cssClasses = []
       cssClasses.push(this._getFluidWidth())
-      return cssClasses.join(" ")
+      return cssClasses.join(' ')
     },
 
     _getFluidWidth: function () {
