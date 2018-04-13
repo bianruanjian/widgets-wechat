@@ -13,7 +13,7 @@ Component({
     maxWidth: {
       type: String,
       value: ''
-    },
+    }
   },
   methods: {
     getCssClasses: function () {
