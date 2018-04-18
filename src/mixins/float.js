@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-export default class floatMixin extends wepy.mixin {
+export default class FloatMixin extends wepy.mixin {
     getProps() {
         return {
             float: {

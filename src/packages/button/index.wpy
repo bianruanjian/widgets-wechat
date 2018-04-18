@@ -15,11 +15,11 @@
 </template>
 
 <script>
-  import baseMixin from '../../mixins/base'
+  import BaseMixin from '../../mixins/base'
   import BaseComponent from '../baseComponent'
   import zanui from '../../vendor/zanui/zanui'
   export default class Button extends BaseComponent {
-    mixins = [baseMixin]
+    mixins = [BaseMixin]
     props = this.mixinProps({
       value: {
         type: String,
@@ -57,7 +57,7 @@
         type: String,
         value: 'self'
       }
-    }, this.mixins)
+    })
     data = {}
     getCssClasses() {
       let cssClasses = []

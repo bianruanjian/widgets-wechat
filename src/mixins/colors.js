@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-export default class colorsMixin extends wepy.mixin {
+export default class ColorsMixin extends wepy.mixin {
     getProps() {
         return {
             textColor: {

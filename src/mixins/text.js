@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-export default class textMixin extends wepy.mixin {
+export default class TextMixin extends wepy.mixin {
     getProps() {
         return {
             fontWeight: {

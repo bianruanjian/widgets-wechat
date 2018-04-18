@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-export default class borderMixin extends wepy.mixin {
+export default class BorderMixin extends wepy.mixin {
     getProps() {
         return {
             border: {

@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-export default class spacingMixin extends wepy.mixin {
+export default class SpacingMixin extends wepy.mixin {
     getProps() {
         return {
             marginTop: {

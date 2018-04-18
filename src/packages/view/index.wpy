@@ -13,19 +13,19 @@
 
 <script>
   import BaseComponent from '../baseComponent'
-  import baseMixin from '../../mixins/base'
-  import borderMixin from '../../mixins/border'
-  import spacingMixin from '../../mixins/spacing'
-  import textMixin from '../../mixins/text'
-  import colorsMixin from '../../mixins/colors'
+  import BaseMixin from '../../mixins/base'
+  import BorderMixin from '../../mixins/border'
+  import SpacingMixin from '../../mixins/spacing'
+  import TextMixin from '../../mixins/text'
+  import ColorsMixin from '../../mixins/colors'
   export default class View extends BaseComponent {
-    mixins = [baseMixin, borderMixin, spacingMixin, textMixin, colorsMixin]
+    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, ColorsMixin]
     props = this.mixinProps({
       maxWidth: {
         type: String,
         value: ''
       }
-    }, this.mixins)
+    })
     getCssClasses() {
       let cssClasses = []
       cssClasses.push(this.getBorderClass())

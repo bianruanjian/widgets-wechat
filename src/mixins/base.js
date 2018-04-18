@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-export default class baseMixin extends wepy.mixin {
+export default class BaseMixin extends wepy.mixin {
   getProps() {
     return {
       widgetId: {
