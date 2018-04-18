@@ -1,0 +1,13 @@
+{
+  "description": "brj-widgets-wechat",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "appid": "wx551cada3c33adc49",
+  "projectname": "wepy-brj-widgets-wechat",
+  "miniprogramRoot": "./dist"
+}

@@ -1,7 +1,0 @@
-@import '../vendor/zanui/button.wxss';
-@import '../vendor/bootstrap/button.wxss';
-
-.btn-outline {
-  border-width: 1px;
-  border-style: solid;
-}

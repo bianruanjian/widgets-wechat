@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "example": "../../packages/@brj/brj-example/index",
-    "example-demo": "../../packages/@brj/brj-example-demo/index",
-    "db-container": "../../packages/container/index",
-    "db-view": "../../packages/view/index"
-  }
-}

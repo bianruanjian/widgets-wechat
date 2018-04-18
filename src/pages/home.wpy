@@ -1,0 +1,57 @@
+<style lang='less'>
+  @import '../common/assets/style/layout.wxss';
+  .index-ft {
+    margin-top: -25rpx;
+  }
+  .github__icon {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+  }
+  .github__url {
+    font-family: Monaco;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #888;
+    font-size: 26rpx;
+    vertical-align: middle;
+  }
+</style>
+
+<template>
+  <view>
+    <view class="index">
+      <view class="index-hd">
+        <image class="index-logo" src="https://avatars1.githubusercontent.com/u/33917699?s=400&u=17384b78428e7d0fdc8f8967cabb9e18c9f7006b&v=4" />
+        <view class="index-desc">基于 bootstrap 和 zanui 的微信小程序语义化组件库</view>
+      </view>
+      <view class="index-bd">
+        <brj-example-menu :menus="menus"></brj-example-menu>
+      </view>
+      <view class="index-ft">
+        <image class="github__icon" mode="aspectFit" src="https://s10.mogucdn.com/mlcdn/c45406/171109_6k95i4l5lfcl458a4i7a37jd84598_64x64.png" />
+        <text class="github__url">https://github.com/bianruanjian/brj-widgets-wechat</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import BrjExampleMenu from '../components/brj-example-menu'
+  import {
+    menus
+  } from './config'
+  export default class HomePage extends wepy.page {
+    config = {
+      navigationBarTitleText: 'brjui'
+    };
+    components = {
+      'brj-example-menu': BrjExampleMenu
+    };
+    data = {
+      menus
+    };
+  }
+</script>

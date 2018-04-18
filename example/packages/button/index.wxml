@@ -1,4 +1,0 @@
-<button id="{{id}}" class="custom-class {{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
-  <slot></slot>
-  {{value?value:''}}
-</button>
