@@ -29,6 +29,9 @@
     </example-demo>
 
     <example-demo title="spacing" desc="" _pid="{{_pid}}">
+     <db-view custom-class='border text-success'>
+        无外边距
+      </db-view>
       <db-view custom-class='border text-success'>
         无外边距
       </db-view>

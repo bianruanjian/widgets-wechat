@@ -13,21 +13,21 @@ module.exports = Behavior({
   },
   methods: {
     _setSystem: function () {
-      let host = this;
+      let host = this
       wx.getSystemInfo && wx.getSystemInfo({
         success: function (res) {
           host.setData({
             _system_: !!~res.system.indexOf('Android') ? 'android' : 'ios'
-          });
+          })
         }
-      });
+      })
     },
     getCssClasses: function () { return '' },
     getCssStyles: function () { return '' }
 
   },
   attached: function () {
-    this._setSystem();
+    this._setSystem()
     let cssClasses = this.getCssClasses().trim()
     let cssStyles = this.getCssStyles().trim()
     if (cssClasses) {

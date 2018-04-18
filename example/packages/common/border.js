@@ -74,6 +74,6 @@ module.exports = Behavior({
         borderRound.push("rounded-" + this.data.borderRound)
       }
       return borderRound
-    },
+    }
   }
 })
