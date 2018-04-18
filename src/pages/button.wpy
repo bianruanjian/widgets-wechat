@@ -1,0 +1,85 @@
+<style lang='less'>
+  button {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+  }
+</style>
+
+<template>
+  <view>
+    <example title="button" desc="按钮">
+      <example-demo-default title="默认用法" desc="">
+        <db-button value='按钮'></db-button>
+      </example-demo-default>
+      <example-demo-appearance title="appearance" desc="">
+        <db-button-apperance-default value='default' appearance='default' custom-class='mt-1'></db-button-apperance-default>
+        <db-button-apperance-primary value='primary' appearance='primary' custom-class='mt-1'></db-button-apperance-primary>
+        <db-button-apperance-secondary value='secondary' appearance='secondary' custom-class='mt-1'></db-button-apperance-secondary>
+        <db-button-apperance-success value='success' appearance='success' custom-class='mt-1'></db-button-apperance-success>
+        <db-button-apperance-danger value='danger' appearance='danger' custom-class='mt-1'></db-button-apperance-danger>
+        <db-button-apperance-warn value='warn' appearance='warn' custom-class='mt-1'></db-button-apperance-warn>
+        <db-button-apperance-info value='info' appearance='info' custom-class='mt-1'></db-button-apperance-info>
+        <db-button-apperance-light value='light' appearance='light' custom-class='mt-1'></db-button-apperance-light>
+        <db-button-apperance-dark value='dark' appearance='dark' custom-class='mt-1'></db-button-apperance-dark>
+        <db-button-apperance-link value='link' appearance='link' custom-class='mt-1'></db-button-apperance-link>
+      </example-demo-appearance>
+      <example-demo-size title="size" desc="">
+        <view>
+          <db-button-size-mini value='mini' appearance='primary' size="mini"></db-button-size-mini>
+        </view>
+        <db-button-size-small value='small' appearance='primary' size="small">
+        </db-button-size-small>
+        <db-button-size-large value='large' appearance='primary' size="large"></db-button-size-large>
+        <db-button-size-default value='default' appearance='primary' size="default"></db-button-size-default>
+      </example-demo-size>
+      <example-demo-outline title="outline" desc="">
+        <db-button-outline-primary value='镂空' appearance='outline-primary' custom-class='mt-1'></db-button-outline-primary>
+        <db-button-outline-secondary value='镂空' appearance='outline-secondary' custom-class='mt-1'></db-button-outline-secondary>
+        <db-button-outline-danger value='镂空' appearance='outline-danger' custom-class='mt-1'></db-button-outline-danger>
+      </example-demo-outline>
+      <example-demo-active title="active" desc="">
+        <db-button-active-primary value='激活' appearance='primary' active='true' custom-class='mt-1'></db-button-active-primary>
+        <db-button-active-secondary value='激活' appearance='secondary' active='true' custom-class='mt-1'></db-button-active-secondary>
+        <db-button-active-success value='激活' appearance='success' active='true' custom-class='mt-1'></db-button-active-success>
+      </example-demo-active>
+    </example>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Button from '../packages/button/index'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  export default class ButtonPage extends wepy.page {
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-appearance': BrjExampleDemo,
+      'example-demo-size': BrjExampleDemo,
+      'example-demo-outline': BrjExampleDemo,
+      'example-demo-active': BrjExampleDemo,
+      'db-button': Button,
+      'db-button-apperance-defualt': Button,
+      'db-button-apperance-primary': Button,
+      'db-button-apperance-secondary': Button,
+      'db-button-apperance-success': Button,
+      'db-button-apperance-danger': Button,
+      'db-button-apperance-warn': Button,
+      'db-button-apperance-info': Button,
+      'db-button-apperance-light': Button,
+      'db-button-apperance-dark': Button,
+      'db-button-apperance-link': Button,
+      'db-button-size-mini': Button,
+      'db-button-size-small': Button,
+      'db-button-size-default': Button,
+      'db-button-size-large': Button,
+      'db-button-outline-primary': Button,
+      'db-button-outline-secondary': Button,
+      'db-button-outline-danger': Button,
+      'db-button-active-primary': Button,
+      'db-button-active-secondary': Button,
+      'db-button-active-success': Button
+    }
+  }
+</script>

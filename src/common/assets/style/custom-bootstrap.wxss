@@ -1,0 +1,4 @@
+@import './components/border.wxss';
+@import './components/spacing.wxss';
+@import './components/text.wxss';
+@import './components/colors.wxss';

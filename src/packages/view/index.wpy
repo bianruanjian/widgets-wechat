@@ -1,0 +1,50 @@
+<style lang='less'>
+  @import '../../common/assets/style/components/border.wxss';
+  @import '../../common/assets/style/components/spacing.wxss';
+  @import '../../common/assets/style/components/text.wxss';
+  @import '../../common/assets/style/components/colors.wxss';
+</style>
+
+<template>
+  <view id="{{widgetId}}" class="{{cssClasses}}" style="{{cssStyles}}">
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseComponent from '../baseComponent'
+  import BaseMixin from '../../mixins/base'
+  import BorderMixin from '../../mixins/border'
+  import SpacingMixin from '../../mixins/spacing'
+  import TextMixin from '../../mixins/text'
+  import ColorsMixin from '../../mixins/colors'
+  export default class View extends BaseComponent {
+    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, ColorsMixin]
+    props = this.mixinProps({
+      maxWidth: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = []
+      cssClasses.push(this.getBorderClass())
+      cssClasses.push(this.getSpacingClass())
+      cssClasses.push(this.getTextClass())
+      cssClasses.push(this.getColorsClass())
+      return cssClasses.join(' ')
+    }
+    getCssStyles() {
+      let cssStyles = []
+      cssStyles.push(this.getTextStyle())
+      cssStyles.push(this._getMaxWidth())
+      cssStyles = cssStyles.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssStyles.length > 0 ? cssStyles.join(';') : ''
+    }
+    _getMaxWidth() {
+      return this.data.maxWidth ? 'max-width: ' + this.data.maxWidth + 'px' : ''
+    }
+  }
+</script>

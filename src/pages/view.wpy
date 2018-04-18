@@ -1,0 +1,183 @@
+<style lang='less'>
+  .title {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+  .border {
+    border: 1px solid #6c757d !important;
+  }
+  .padding-width {
+    width: 29%;
+  }
+</style>
+
+<template>
+  <view>
+    <example title="view" desc="视图" _pid="{{_pid}}">
+      <example-demo-default title="maxWidth" desc="" _pid="{{_pid}}">
+        <db-view-default customClass='mt-1 bg-primary'>
+          默认
+        </db-view-default>
+        <db-view-maxWidth maxWidth='150' customClass='mt-1 bg-secondary'>
+          maxWidth-150px
+        </db-view-maxWidth>
+      </example-demo-default>
+      <view class='title'>展示 border、spacing、text、colors 等效果</view>
+      <example-demo-border title="border" desc="" _pid="{{_pid}}">
+        <db-view-border-left borderLeft="true"  customClass='mt-1'>
+          左边框
+        </db-view-border-left>
+        <db-view-border-top borderTop="true" customClass='mt-1'>
+          顶边框
+        </db-view-border-top>
+        <db-view-border-right borderRight="true" customClass='mt-1'>
+          右边框
+        </db-view-border-right>
+        <db-view-border-bottom borderBottom="true" customClass='mt-1'>
+          底边框
+        </db-view-border-bottom>
+        <db-view-border borderLeft="true" borderTop="true" borderRight="true" borderBottom="true" customClass='mt-1'>
+          全边框
+        </db-view-border>
+      </example-demo-border>
+      <example-demo-spacing title="spacing" desc="" _pid="{{_pid}}">
+        <db-view-spacing-default customClass='border text-success'>
+          无边距
+        </db-view-spacing-default>
+        <db-view-spacing-margin-default customClass='border text-success'>
+          无外边距
+        </db-view-spacing-margin-default>
+        <db-view-spacing-margin-x marginRight="2" marginLeft="2" customClass='border'>
+          x 轴外边距
+        </db-view-spacing-margin-x>
+        <db-view-spacing-margin-y marginTop="2" marginBottom="2" customClass='border'>
+          y 轴外边距
+        </db-view-spacing-margin-y>
+        <db-view-spacing-xy marginRight="2" marginLeft="2" marginTop="2" marginBottom="2" customClass='border'>
+          xy 轴外边距
+        </db-view-spacing-xy>
+        <db-view-spacing-padding-default customClass='padding-width border text-success'>
+          无内边距
+        </db-view-spacing-padding-default>
+        <db-view-spacing-padding-x paddingRight="2" paddingLeft="2" customClass='padding-width border'>
+          x 轴内边距
+        </db-view-spacing-padding-x>
+        <db-view-spacing-padding-y paddingTop="2" paddingBottom="2" customClass='padding-width border'>
+          y 轴内边距
+        </db-view-spacing-padding-y>
+        <db-view-spacing-padding-xy paddingRight="2" paddingLeft="2" paddingTop="2" paddingBottom="2" customClass='padding-width border'>
+          xy 轴内边距
+        </db-view-spacing-padding-xy>
+        <db-view-spacing-margin-top marginTop="2" customClass='border'>
+          顶外边距
+        </db-view-spacing-margin-top>
+        <db-view-spacing-margin-bottom marginBottom="2" customClass='border'>
+          底外边距
+        </db-view-spacing-margin-bottom>
+        <db-view-spacing-margin-left marginLeft="2" customClass='border'>
+          左外边距
+        </db-view-spacing-margin-left>
+        <db-view-spacing-margin-right marginRight="2" customClass='border'>
+          右外边距
+        </db-view-spacing-margin-right>
+        <db-view-spacing-padding-top paddingTop="2" customClass='border padding-width'>
+          顶内边距
+        </db-view-spacing-padding-top>
+        <db-view-spacing-padding-bottom paddingBottom="2" customClass='border padding-width'>
+          底内边距
+        </db-view-spacing-padding-bottom>
+        <db-view-spacing-padding-left paddingLeft="2" customClass='border padding-width'>
+          左内边距
+        </db-view-spacing-padding-left>
+        <db-view-spacing-padding-right paddingRight="2" customClass='border padding-width'>
+          右内边距
+        </db-view-spacing-padding-right>
+      </example-demo-spacing>
+      <example-demo-text title="text" desc="" _pid="{{_pid}}">
+        <db-view-text-fontWeight fontWeight="light" customClass='mt-1'>
+          fontWeight-bold
+        </db-view-text-fontWeight>
+        <db-view-text-fontItalic fontItalic="true" customClass='mt-1'>
+          fontItalic
+        </db-view-text-fontItalic>
+        <db-view-text-decoration textDecoration="lineThrough" customClass='mt-1'>
+          textDecoration-lineThrough
+        </db-view-text-decoration>
+        <db-view-text-alignment alignment="center" customClass='mt-1'>
+          alignment-center
+        </db-view-text-alignment>
+        <db-view-text-transform transform="upperCase" customClass='mt-1'>
+          transform
+        </db-view-text-transform>
+        <db-view-text-truncate truncate="48" customClass='mt-1'>
+          truncate 数字
+        </db-view-text-truncate>
+        <db-view-text-wrap wrap="1" customClass='mt-1  bg-secondary'>
+          wrap
+        </db-view-text-wrap>
+      </example-demo-text>
+      <example-demo-colors title="colors" desc="" _pid="{{_pid}}">
+        <db-view-colors-primary textColor="primary" customClass='mt-1'>
+          primary
+        </db-view-colors-primary>
+        <db-view-colors-secondary textColor="secondary" customClass='mt-1'>
+          secondary
+        </db-view-colors-secondary>
+        <db-view-colors-danger textColor="danger" customClass='mt-1'>
+          danger
+        </db-view-colors-danger>
+      </example-demo-colors>
+    </example>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import BrjView from '../packages/view/index'
+  export default class ViewPage extends wepy.page {
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-border': BrjExampleDemo,
+      'example-demo-text': BrjExampleDemo,
+      'example-demo-spacing': BrjExampleDemo,
+      'example-demo-colors': BrjExampleDemo,
+      'example-demo-float': BrjExampleDemo,
+      'db-view-default': BrjView,
+      'db-view-maxWidth': BrjView,
+      'db-view-border': BrjView,
+      'db-view-border-left': BrjView,
+      'db-view-border-top': BrjView,
+      'db-view-border-right': BrjView,
+      'db-view-border-bottom': BrjView,
+      'db-view-spacing-margin-default': BrjView,
+      'db-view-spacing-margin-x': BrjView,
+      'db-view-spacing-margin-y': BrjView,
+      'db-view-spacing-margin-xy': BrjView,
+      'db-view-spacing-margin-left': BrjView,
+      'db-view-spacing-margin-top': BrjView,
+      'db-view-spacing-margin-right': BrjView,
+      'db-view-spacing-margin-bottom': BrjView,
+      'db-view-spacing-padding-default': BrjView,
+      'db-view-spacing-padding-x': BrjView,
+      'db-view-spacing-padding-y': BrjView,
+      'db-view-spacing-padding-xy': BrjView,
+      'db-view-spacing-padding-left': BrjView,
+      'db-view-spacing-padding-top': BrjView,
+      'db-view-spacing-padding-right': BrjView,
+      'db-view-spacing-padding-bottom': BrjView,
+      'db-view-text-fontWeight': BrjView,
+      'db-view-text-fontItalic': BrjView,
+      'db-view-text-decoration': BrjView,
+      'db-view-text-alignment': BrjView,
+      'db-view-text-transform': BrjView,
+      'db-view-text-truncate': BrjView,
+      'db-view-text-wrap': BrjView,
+      'db-view-colors-primary': BrjView,
+      'db-view-colors-secondary': BrjView,
+      'db-view-colors-danger': BrjView
+    }
+  }
+</script>

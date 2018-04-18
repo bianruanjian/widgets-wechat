@@ -1,0 +1,40 @@
+<style lang='less'>
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+</style>
+
+<template>
+  <view class="{{cssClasses}}" style="{{cssStyles}}" id="{{widgetId}}">
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import BaseComponent from '../baseComponent'
+  export default class Container extends BaseComponent {
+    mixins = [BaseMixin]
+    props = this.mixinProps({
+      fluidWidth: {
+        type: Boolean,
+        value: false
+      }
+    })
+    getCssClasses() {
+      let cssClasses = []
+      cssClasses.push(this._getFluidWidth())
+      return cssClasses.join(' ')
+    }
+    _getFluidWidth() {
+      return this.data.fluidWidth ? 'container-fluid' : 'container'
+    }
+  }
+</script>
