@@ -9,9 +9,9 @@
 
 <template>
   <button id="{{id}}" class="{{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
-            <slot></slot>
-            {{value?value:''}}
-          </button>
+                      <slot></slot>
+                      {{value?value:''}}
+        </button>
 </template>
 
 <script>
@@ -58,24 +58,22 @@
         value: 'self'
       }
     })
-    data = {}
     getCssClasses() {
-      let cssClasses = []
-      cssClasses.push(this._getAppearance())
-      cssClasses.push(this._getSize())
-      cssClasses.push(this._isActive())
-      return cssClasses.join(' ')
+      let cssClasses = [this._getAppearance(), this._getAppearance(), this._getSize()， this._getFluidWidth(), this._getActive()]
+      return cssClasses.join(' ').trim()
     }
     _getAppearance() {
       let appearanceClasses = []
       let appearance = this.data.appearance
-      if (appearance && appearance.indexOf('outline') > -1) {
-        appearanceClasses.push('btn-outline')
+      if (appearance) {
+        if (appearance.indexOf('outline') > -1) {
+          appearanceClasses.push('btn-outline')
+        }
+        appearanceClasses.push('zan-btn--' + appearance)
+        //  因为 zanui 样式不全，因此我们单独补充了不全的样式，但不以 zan 开头，不以 zan 的风格来写
+        appearanceClasses.push('btn btn-' + appearance)
       }
-      appearanceClasses.push('zan-btn--' + appearance)
-      //  因为 zanui 样式不全，因此我们单独补充了不全的样式，但不以 zan 开头，不以 zan 的风格来写
-      appearanceClasses.push('btn btn-' + appearance)
-      return appearance ? appearanceClasses.join(' ') : ''
+      return appearanceClasses.join(' ').trim()
     }
     _getSize() {
       if (this.data.size) {
@@ -83,7 +81,10 @@
       }
       return ''
     }
-    _isActive() {
+    _getFluidWidth() {
+      return this.data.fluidWidth ? 'btn-block' : ''
+    }
+    _getActive() {
       return this.data.active ? 'active' : ''
     }
   }

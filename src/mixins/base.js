@@ -38,13 +38,59 @@ export default class BaseMixin extends wepy.mixin {
     return ''
   }
 
+  /**
+   * 混入的 class 样式
+   */
+  _getMixinClasses() {
+    if (this.mixins.length == 0) {
+      return ''
+    }
+    const mixinClasses = []
+    for (let i = 0; i < this.mixins.length; i++) {
+      const method = this.mixins[i].prototype.getClass
+      if (method) {
+        mixinClasses.push(method.call(this))
+      }
+    }
+    return mixinClasses.join(' ').trim()
+  }
+
+  /**
+   * 混入的 style 样式
+   */
+  _getMixinStyles() {
+    if (this.mixins.length == 0) {
+      return ''
+    }
+    const mixinStyles = []
+    for (let i = 0; i < this.mixins.length; i++) {
+      const method = this.mixins[i].prototype.getStyle
+      if (method) {
+        mixinStyles.push(method.call(this))
+      }
+    }
+    mixinStyles = mixinStyles.filter(function (item, index, array) {
+      return item !== ';'
+    })
+    return mixinStyles.join(';').trim()
+  }
+
   onLoad() {
     this._setSystem()
-    let cssClasses = this.getCssClasses().trim()
-    if (this.customClass) {
-      cssClasses = (cssClasses + " " + this.customClass).trim()
+    let cssClasses = this.getCssClasses()
+    let cssStyles = this.getCssStyles()
+    let mixinClasses = this._getMixinClasses()
+    let mixinStyles = this._getMixinStyles()
+    if (mixinClasses) {
+      cssClasses = cssClasses + " " + mixinClasses
     }
-    let cssStyles = this.getCssStyles().trim()
+    if (this.customClass) {
+      cssClasses = cssClasses + " " + this.customClass
+    }
+    if (mixinStyles) {
+      cssStyles = cssStyles + ";" + mixinStyles
+    }
+
     if (cssClasses) {
       this.cssClasses = cssClasses
     }

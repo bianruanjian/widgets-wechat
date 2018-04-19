@@ -61,6 +61,11 @@
   border-color: #007bff;
 }
 
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
 .btn-primary:not(:disabled):not(.disabled).active {
   color: #fff;
   background-color: #0062cc;

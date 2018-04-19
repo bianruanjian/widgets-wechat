@@ -37,11 +37,8 @@ export default class SpacingMixin extends wepy.mixin {
         }
     }
 
-    getSpacingClass() {
-        let data = this.data
-        let spacingClass = []
-        spacingClass = spacingClass.concat(this._getMargin())
-        spacingClass = spacingClass.concat(this._getPadding())
+    getClass() {
+        let spacingClass = [...this._getMargin(), ...this._getPadding()]
         return spacingClass.join(' ')
     }
 
