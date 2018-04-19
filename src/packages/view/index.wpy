@@ -38,7 +38,7 @@
       let maxWidth = ''
       if (this.data.maxWidth) {
         maxWidth = 'max-width: ' + this.data.maxWidth
-        if (this.data.maxWidth.indexOf('%') === -1) {
+        if (maxWidth.indexOf('%') === -1) {
           maxWidth += 'px'
         }
       }
