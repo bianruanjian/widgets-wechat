@@ -34,10 +34,7 @@ export default class BorderMixin extends wepy.mixin {
     }
     
     getClass() {
-        let borderClass = []
-        borderClass.push(...this._getBorder())
-        borderClass.push(...this._getBorderClolor())
-        borderClass.push(...this._getBorderRound())
+        let borderClass = [...this._getBorder(), ...this._getBorderClolor(), ...this._getBorderRound()]
         return borderClass.join(' ')
     }
 

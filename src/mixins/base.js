@@ -45,9 +45,9 @@ export default class BaseMixin extends wepy.mixin {
     if (this.mixins.length == 0) {
       return ''
     }
-    let mixinClasses = []
+    const mixinClasses = []
     for (let i = 0; i < this.mixins.length; i++) {
-      let method = this.mixins[i].prototype.getClass
+      const method = this.mixins[i].prototype.getClass
       if (method) {
         mixinClasses.push(method.call(this))
       }
@@ -62,9 +62,9 @@ export default class BaseMixin extends wepy.mixin {
     if (this.mixins.length == 0) {
       return ''
     }
-    let mixinStyles = []
+    const mixinStyles = []
     for (let i = 0; i < this.mixins.length; i++) {
-      let method = this.mixins[i].prototype.getStyle
+      const method = this.mixins[i].prototype.getStyle
       if (method) {
         mixinStyles.push(method.call(this))
       }

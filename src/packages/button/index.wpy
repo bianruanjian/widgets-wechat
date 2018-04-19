@@ -9,9 +9,9 @@
 
 <template>
   <button id="{{id}}" class="{{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
-                    <slot></slot>
-                    {{value?value:''}}
-      </button>
+                      <slot></slot>
+                      {{value?value:''}}
+        </button>
 </template>
 
 <script>
@@ -59,11 +59,7 @@
       }
     })
     getCssClasses() {
-      let cssClasses = []
-      cssClasses.push(this._getAppearance())
-      cssClasses.push(this._getSize())
-      cssClasses.push(this._getFluidWidth())
-      cssClasses.push(this._getActive())
+      let cssClasses = [this._getAppearance(), this._getAppearance(), this._getSize()， this._getFluidWidth(), this._getActive()]
       return cssClasses.join(' ').trim()
     }
     _getAppearance() {
