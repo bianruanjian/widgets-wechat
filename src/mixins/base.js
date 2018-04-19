@@ -82,13 +82,13 @@ export default class BaseMixin extends wepy.mixin {
     let mixinClasses = this._getMixinClasses()
     let mixinStyles = this._getMixinStyles()
     if (mixinClasses) {
-      cssClasses = (cssClasses + " " + mixinClasses)
+      cssClasses = cssClasses + " " + mixinClasses
     }
     if (this.customClass) {
-      cssClasses = (cssClasses + " " + this.customClass)
+      cssClasses = cssClasses + " " + this.customClass
     }
     if (mixinStyles) {
-      cssStyles = (cssStyles + ";" + mixinStyles)
+      cssStyles = cssStyles + ";" + mixinStyles
     }
 
     if (cssClasses) {
