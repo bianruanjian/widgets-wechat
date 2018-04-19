@@ -13,10 +13,10 @@ export default class ColorsMixin extends wepy.mixin {
         }
     }
     
-    getColorsClass() {
+    getClass() {
         let colorClass = []
-        colorClass = colorClass.concat(this._getTextClolor())
-        colorClass = colorClass.concat(this._getBackgroundColor())
+        colorClass.push(...this._getTextClolor())
+        colorClass.push(...this._getBackgroundColor())
         return colorClass.join(' ')
     }
 

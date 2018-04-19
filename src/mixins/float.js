@@ -9,9 +9,9 @@ export default class FloatMixin extends wepy.mixin {
         }
     }
 
-    getFloatClass() {
+    getClass() {
         let floatClass = []
-        floatClass = floatClass.concat(this._getFloat())
+        floatClass.push(...this._getFloat())
         return floatClass.join(' ')
     }
 

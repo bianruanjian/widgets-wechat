@@ -33,21 +33,21 @@ export default class TextMixin extends wepy.mixin {
         }
     }
 
-    getTextClass() {
+    getClass() {
         let textClass = []
 
-        textClass = textClass.concat(this._getFontWeight())
-        textClass = textClass.concat(this._getFontItalic())
-        textClass = textClass.concat(this._getAlignment())
-        textClass = textClass.concat(this._getTransform())
-        textClass = textClass.concat(this._getTruncate())
-        textClass = textClass.concat(this._getWrap())
-        textClass = textClass.concat(this._getTextDecoration())
+        textClass.push(...this._getFontWeight())
+        textClass.push(...this._getFontItalic())
+        textClass.push(...this._getAlignment())
+        textClass.push(...this._getTransform())
+        textClass.push(...this._getTruncate())
+        textClass.push(...this._getWrap())
+        textClass.push(...this._getTextDecoration())
 
         return textClass.join(' ')
     }
 
-    getTextStyle() {
+    getStyle() {
         let data = this.data
         let textStyle = []
 
