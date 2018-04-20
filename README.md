@@ -6,7 +6,7 @@ brj-widgets-wechat 是编软件 UI 组件的小程序实现版本，结合微信
 
 ## 在线体验
 <div>
-<img src="https://mp.weixin.qq.com/wxopen/qrcode?action=show&type=2&fakeid=3855013071&token=1975127635" width="200" />
+    <img src="src/common/assets/images/qrcode.png" width="200" />
 <div>
 
 
