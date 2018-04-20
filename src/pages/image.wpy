@@ -9,8 +9,8 @@
     <example-demo-default title='默认用法' desc=''>
       <db-image src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413'></db-image>
     </example-demo-default>
-    <example-demo-fluid title='fluid' desc='水平铺满(取决于max-width)'>
-      <db-image-fluid src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' fluid='true'></db-image-fluid>
+    <example-demo-fluid title='fluid' desc='水平铺满(取决于width)'>
+      <db-image-fluid src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' width='100%' fluid='true'></db-image-fluid>
     </example-demo-fluid>
     <example-demo-thumbnail title='thumbnail' desc='缩略图效果'>
       <db-image-thumbnail src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' thumbnail='true'></db-image-thumbnail>
