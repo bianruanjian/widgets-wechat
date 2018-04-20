@@ -32,7 +32,7 @@
   import BaseComponent from '../baseComponent'
   import BorderMixin from '../../mixins/border'
   import SpacingMixin from '../../mixins/spacing'
-  export default class Index extends BaseComponent {
+  export default class Image extends BaseComponent {
     mixins = [BaseMixin, BorderMixin, SpacingMixin]
     props = this.mixinProps({
       src: {
@@ -69,14 +69,20 @@
       }
     })
     getCssClasses() {
-      let cssClasses = []
-      cssClasses.push(this._getFluid())
-      cssClasses.push(this._getThumbnail())
-      cssClasses.push(this._getAlignment())
+      let cssClasses = [this._getFluid(), this._getThumbnail(), this._getAlignment()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
       return cssClasses.join(' ').trim()
     }
     getCssStyles() {
-      let cssStyles = [this._getWidth(), this._getHeight()]
+      let cssStyles = []
+      if (this.data.fluid) {
+        cssStyles.push("width:  100%")
+      } else {
+        cssStyles.push(this._getWidth())
+      }
+      cssStyles.push(this._getHeight())
       cssStyles = cssStyles.filter(function(item, index, array) {
         return item !== ''
       })

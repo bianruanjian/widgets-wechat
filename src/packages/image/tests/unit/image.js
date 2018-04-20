@@ -22,7 +22,6 @@ registerSuite('Image', {
 
         'custom properties'() {
             let customProperties = {
-                fluid: true,
                 thumbnail: true,
                 src: 'http://image.png',
                 alt: 'cat',
@@ -30,8 +29,11 @@ registerSuite('Image', {
                 height: '60%'
             }
             component.data = customProperties
-            assert.equal('img-fluid img-thumbnail', component.getCssClasses())
+            assert.equal('img-thumbnail', component.getCssClasses())
             assert.equal('width: 60px;height: 60%', component.getCssStyles())
+            component.data.fluid = true
+            assert.equal('img-fluid img-thumbnail', component.getCssClasses())
+            assert.equal('width:  100%;height: 60%', component.getCssStyles())
         },
 
         'alignment is center'() {
