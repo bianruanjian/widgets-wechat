@@ -1,0 +1,65 @@
+<style lang='less'>
+  .border {
+    border: 1px solid #6c757d !important;
+  }
+</style>
+
+<template>
+  <example title='image' desc='图片'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-image src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413'></db-image>
+    </example-demo-default>
+    <example-demo-fluid title='fluid' desc='水平铺满(取决于width)'>
+      <db-image-fluid src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' fluid='true'></db-image-fluid>
+    </example-demo-fluid>
+    <example-demo-thumbnail title='thumbnail' desc='缩略图效果'>
+      <db-image-thumbnail src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' thumbnail='true'></db-image-thumbnail>
+    </example-demo-thumbnail>
+    <example-demo-alt title='alt' desc='替代文本'>
+      <db-image-alt src='http://image.jpg' alt='图片不存在'></db-image-alt>
+    </example-demo-alt>
+    <example-demo-width title='width' desc='宽度'>
+      <db-image-width src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' width='200'></db-image-width>
+    </example-demo-width>
+    <example-demo-height title='height' desc='高度'>
+      <db-image-height src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' height='150'></db-image-height>
+    </example-demo-height>
+    <example-demo-alignment title='align' desc='排列方式'>
+      <db-image-alignment-left src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' width='200' alignment='left' ></db-image-alignment-left>
+      <db-image-alignment-center src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' width='200' alignment='center' ></db-image-alignment-center>
+      <db-image-alignment-right src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' width='200' alignment='right' ></db-image-alignment-right>
+    </example-demo-alignment>
+  </example>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbImage from '../packages/image/index'
+  export default class ImagePage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-src': BrjExampleDemo,
+      'example-demo-fluid': BrjExampleDemo,
+      'example-demo-thumbnail': BrjExampleDemo,
+      'example-demo-alt': BrjExampleDemo,
+      'example-demo-width': BrjExampleDemo,
+      'example-demo-height': BrjExampleDemo,
+      'example-demo-alignment': BrjExampleDemo,
+      'db-image': DbImage,
+      'db-image-src': DbImage,
+      'db-image-fluid': DbImage,
+      'db-image-thumbnail': DbImage,
+      'db-image-alt': DbImage,
+      'db-image-width': DbImage,
+      'db-image-height': DbImage,
+      'db-image-alignment-left': DbImage,
+      'db-image-alignment-center': DbImage,
+      'db-image-alignment-right': DbImage
+    }
+    methods = {}
+  }
+</script>

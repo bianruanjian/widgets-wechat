@@ -23,18 +23,17 @@
   export default class Container extends BaseComponent {
     mixins = [BaseMixin]
     props = this.mixinProps({
-      fluidWidth: {
+      fluid: {
         type: Boolean,
         value: false
       }
     })
     getCssClasses() {
-      let cssClasses = []
-      cssClasses.push(this._getFluidWidth())
+      let cssClasses = [this._getFluid()]
       return cssClasses.join(' ').trim()
     }
-    _getFluidWidth() {
-      return this.data.fluidWidth ? 'container-fluid' : 'container'
+    _getFluid() {
+      return this.data.fluid ? 'container-fluid' : 'container'
     }
   }
 </script>

@@ -9,9 +9,9 @@
 
 <template>
   <button id="{{id}}" class="{{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
-                      <slot></slot>
-                      {{value?value:''}}
-        </button>
+                        <slot></slot>
+                        {{value?value:''}}
+          </button>
 </template>
 
 <script>
@@ -41,7 +41,7 @@
         type: String,
         value: ''
       },
-      fluidWidth: {
+      fluid: {
         type: Boolean,
         value: false
       },
@@ -59,7 +59,10 @@
       }
     })
     getCssClasses() {
-      let cssClasses = [this._getAppearance(), this._getAppearance(), this._getSize()， this._getFluidWidth(), this._getActive()]
+      let cssClasses = [this._getAppearance(), this._getSize(), this._getFluid(), this._getActive()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
       return cssClasses.join(' ').trim()
     }
     _getAppearance() {
@@ -81,8 +84,8 @@
       }
       return ''
     }
-    _getFluidWidth() {
-      return this.data.fluidWidth ? 'btn-block' : ''
+    _getFluid() {
+      return this.data.fluid ? 'btn-block' : ''
     }
     _getActive() {
       return this.data.active ? 'active' : ''

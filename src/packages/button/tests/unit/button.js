@@ -1,28 +1,37 @@
-import Button from '../../index';
+import Component from '../../index';
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
-
+let component;
 registerSuite('Button', {
-    'create new'() {
-        let button = new Button()
-        assert.equal("", button.getCssClasses())
-        assert.equal("", button._getAppearance())
-        assert.equal("", button._getSize())
-        assert.equal("", button._getFluidWidth())
-        assert.equal("", button._getActive())
-        assert.equal("{}", JSON.stringify(button.data))
+    beforeEach() {
+        component = new Component();
     },
+    afterEach() {
+        component = null;
+    },
+    tests: {
+        'should construct component'() {
+            assert.doesNotThrow(() => new Component());
+        },
 
-    "update values"(){
-        let button = new Button()
-        button.data.fluidWidth = true
-        assert.equal("btn-block", button._getFluidWidth())
+        'default properties'() {
+            assert.equal("", component.getCssClasses())
+            assert.deepEqual({}, component.data)
+            assert.deepEqual(false, component.props.fluid.value)
+            assert.deepEqual(false, component.props.active.value)
+            assert.deepEqual(false, component.props.disabled.value)
+        },
 
-        button.data.active = true
-        assert.equal("active", button._getActive())
-
-        assert.equal("btn-block active", button.getCssClasses())
-        
+        "custom properties"() {
+            let customProperties = {
+                fluid: true,
+                appearance: 'primary',
+                size: 'large',
+                active: true
+            }
+            component.data = customProperties
+            assert.equal("zan-btn--primary btn btn-primary zan-btn--large btn-block active", component.getCssClasses())
+        }
     }
 });
 
