@@ -1,20 +1,28 @@
-import View from '../../index';
+import Component from '../../index';
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
-
+let component;
 registerSuite('View', {
-    'create new'() {
-        let view = new View()
-        assert.equal("", view.getCssStyles())
-        assert.equal("", view._getMaxWidth())
-        assert.equal("{}", JSON.stringify(view.data))
+    beforeEach() {
+        component = new Component();
     },
+    afterEach() {
+        component = null;
+    },
+    tests: {
+        'should construct component'() {
+            assert.doesNotThrow(() => new Component());
+        },
 
-    "update values"(){
-        let view = new View()
-        view.data.maxWidth = "50%"
-        assert.equal("max-width: 50%", view._getMaxWidth())
-        assert.equal('{"maxWidth":"50%"}', JSON.stringify(view.data))
+        'default properties'() {
+            assert.equal("", component.getCssStyles())
+            assert.deepEqual({}, component.data)
+        },
+
+        "custom properties"() {
+            component.data.maxWidth = "50%"
+            assert.equal("max-width: 50%", component.getCssStyles())
+        }
     }
 });
 

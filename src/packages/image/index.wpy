@@ -1,0 +1,121 @@
+<style lang='less'>
+  @import '../../common/assets/style/components/embed.wxss';
+  @import '../../common/assets/style/components/border.wxss';
+  @import '../../common/assets/style/components/spacing.wxss';
+  image {
+    display: block; // vertical-align: middle;
+    border-style: none;
+  }
+  /*调整，删除原有bootstrap的高度*/
+  .img-fluid,
+  .img-thumbnail {
+    max-width: 100%; // height: auto; 
+  }
+  /*调整，删除原有bootstrap的高度*/
+  .img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%; // height: auto; 
+  }
+</style>
+
+<template>
+  <!-- <img style="{{cssStyles}}" class="{{cssClasses}}" alt="{{alt}}" src="{{src}}" /> -->
+  <image style="{{cssStyles}}" class="{{cssClasses}}" src="{{src}}" />
+  <!-- <view>{{alt}}</view> -->
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import BaseComponent from '../baseComponent'
+  import BorderMixin from '../../mixins/border'
+  import SpacingMixin from '../../mixins/spacing'
+  export default class Index extends BaseComponent {
+    mixins = [BaseMixin, BorderMixin, SpacingMixin]
+    props = this.mixinProps({
+      src: {
+        type: String,
+        value: ''
+      },
+      fluid: {
+        type: Boolean | String,
+        value: false
+      },
+      thumbnail: {
+        type: Boolean | String,
+        value: false
+      },
+      alt: {
+        type: String,
+        value: ''
+      },
+      title: {
+        type: String,
+        value: ''
+      },
+      width: {
+        type: String | Number,
+        value: ''
+      },
+      height: {
+        type: String | Number,
+        value: ''
+      },
+      alignment: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = []
+      cssClasses.push(this._getFluid())
+      cssClasses.push(this._getThumbnail())
+      cssClasses.push(this._getAlignment())
+      return cssClasses.join(' ').trim()
+    }
+    getCssStyles() {
+      let cssStyles = [this._getWidth(), this._getHeight()]
+      cssStyles = cssStyles.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssStyles.length > 0 ? cssStyles.join(';') : ''
+    }
+    _getFluid() {
+      return this.data.fluid ? 'img-fluid' : ''
+    }
+    _getThumbnail() {
+      return this.data.thumbnail ? 'img-thumbnail' : ''
+    }
+    _getWidth() {
+      let width = ''
+      if (this.data.width) {
+        width = 'width: ' + this.data.width
+        if (width.indexOf('%') === -1 && width.indexOf('auto') === -1) {
+          width += 'px'
+        }
+      }
+      return width
+    }
+    _getHeight() {
+      let height = ''
+      if (this.data.height) {
+        height = 'height: ' + this.data.height
+        if (height.indexOf('%') === -1 && height.indexOf('auto') === -1) {
+          height += 'px'
+        }
+      }
+      return height
+    }
+    _getAlignment() {
+      let float = ''
+      if (this.data.alignment === 'center') {
+        float = 'mx-auto d-block'
+      } else {
+        float = this.data.alignment ? 'float-' + this.data.alignment : ''
+      }
+      return float
+    }
+  }
+</script>

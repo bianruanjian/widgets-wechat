@@ -62,7 +62,7 @@ export default class BaseMixin extends wepy.mixin {
     if (this.mixins.length == 0) {
       return ''
     }
-    const mixinStyles = []
+    let mixinStyles = []
     for (let i = 0; i < this.mixins.length; i++) {
       const method = this.mixins[i].prototype.getStyle
       if (method) {

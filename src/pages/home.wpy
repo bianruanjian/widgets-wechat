@@ -43,7 +43,7 @@
   import { menus } from './config'
   export default class HomePage extends wepy.page {
     config = {
-      navigationBarTitleText: 'brjui'
+      navigationBarTitleText: 'BrjUI'
     };
     components = {
       'brj-example-menu': BrjExampleMenu

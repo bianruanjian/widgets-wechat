@@ -305,3 +305,11 @@
 .ml-auto, .mx-auto {
   margin-left: auto !important;
 }
+
+.float-left {
+  float: left!important;
+}
+
+.float-right {
+  float: right!important;
+}

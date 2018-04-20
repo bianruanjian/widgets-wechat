@@ -13,7 +13,8 @@ export default class extends wepy.app {
       'pages/home',
       'pages/button',
       'pages/container',
-      'pages/view'
+      'pages/view',
+      'pages/image'
     ],
     window: {
       backgroundTextStyle: 'light',

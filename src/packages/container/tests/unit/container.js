@@ -1,21 +1,29 @@
-import Container from '../../index';
+import Component from '../../index';
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
-
+let component;
 registerSuite('Container', {
-    'create new'() {
-        let container = new Container()
-        assert.equal("container", container.getCssClasses())
-        assert.equal("container", container._getFluidWidth())
-        assert.equal("{}", JSON.stringify(container.data))
+    beforeEach() {
+        component = new Component();
     },
+    afterEach() {
+        component = null;
+    },
+    tests: {
+        'should construct component'() {
+            assert.doesNotThrow(() => new Component());
+        },
 
-    "update values"(){
-        let container = new Container()
-        container.data.fluidWidth = true
-        assert.equal("container-fluid", container._getFluidWidth())
-        assert.equal("container-fluid", container.getCssClasses())
-        assert.equal('{"fluidWidth":true}', JSON.stringify(container.data))
+        'default properties'() {
+            assert.equal("container", component.getCssClasses())
+            assert.deepEqual(false, component.props.fluid.value)
+            assert.deepEqual({}, component.data)
+        },
+
+        "custom properties"() {
+            component.data.fluid = true
+            assert.equal("container-fluid", component.getCssClasses())
+        }
     }
 });
 
