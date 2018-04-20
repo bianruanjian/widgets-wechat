@@ -4,6 +4,12 @@
 
 brj-widgets-wechat 是编软件 UI 组件的小程序实现版本，结合微信和 bootstrap ，为用户提供 bootstrap 版的小程序体验。
 
+## 在线体验
+<div>
+    <img src="src/common/assets/images/qrcode.png" width="200" />
+<div>
+
+
 
 ## 下载
 ``` bash
