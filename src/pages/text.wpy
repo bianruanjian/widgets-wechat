@@ -1,0 +1,50 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <example title='text' desc='文本'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-text-default value='我是文本'></db-text-default>
+      <db-text-default value='我是文本'></db-text-default>
+      <db-text-default value='我是文本'></db-text-default>
+    </example-demo-default>
+    <example-demo-type title='h1~h6,p,lead,small' desc=''>
+      <db-text-type-h1 value='我是文本' type='h1'></db-text-type-h1>
+      <db-text-type-h2 value='我是文本' type='h2'></db-text-type-h2>
+      <db-text-type-h3 value='我是文本' type='h3'></db-text-type-h3>
+      <db-text-type-h4 value='我是文本' type='h4'></db-text-type-h4>
+      <db-text-type-h5 value='我是文本' type='h5'></db-text-type-h5>
+      <db-text-type-h6 value='我是文本' type='h6'></db-text-type-h6>
+      <db-text-type-p value='我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落' type='p' ></db-text-type-p>
+      <db-text-type-lead value='我是突出式段落我是突出式段落我是突出式段落我是突出式段落我是突出式段落我是突出' type='lead'></db-text-type-lead>
+      <db-text-type-small value='我是小文本' type='small'></db-text-type-small>
+    </example-demo-type>
+  </example>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbText from '../packages/text/index'
+  export default class TextPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-type': BrjExampleDemo,
+      'db-text-default': DbText,
+      'db-text-type-h1': DbText,
+      'db-text-type-h2': DbText,
+      'db-text-type-h3': DbText,
+      'db-text-type-h4': DbText,
+      'db-text-type-h5': DbText,
+      'db-text-type-h6': DbText,
+      'db-text-type-p': DbText,
+      'db-text-type-lead': DbText,
+      'db-text-type-small': DbText
+    }
+    methods = {}
+  }
+</script>

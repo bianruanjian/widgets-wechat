@@ -1,0 +1,63 @@
+<style lang='less'>
+  @import '../../vendor/fontawesome/css/fontawesome-all.wxss';
+</style>
+
+<template>
+  <i class="{{cssClasses}}" style='{{cssStyles}}'>
+    <slot></slot>
+  </i>
+</template>
+
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import ColorsMixin from '../../mixins/colors'
+  import FlexMixin from '../../mixins/flex'
+  import BaseComponent from '../baseComponent'
+  export default class Icon extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, ColorsMixin, FlexMixin.item]
+    props = this.mixinProps({
+      value: {
+        type: String,
+        value: ''
+      },
+      size: {
+        type: String,
+        value: ''
+      },
+      alt: {
+        type: String,
+        value: ''
+      },
+      title: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = [this._getValue(), this._getSize()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+
+    _getValue() {
+      return this.data.value ? this.data.value : ''
+    }
+    _getSize() {
+      let sizeMap = {
+        'extraSmall': 'xs',
+        'small': 'sm',
+        'large': 'lg'
+      }
+      let size = ''
+      if (this.data.size) {
+        size = sizeMap[this.data.size]
+        size = size ? 'fa-' + size : 'fa-' + this.data.size
+      }
+      return size
+    }
+  }
+</script>

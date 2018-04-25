@@ -9,6 +9,16 @@ module.exports = {
       "name": "按钮",
       "icon": "",
       "code": ""
+    }, {
+      "id": "text",
+      "name": "文本",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "icon",
+      "name": "图标",
+      "icon": "",
+      "code": ""
     }]
   },{
     id: 'layout',
@@ -23,6 +33,26 @@ module.exports = {
     }, {
       "id": "view",
       "name": "视图",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "gridRow",
+      "name": "网格行",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "gridColumn",
+      "name": "网格列",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "listGroup",
+      "name": "列表",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "listItem",
+      "name": "列表项",
       "icon": "",
       "code": ""
     }]

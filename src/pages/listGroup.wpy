@@ -1,0 +1,39 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <example title='listGroup' desc='列表'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-list-group-default>
+        <view class='list-group-item'>item1</view>
+        <view class='list-group-item'>item2</view>
+        <view class='list-group-item'>item3</view>
+      </db-list-group-default>
+    </example-demo-default>
+    <example-demo-flush title='flush' desc=''>
+      <db-list-group-flush flush='true'>
+        <view class='list-group-item'>item1</view>
+        <view class='list-group-item'>item2</view>
+        <view class='list-group-item'>item3</view>
+      </db-list-group-flush>
+    </example-demo-flush>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbListGroup from '../packages/list-group/index'
+  export default class ListGroupPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-flush': BrjExampleDemo,
+      'db-list-group-default': DbListGroup,
+      'db-list-group-flush': DbListGroup
+    }
+    methods = {}
+  }
+</script>

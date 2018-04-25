@@ -1,0 +1,34 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/grid.wxss';
+</style>
+
+<template>
+  <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import BorderMixin from '../../mixins/border'
+  import SpacingMixin from '../../mixins/spacing'
+  import TextMixin from '../../mixins/text'
+  import FlexMixin from '../../mixins/flex'
+  import BaseComponent from '../baseComponent'
+  export default class GridColumn extends BaseComponent {
+    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, FlexMixin.container, FlexMixin.item]
+    props = this.mixinProps({
+      offset: {
+        type: Number | String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['col', 'gutters-col', this._getOffset()]
+      return cssClasses.join(' ').trim()
+    }
+    _getOffset() {
+      return (this.data.offset !== undefined) ? 'offset-' + this.data.offset : ''
+    }
+  }
+</script>

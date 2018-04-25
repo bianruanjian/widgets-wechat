@@ -1,0 +1,92 @@
+<style lang='less'>
+  button {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+  }
+</style>
+
+<template>
+  <example title='icon' desc='图标'>
+    <example-demo-default title='默认用法' desc=''>
+      <view class='d-flex'>
+        <db-icon-default value='fas fa-user'></db-icon-default>
+        <view class='px-2'> fas fa-user</view>
+      </view>
+      <view class='d-flex'>
+        <db-icon-fas value='fas fa-user'></db-icon-fas>
+        <view class='px-2'> fas fa-user</view>
+      </view>
+      <view class='d-flex'>
+        <db-icon-far value='far fa-user'></db-icon-far>
+        <view class='px-2'> far fa-user</view>
+      </view>
+    </example-demo-default>
+    <example-demo-size title='size' desc=''>
+      <db-icon-size-xs value='fas fa-user' size='extraSmall'></db-icon-size-xs>
+      <db-icon-size-small value='fas fa-user' size='small'></db-icon-size-small>
+      <db-icon-size-large value='fas fa-user' size='large'></db-icon-size-large>
+      <db-icon-size-2x value='fas fa-user' size='2x'></db-icon-size-2x>
+      <db-icon-size-5x value='fas fa-user' size='5x'></db-icon-size-5x>
+    </example-demo-size>
+    <example-demo-btn title='search-btn demo' desc=''>
+      <view class='d-flex'>
+        <button class='btn'>
+              <db-icon-search-primary value='fas fa-search' textColor='primary'></db-icon-search-primary>
+              查询
+        </button>
+        <button class='btn'>
+              <db-icon-search-success value='fas fa-search' textColor='success'></db-icon-search-success>
+              查询
+        </button>
+      </view>
+      <button class='btn'>
+              <db-icon-search-btn value='fas fa-search' textColor='danger'></db-icon-search-btn>
+              查询
+      </button>
+    </example-demo-btn>
+    <example-demo-msg title='msg demo' desc=''>
+      <view class='d-flex'>
+        <db-icon-msg-success value='fas fa-check-circle' size='3x' textColor='success' customClass='mr-3'></db-icon-msg-success>
+        <span class='my-auto'>操作成功</span>
+      </view>
+      <view class='d-flex'>
+        <db-icon-msg-info value='fas fa-info-circle' size='3x' textColor='primary' customClass='mr-3'></db-icon-msg-info>
+        <span class='my-auto'>提示</span>
+      </view>
+      <view class='d-flex'>
+        <db-icon-msg-warning value='fas fa-exclamation-circle' size='3x' textColor='warning' customClass='mr-3'></db-icon-msg-warning>
+        <span class='my-auto'>普通警告</span>
+      </view>
+    </example-demo-msg>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbIcon from '../packages/icon/index'
+  export default class IconPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-size': BrjExampleDemo,
+      'example-demo-btn': BrjExampleDemo,
+      'example-demo-msg': BrjExampleDemo,
+      'db-icon-default': DbIcon,
+      'db-icon-fas': DbIcon,
+      'db-icon-far': DbIcon,
+      'db-icon-size-xs': DbIcon,
+      'db-icon-size-small': DbIcon,
+      'db-icon-size-large': DbIcon,
+      'db-icon-size-2x': DbIcon,
+      'db-icon-size-5x': DbIcon,
+      'db-icon-search-btn': DbIcon,
+      'db-icon-search-primary': DbIcon,
+      'db-icon-search-success': DbIcon,
+      'db-icon-msg-success': DbIcon,
+      'db-icon-msg-info': DbIcon,
+      'db-icon-msg-warning': DbIcon
+    }
+  }
+</script>

@@ -1,0 +1,50 @@
+<style lang='less'>
+  .gutters-col {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+  .no-gutters>.gutters-col {
+    padding-right: 0;
+    padding-left: 0;
+  }
+</style>
+
+<template>
+  <example title='gridRow' desc='网格行'>
+    <example-demo-default title='默认用法' desc=''>
+      <view class='container bg-primary'>
+        <db-grid-row-default customClass='bg-primary'>
+          <view class='gutters-col'>default</view>
+        </db-grid-row-default>
+      </view>
+    </example-demo-default>
+    <example-demo-gutters title='no-gutters' desc=''>
+      <view class='container bg-danger'>
+        <db-grid-row-gutters-f gutters='true' customClass='bg-success'>
+          <view class='gutters-col'>gutters</view>
+        </db-grid-row-gutters-f>
+        <db-grid-row-gutters-t gutters='false' customClass='bg-success'>
+          <view class='gutters-col'>no-gutters</view>
+        </db-grid-row-gutters-t>
+      </view>
+    </example-demo-gutters>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbGridRow from '../packages/grid-row/index'
+  export default class GridRowPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-gutters': BrjExampleDemo,
+      'db-grid-row-default': DbGridRow,
+      'db-grid-row-gutters-f': DbGridRow,
+      'db-grid-row-gutters-t': DbGridRow
+    }
+    methods = {}
+  }
+</script>

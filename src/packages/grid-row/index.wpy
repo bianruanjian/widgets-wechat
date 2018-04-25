@@ -1,0 +1,37 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/grid.wxss';
+  @import '../../vendor/bootstrap/utilities/flex.wxss';
+  @import '../../vendor/bootstrap/grid.wxss';
+  .row {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
+</style>
+<template>
+  <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FlexMixin from '../../mixins/flex'
+  import BaseComponent from '../baseComponent'
+  export default class GridRow extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FlexMixin.container, FlexMixin.item]
+    props = this.mixinProps({
+      gutters: {
+        type: Boolean | String,
+        value: true
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['row', this._getGutters()]
+      return cssClasses.join(' ').trim()
+    }
+    _getGutters() {
+      return (this.data.gutters === false || this.data.gutters === 'false') ? 'no-gutters' : ''
+    }
+  }
+</script>

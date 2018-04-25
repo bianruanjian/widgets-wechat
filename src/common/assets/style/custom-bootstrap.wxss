@@ -1,4 +1,23 @@
-@import './components/border.wxss';
-@import './components/spacing.wxss';
-@import './components/text.wxss';
-@import './components/colors.wxss';
+@import '../../../vendor/bootstrap/utilities/border.wxss';
+@import '../../../vendor/bootstrap/utilities/spacing.wxss';
+@import '../../../vendor/bootstrap/utilities/text.wxss';
+@import '../../../vendor/bootstrap/utilities/colors.wxss';
+@import '../../../vendor/bootstrap/utilities/display.wxss';
+
+@import '../../../vendor/zanui/button.wxss';
+@import '../../../vendor/bootstrap/button.wxss';
+@import '../../../vendor/bootstrap/grid.wxss';
+@import '../../../vendor/bootstrap/text.wxss';
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+.container-fluid {
+    margin-right: 4px;
+    margin-left: 4px;
+} 
+

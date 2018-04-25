@@ -1,0 +1,49 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/list-group.wxss';
+</style>
+
+<template>
+  <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}' disabled='{{disabled}}'>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import FlexMixin from '../../mixins/flex'
+  import TextMixin from '../../mixins/text'
+  import BaseComponent from '../baseComponent'
+  export default class ListItem extends BaseComponent {
+    mixins = [BaseMixin, TextMixin, FlexMixin.container]
+    props = this.mixinProps({
+      active: {
+        type: Boolean | String,
+        value: false
+      },
+      disabled: {
+        type: Boolean | String,
+        value: false
+      },
+      appearance: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['list-group-item', this._getAppearance(), this._getActive(), this._getDisabled()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getAppearance() {
+      return this.data.appearance ? 'list-group-item-' + this.data.appearance : ''
+    }
+    _getDisabled() {
+      return this.data.disabled ? 'disabled' : ''
+    }
+    _getActive() {
+      return this.data.active ? 'active' : ''
+    }
+  }
+</script>

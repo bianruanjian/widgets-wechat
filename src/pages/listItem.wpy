@@ -1,0 +1,66 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <example title='listItem' desc='列表项'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-list-group-default>
+        <db-list-item-default>item1</db-list-item-default>
+        <db-list-item-default>item2</db-list-item-default>
+        <db-list-item-default>item3</db-list-item-default>
+      </db-list-group-default>
+    </example-demo-default>
+    <example-demo-active title='active' desc=''>
+      <db-list-group-active>
+        <db-list-item-active-1 active='true'>item1</db-list-item-active-1>
+        <db-list-item-active-2>item2</db-list-item-active-2>
+        <db-list-item-active-3>item3</db-list-item-active-3>
+      </db-list-group-active>
+    </example-demo-active>
+    <example-demo-disabled title='disabled' desc=''>
+      <db-list-group-disabled>
+        <db-list-item-disabled-1>item1</db-list-item-disabled-1>
+        <db-list-item-disabled-2 disabled='true'>item2</db-list-item-disabled-2>
+      </db-list-group-disabled>
+    </example-demo-disabled>
+    <example-demo-appearance title='appearance' desc=''>
+      <db-list-group-appearance>
+        <db-list-item-appearance-primary appearance='primary'>item1</db-list-item-appearance-primary>
+        <db-list-item-appearance-secondary appearance='secondary'>item2</db-list-item-appearance-secondary>
+        <db-list-item-appearance-success appearance='success'>item3</db-list-item-appearance-success>
+      </db-list-group-appearance>
+    </example-demo-appearance>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbListGroup from '../packages/list-group/index'
+  import DbListItem from '../packages/list-item/index'
+  export default class ListItemPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-active': BrjExampleDemo,
+      'example-demo-disabled': BrjExampleDemo,
+      'example-demo-appearance': BrjExampleDemo,
+      'db-list-group-default': DbListGroup,
+      'db-list-group-active': DbListGroup,
+      'db-list-group-disabled': DbListGroup,
+      'db-list-group-appearance': DbListGroup,
+      'db-list-item-default': DbListItem,
+      'db-list-item-active-1': DbListItem,
+      'db-list-item-active-2': DbListItem,
+      'db-list-item-active-3': DbListItem,
+      'db-list-item-disabled-1': DbListItem,
+      'db-list-item-disabled-2': DbListItem,
+      'db-list-item-appearance-primary': DbListItem,
+      'db-list-item-appearance-secondary': DbListItem,
+      'db-list-item-appearance-success': DbListItem
+    }
+    methods = {}
+  }
+</script>

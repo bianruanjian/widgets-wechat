@@ -1,8 +1,8 @@
 <style lang='less'>
-  @import '../../common/assets/style/components/border.wxss';
-  @import '../../common/assets/style/components/spacing.wxss';
-  @import '../../common/assets/style/components/text.wxss';
-  @import '../../common/assets/style/components/colors.wxss';
+  @import '../../vendor/bootstrap/utilities/border.wxss';
+  @import '../../vendor/bootstrap/utilities/spacing.wxss';
+  @import '../../vendor/bootstrap/utilities/text.wxss';
+  @import '../../vendor/bootstrap/utilities/colors.wxss';
 </style>
 
 <template>

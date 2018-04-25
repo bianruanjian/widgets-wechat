@@ -14,7 +14,13 @@ export default class extends wepy.app {
       'pages/button',
       'pages/container',
       'pages/view',
-      'pages/image'
+      'pages/image',
+      'pages/text',
+      'pages/gridRow',
+      'pages/gridColumn',
+      'pages/listGroup',
+      'pages/listItem',
+      'pages/icon'
     ],
     window: {
       backgroundTextStyle: 'light',
