@@ -1,0 +1,38 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/input-group.wxss';
+</style>
+
+<template>
+  <view class='{{cssClasses}}' style='{{cssStyles}}'>
+    <block wx:if="{{value}}">
+      <span class="input-group-text">{{value}}</span>
+    </block>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import ColorsMixin from '../../mixins/colors'
+  import BaseComponent from '../baseComponent'
+  export default class Addon extends BaseComponent {
+    mixins = [BaseMixin, ColorsMixin]
+    props = this.mixinProps({
+      value: {
+        type: String,
+        value: ''
+      },
+      position: {
+        type: String,
+        value: 'prepend'
+      }
+    })
+    getCssClasses() {
+      let cssClasses = [this._getPosition()]
+      return cssClasses.join(' ').trim()
+    }
+    _getPosition() {
+      return this.data.position ? 'input-group-' + this.data.position : 'input-group-' + this.props.position.value
+    }
+  }
+</script>

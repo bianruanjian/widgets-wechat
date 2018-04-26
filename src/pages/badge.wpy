@@ -1,0 +1,77 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <example title='badge' desc='徽章'>
+    <example-demo-default title='默认用法' desc=''>
+      <view class='h1'>
+        New
+        <db-badge-default value='New' appearance='secondary'></db-badge-default>
+      </view>
+      <view class='h2'>
+        New
+        <db-badge-default value='New' appearance='secondary'></db-badge-default>
+      </view>
+      <view class='h3'>
+        New
+        <db-badge-default value='New' appearance='secondary'></db-badge-default>
+      </view>
+      <view class='h4'>
+        New
+        <db-badge-default value='New' appearance='secondary'></db-badge-default>
+      </view>
+      <view class='h5'>
+        New
+        <db-badge-default value='New' appearance='secondary'></db-badge-default>
+      </view>
+      <view class='h6'>
+        New
+        <db-badge-default value='New' appearance='secondary'></db-badge-default>
+      </view>
+    </example-demo-default>
+    <example-demo-appearance title='appearance' desc=''>
+      <db-badge-appearance-primary appearance='primary'>Primary</db-badge-appearance-primary>
+      <db-badge-appearance-secondary appearance='secondary'>Secondary</db-badge-appearance-secondary>
+      <db-badge-appearance-success appearance='light'>success</db-badge-appearance-success>
+    </example-demo-appearance>
+    <example-demo-pill title='pill' desc=''>
+      <db-badge-pill-primary appearance='primary' pill='true'>Primary</db-badge-pill-primary>
+      <db-badge-pill-secondary appearance='secondary' pill='true'>Secondary</db-badge-pill-secondary>
+      <db-badge-pill-success appearance='light' pill='true'>success</db-badge-pill-success>
+    </example-demo-pill>
+    <example-demo-button title='button demo' desc=''>
+       <button class='btn'>
+         New
+        <db-badge-button appearance='primary' pill='true'>99+</db-badge-button>
+      </button>
+    </example-demo-button>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbBadge from '../packages/badge/index'
+  export default class BadgePage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-appearance': BrjExampleDemo,
+      'example-demo-pill': BrjExampleDemo,
+      'example-demo-href': BrjExampleDemo,
+      'example-demo-button': BrjExampleDemo,
+      'db-badge-default': DbBadge,
+      'db-badge-appearance-primary': DbBadge,
+      'db-badge-appearance-secondary': DbBadge,
+      'db-badge-appearance-success': DbBadge,
+      'db-badge-pill-primary': DbBadge,
+      'db-badge-pill-secondary': DbBadge,
+      'db-badge-pill-success': DbBadge,
+      'db-badge-href': DbBadge,
+      'db-badge-button': DbBadge
+    }
+    methods = {}
+  }
+</script>

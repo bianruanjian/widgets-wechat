@@ -19,6 +19,21 @@ module.exports = {
       "name": "图标",
       "icon": "",
       "code": ""
+    }, {
+      "id": "label",
+      "name": "标签",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "badge",
+      "name": "徽章",
+      "icon": "",
+      "code": ""
+    }, {
+      "id": "addon",
+      "name": "前缀/后缀插件",
+      "icon": "",
+      "code": ""
     }]
   },{
     id: 'layout',
@@ -53,6 +68,17 @@ module.exports = {
     }, {
       "id": "listItem",
       "name": "列表项",
+      "icon": "",
+      "code": ""
+    }]
+  },{
+    id: 'form',
+    name: '表单组件',
+    open: false,
+    icon: '../common/assets/images/demo-menu-form_68x68.png',
+    pages: [{
+      "id": "inputGroup",
+      "name": "输入框组",
       "icon": "",
       "code": ""
     }]

@@ -8,6 +8,9 @@
 @import '../../../vendor/bootstrap/button.wxss';
 @import '../../../vendor/bootstrap/grid.wxss';
 @import '../../../vendor/bootstrap/text.wxss';
+@import '../../../vendor/bootstrap/badge.wxss';
+@import '../../../vendor/bootstrap/form.wxss';
+@import '../../../vendor/bootstrap/input-group.wxss';
 
 
 .container {

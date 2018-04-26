@@ -8,7 +8,7 @@
 </style>
 
 <template>
-  <button id="{{id}}" class="{{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
+  <button id="{{widgetId}}" class="{{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
         <slot></slot>
         {{value?value:''}}
   </button>

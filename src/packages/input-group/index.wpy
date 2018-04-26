@@ -1,0 +1,73 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/input-group.wxss';
+  .input-group-text {
+    padding:0;
+    font-size: .6rem;
+    line-height: 1.4;
+    border-radius: 0.2rem;
+  }
+  .input-group-prepend .btn, .input-group-append .btn {
+    font-size: .6rem;
+    line-height: 1.4;
+  }
+
+  .form-control {
+    padding:0;
+  }
+
+  .form-control-sm, .input-group-sm > .form-control, .input-group-sm > .input-group-prepend > .input-group-text, .input-group-sm > .input-group-append > .input-group-text, .input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-append > .btn {
+    padding:0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .form-control-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-prepend > .input-group-text, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-append > .btn {
+    padding:0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+</style>
+
+<template>
+  <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FloatMixin from '../../mixins/float'
+  import FlexMixin from '../../mixins/flex'
+  import BaseComponent from '../baseComponent'
+  export default class InputGroup extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FloatMixin, FlexMixin.item]
+    props = this.mixinProps({
+      label: {
+        type: String,
+        value: ''
+      },
+      size: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['input-group', this._getSize()]
+      return cssClasses.join(' ').trim()
+    }
+    _getSize() {
+      let sizeMap = {
+        'small': 'sm',
+        'large': 'lg'
+      }
+      let size = ''
+      if (this.data.size) {
+        size = sizeMap[this.data.size]
+        size = size ? 'input-group-' + size : 'input-group-' + this.data.size
+      }
+      return size
+    }
+  }
+</script>

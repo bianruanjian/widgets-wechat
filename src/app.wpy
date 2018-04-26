@@ -20,7 +20,11 @@ export default class extends wepy.app {
       'pages/gridColumn',
       'pages/listGroup',
       'pages/listItem',
-      'pages/icon'
+      'pages/icon',
+      'pages/label',
+      'pages/badge',
+      'pages/inputGroup',
+      'pages/addon'
     ],
     window: {
       backgroundTextStyle: 'light',

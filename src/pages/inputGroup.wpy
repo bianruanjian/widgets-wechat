@@ -1,0 +1,39 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <example title='input-group' desc='输入框组'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-input-group>
+        <view class='input-group-prepend'><span class='input-group-text'>http://www.</span></view>
+        <input type='text' class='form-control border border-secondary' />
+        <view class='input-group-append'><span class='input-group-text'>.com</span></view>
+      </db-input-group>
+    </example-demo-default>
+    <example-demo-size title='size' desc=''>
+      <db-input-group-size-large size='large'>
+        <view class='input-group-prepend'><span class='input-group-text'>http://www.</span></view>
+        <input type='text' class='form-control border border-secondary' place-holder='size-large'/>
+        <view class='input-group-append'><span class='input-group-text'>.com</span></view>
+      </db-input-group-size-large>
+    </example-demo-size>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbInputGroup from '../packages/input-group/index'
+  export default class InputGroupPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-size': BrjExampleDemo,
+      'db-input-group': DbInputGroup,
+      'db-input-group-size-large': DbInputGroup
+    }
+    methods = {}
+  }
+</script>

@@ -23,7 +23,7 @@
 
 <template>
   <!-- <img style='{{cssStyles}}' class='{{cssClasses}}' alt='{{alt}}' src='{{src}}' /> -->
-  <image style='{{cssStyles}}' class='{{cssClasses}}' src='{{src}}' />
+  <image style='{{cssStyles}}' class='{{cssClasses}}' src='{{src}}'  id='{{widgetId}}'/>
   <!-- <view>{{alt}}</view> -->
 </template>
 

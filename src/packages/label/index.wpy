@@ -1,0 +1,30 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <label class='{{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>
+        {{value?value:''}}
+        <slot></slot>
+    </label>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import BaseComponent from '../baseComponent'
+  export default class Label extends BaseComponent {
+    mixins = [BaseMixin]
+    props = this.mixinProps({
+      forId: {
+        type: String,
+        value: ''
+      },
+      value: {
+        type: String,
+        value: ''
+      }
+    })
+    components = {}
+    methods = {}
+  }
+</script>
