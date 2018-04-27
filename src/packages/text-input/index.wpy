@@ -1,0 +1,135 @@
+<style lang='less'>
+  .form-control {
+    width: auto;
+  }
+  .form-control-plaintext{
+    width: auto;
+  }
+</style>
+
+<template>
+  <block wx:if="{{password=='true'}}">
+    <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' password='true' placeholder-class='{{placeholderAppearance}}' disabled='{{disabled}}' maxlength="{{maxLength?maxLength:'-1'}}"
+      class='{{cssClasses}}' style='{{cssStyles}}' />
+  </block>
+  <block wx:else>
+    <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength?maxLength:'-1'}}" disabled='{{disabled}}' class='{{cssClasses}}'
+      style='{{cssStyles}}' />
+  </block>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FlexMixin from '../../mixins/flex'
+  import FloatMixin from '../../mixins/float'
+  import BaseComponent from '../baseComponent'
+  export default class TextInput extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
+    props = this.mixinProps({
+      name: {
+        type: String,
+        value: ''
+      },
+      type: {
+        type: String,
+        value: ''
+      },
+      password: {
+        type: Boolean | String,
+        value: false
+      },
+      value: {
+        type: String,
+        value: ''
+      },
+      label: {
+        type: String,
+        value: ''
+      },
+      placeholder: {
+        type: String,
+        value: ''
+      },
+      placeholderAppearance: {
+        type: String,
+        value: ''
+      },
+      required: {
+        type: Boolean,
+        value: false
+      },
+      disabled: {
+        type: Boolean | String,
+        value: false
+      },
+      readOnly: {
+        type: Boolean,
+        value: false
+      },
+      size: {
+        type: String,
+        value: ''
+      },
+      focus: {
+        type: Boolean | String,
+        value: false
+      },
+      plainText: {
+        type: Boolean | String,
+        value: false
+      },
+      maxLength: {
+        type: Number | String,
+        value: '-1'
+      },
+      minLength: {
+        type: Number | String
+      },
+      invalidMessage: {
+        type: String,
+        value: ''
+      },
+      validMessage: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = [this._getPlaintext(), this._getSize()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getType() {
+      let typeMap = {
+        'text': 'text',
+        'email': 'email',
+        'number': 'number',
+        'idCard': 'idcard',
+        'digit': 'digit'
+      }
+      if (this.data.type && typeMap[this.data.type]) {
+        return typeMap[this.data.type]
+      }
+      return ''
+    }
+    _getPlaintext() {
+      if (this.data.plainText === true || this.data.plainText === 'true') {
+        return 'form-control-plaintext'
+      }
+      return 'form-control'
+    }
+    _getSize() {
+      let sizeMap = {
+        small: 'sm',
+        large: 'lg'
+      }
+      if (this.data.size && sizeMap[this.data.size]) {
+        return 'form-control-' + sizeMap[this.data.size]
+      }
+      return ''
+    }
+  }
+</script>

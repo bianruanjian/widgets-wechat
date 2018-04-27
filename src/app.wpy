@@ -24,7 +24,8 @@ export default class extends wepy.app {
       'pages/label',
       'pages/badge',
       'pages/inputGroup',
-      'pages/addon'
+      'pages/addon',
+      'pages/textInput'
     ],
     window: {
       backgroundTextStyle: 'light',

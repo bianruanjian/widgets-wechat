@@ -81,6 +81,11 @@ module.exports = {
       "name": "输入框组",
       "icon": "",
       "code": ""
+    },{
+      "id": "textInput",
+      "name": "输入框",
+      "icon": "",
+      "code": ""
     }]
   },{
     id: 'data',
