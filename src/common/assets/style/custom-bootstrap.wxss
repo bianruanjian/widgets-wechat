@@ -12,6 +12,10 @@
 @import '../../../vendor/bootstrap/form.wxss';
 @import '../../../vendor/bootstrap/input-group.wxss';
 
+@import './packages/container.wxss';
+@import './packages/grid.wxss';
+@import './packages/form.wxss';
+
 
 .container {
     margin-right: auto;

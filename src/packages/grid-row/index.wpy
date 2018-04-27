@@ -1,11 +1,7 @@
 <style lang='less'>
   @import '../../vendor/bootstrap/grid.wxss';
   @import '../../vendor/bootstrap/utilities/flex.wxss';
-  @import '../../vendor/bootstrap/grid.wxss';
-  .row {
-    margin-right: -4px;
-    margin-left: -4px;
-  }
+  @import '../../common/assets/style/packages/grid.wxss';
 </style>
 <template>
   <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>

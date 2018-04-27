@@ -1,0 +1,49 @@
+<style lang='less'>
+  input {
+    border: 1rpx solid #e9e9e9;
+  }
+</style>
+
+<template>
+  <example title='textarea' desc='文本域'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-textarea-default name='text' type='text' placeholder='I am placeholder' />
+    </example-demo-default>
+    <example-demo-disabled title='disabled' desc=''>
+      <db-textarea-disabled name='text' type='text' value='我是不可编辑的文本' disabled='true' />
+    </example-demo-disabled>
+    <example-demo-focus title='focus' desc=''>
+      <db-textarea-focus name='text' type='text' placeholder='自动聚焦' focus='true' />
+    </example-demo-focus>
+    <example-demo-plainText title='plainText' desc=''>
+      <db-textarea-plainText name='text' type='text' readOnly='true' plainText='true' placeholder='显示为普通为本' />
+    </example-demo-plainText>
+    <example-demo-maxLength title='maxLength' desc=''>
+      <db-textarea-maxLength name='text' type='text' maxLength='32' placeholder='最多只能输入32位' />
+    </example-demo-maxLength>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbTextarea from '../packages/textarea/index'
+  export default class TextareaPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-type': BrjExampleDemo,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-disabled': BrjExampleDemo,
+      'example-demo-focus': BrjExampleDemo,
+      'example-demo-plainText': BrjExampleDemo,
+      'example-demo-maxLength': BrjExampleDemo,
+      'db-textarea-default': DbTextarea,
+      'db-textarea-disabled': DbTextarea,
+      'db-textarea-focus': DbTextarea,
+      'db-textarea-plainText': DbTextarea,
+      'db-textarea-maxLength': DbTextarea
+    }
+    methods = {}
+  }
+</script>

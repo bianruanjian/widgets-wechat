@@ -1,0 +1,56 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <example title='radio' desc='单选框'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-radio-default name='item1' label='item1' value='1' :options='options' />
+    </example-demo-default>
+    <example-demo-labelAfter title='labelAfter' desc=''>
+      <db-radio-labelAfter name='item2' label='item2' value='1' checked='true' labelAfter='true' :options='options' />
+    </example-demo-labelAfter>
+    <example-demo-disabled title='disabled' desc=''>
+      <db-radio-disabled name='item3' label='item3' disabled='true' value='2' checked='true' labelAfter='true' :options='options' />
+    </example-demo-disabled>
+    <example-demo-fluid title='fluid' desc=''>
+      <db-radio-fluid name='item4' value='3' label='item4' fluid='true' labelAfter='true' :options='options' />
+    </example-demo-fluid>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbRadio from '../packages/radio/index'
+  export default class RadioPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-labelAfter': BrjExampleDemo,
+      'example-demo-disabled': BrjExampleDemo,
+      'example-demo-fluid': BrjExampleDemo,
+      'db-radio-default': DbRadio,
+      'db-radio-labelAfter': DbRadio,
+      'db-radio-disabled': DbRadio,
+      'db-radio-fluid': DbRadio
+    }
+    data = {
+      options: [{
+        value: 1,
+        label: '中国',
+        checked: 'true'
+      }, {
+        value: 0,
+        label: '美国'
+      }, {
+        value: 2,
+        label: '巴西'
+      }, {
+        value: 3,
+        label: '日本'
+      }]
+    }
+  }
+</script>

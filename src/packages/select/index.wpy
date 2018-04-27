@@ -1,16 +1,12 @@
 <style lang='less'>
-  @import '../../common/assets/style/packages/form.wxss';
+
 </style>
 
 <template>
-  <block wx:if="{{password=='true'}}">
-    <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' password='true' placeholder-class='{{placeholderAppearance}}' disabled='{{disabled}}' maxlength="{{maxLength?maxLength:'-1'}}"
-      class='{{cssClasses}}' style='{{cssStyles}}' />
-  </block>
-  <block wx:else>
-    <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength?maxLength:'-1'}}" disabled='{{disabled}}'
-      class='{{cssClasses}}' style='{{cssStyles}}' />
-  </block>
+  <picker value="{{value}}" range="{{options}}" id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
+    <slot></slot>
+    {{options[value]}}
+  </picker>
 </template>
 
 <script>
@@ -19,14 +15,10 @@
   import FlexMixin from '../../mixins/flex'
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
-  export default class TextInput extends BaseComponent {
+  export default class Select extends BaseComponent {
     mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
     props = this.mixinProps({
       name: {
-        type: String,
-        value: ''
-      },
-      type: {
         type: String,
         value: ''
       },
@@ -39,14 +31,6 @@
         value: ''
       },
       label: {
-        type: String,
-        value: ''
-      },
-      placeholder: {
-        type: String,
-        value: ''
-      },
-      placeholderAppearance: {
         type: String,
         value: ''
       },
@@ -74,12 +58,21 @@
         type: Boolean | String,
         value: false
       },
-      maxLength: {
-        type: Number | String,
-        value: '-1'
+      options: {
+        type: String | Array,
+        value: ''
       },
-      minLength: {
-        type: Number | String
+      labelField: {
+        type: String,
+        value: ''
+      },
+      valueField: {
+        type: String,
+        value: ''
+      },
+      dataPath: {
+        type: String,
+        value: ''
       },
       invalidMessage: {
         type: String,
@@ -96,19 +89,6 @@
         return item !== ''
       })
       return cssClasses.join(' ').trim()
-    }
-    _getType() {
-      let typeMap = {
-        'text': 'text',
-        'email': 'email',
-        'number': 'number',
-        'idCard': 'idcard',
-        'digit': 'digit'
-      }
-      if (this.data.type && typeMap[this.data.type]) {
-        return typeMap[this.data.type]
-      }
-      return ''
     }
     _getPlaintext() {
       if (this.data.plainText === true || this.data.plainText === 'true') {

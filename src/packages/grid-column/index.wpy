@@ -1,5 +1,6 @@
 <style lang='less'>
   @import '../../vendor/bootstrap/grid.wxss';
+  @import '../../common/assets/style/packages/grid.wxss';
 </style>
 
 <template>

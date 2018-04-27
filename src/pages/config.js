@@ -86,6 +86,26 @@ module.exports = {
       "name": "输入框",
       "icon": "",
       "code": ""
+    },{
+      "id": "select",
+      "name": "普通下拉框",
+      "icon": "",
+      "code": ""
+    },{
+      "id": "checkbox",
+      "name": "复选框",
+      "icon": "",
+      "code": ""
+    },{
+      "id": "radio",
+      "name": "单选框",
+      "icon": "",
+      "code": ""
+    },{
+      "id": "textarea",
+      "name": "文本域",
+      "icon": "",
+      "code": ""
     }]
   },{
     id: 'data',

@@ -93,7 +93,7 @@
       </db-container>
     </example-demo-order>
     <example-demo-offset title='offset' desc=''>
-      <db-container customClass='bg-primary'>
+      <db-container>
         <db-grid-row-offset customClass='bg-success'>
           <db-grid-column-offset-1 customClass='col-3'>.col-4</db-grid-column-offset-1>
           <db-grid-column-offset-2 customClass='col-3'>offset-4</db-grid-column-offset-2>

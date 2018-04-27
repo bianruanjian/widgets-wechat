@@ -1,0 +1,96 @@
+<style lang='less'>
+  @import '../../common/assets/style/packages/form.wxss';
+  .form-check-input {
+    margin-top: 0rem;
+  }
+</style>
+
+<template>
+  <view class="{{fluid?'form-check':'form-check-inline'}}">
+    <checkbox id='{{widgetId}}' name='{{name}}' value="{{name}}" checked="{{checked}}" 
+    class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' /> 
+    {{labelAfter?label:''}}
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FlexMixin from '../../mixins/flex'
+  import FloatMixin from '../../mixins/float'
+  import BaseComponent from '../baseComponent'
+  export default class Checkbox extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
+    props = this.mixinProps({
+      name: {
+        type: String,
+        value: ''
+      },
+      type: {
+        type: String,
+        value: ''
+      },
+      value: {
+        type: String,
+        value: ''
+      },
+      checked: {
+        type: Boolean | String,
+        value: false
+      },
+      label: {
+        type: String,
+        value: ''
+      },
+      labelAfter: {
+        type: Boolean | String,
+        value: false
+      },
+      required: {
+        type: Boolean | String,
+        value: false
+      },
+      disabled: {
+        type: Boolean | String,
+        value: false
+      },
+      readOnly: {
+        type: Boolean | String,
+        value: false
+      },
+      fluid: {
+        type: Boolean | String,
+        value: false
+      },
+      size: {
+        type: String,
+        value: ''
+      },
+      invalidMessage: {
+        type: String,
+        value: ''
+      },
+      validMessage: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['form-check-input', this._getSize()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getSize() {
+      let sizeMap = {
+        small: 'sm',
+        large: 'lg'
+      }
+      if (this.data.size && sizeMap[this.data.size]) {
+        return 'form-control-' + sizeMap[this.data.size]
+      }
+      return ''
+    }
+  }
+</script>

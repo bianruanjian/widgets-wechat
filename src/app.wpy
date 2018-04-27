@@ -25,7 +25,11 @@ export default class extends wepy.app {
       'pages/badge',
       'pages/inputGroup',
       'pages/addon',
-      'pages/textInput'
+      'pages/textInput',
+      'pages/select',
+      'pages/checkbox',
+      'pages/radio',
+      'pages/textarea'
     ],
     window: {
       backgroundTextStyle: 'light',

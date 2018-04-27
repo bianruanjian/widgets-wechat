@@ -1,32 +1,18 @@
 <style lang='less'>
   @import '../../vendor/bootstrap/input-group.wxss';
+  @import '../../common/assets/style/packages/form.wxss';
+
   .input-group-text {
-    padding:0;
+    padding: 0;
     font-size: .6rem;
     line-height: 1.4;
     border-radius: 0.2rem;
   }
-  .input-group-prepend .btn, .input-group-append .btn {
+  .input-group-prepend .btn,
+  .input-group-append .btn {
     font-size: .6rem;
     line-height: 1.4;
   }
-
-  .form-control {
-    padding:0;
-  }
-
-  .form-control-sm, .input-group-sm > .form-control, .input-group-sm > .input-group-prepend > .input-group-text, .input-group-sm > .input-group-append > .input-group-text, .input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-append > .btn {
-    padding:0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
-  .form-control-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-prepend > .input-group-text, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-append > .btn {
-    padding:0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
 </style>
 
 <template>

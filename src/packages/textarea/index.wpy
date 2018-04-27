@@ -3,14 +3,8 @@
 </style>
 
 <template>
-  <block wx:if="{{password=='true'}}">
-    <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' password='true' placeholder-class='{{placeholderAppearance}}' disabled='{{disabled}}' maxlength="{{maxLength?maxLength:'-1'}}"
-      class='{{cssClasses}}' style='{{cssStyles}}' />
-  </block>
-  <block wx:else>
-    <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength?maxLength:'-1'}}" disabled='{{disabled}}'
-      class='{{cssClasses}}' style='{{cssStyles}}' />
-  </block>
+  <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength?maxLength:'-1'}}" disabled='{{disabled}}'
+    class='{{cssClasses}}' style='{{cssStyles}}' />
 </template>
 
 <script>
@@ -19,20 +13,12 @@
   import FlexMixin from '../../mixins/flex'
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
-  export default class TextInput extends BaseComponent {
+  export default class Textarea extends BaseComponent {
     mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
     props = this.mixinProps({
       name: {
         type: String,
         value: ''
-      },
-      type: {
-        type: String,
-        value: ''
-      },
-      password: {
-        type: Boolean | String,
-        value: false
       },
       value: {
         type: String,
@@ -40,6 +26,14 @@
       },
       label: {
         type: String,
+        value: ''
+      },
+      rows: {
+        type: Number | String,
+        value: ''
+      },
+      cols: {
+        type: Number | String,
         value: ''
       },
       placeholder: {
@@ -59,6 +53,10 @@
         value: false
       },
       readOnly: {
+        type: Boolean | String,
+        value: false
+      },
+      noResize: {
         type: Boolean | String,
         value: false
       },
@@ -96,19 +94,6 @@
         return item !== ''
       })
       return cssClasses.join(' ').trim()
-    }
-    _getType() {
-      let typeMap = {
-        'text': 'text',
-        'email': 'email',
-        'number': 'number',
-        'idCard': 'idcard',
-        'digit': 'digit'
-      }
-      if (this.data.type && typeMap[this.data.type]) {
-        return typeMap[this.data.type]
-      }
-      return ''
     }
     _getPlaintext() {
       if (this.data.plainText === true || this.data.plainText === 'true') {
