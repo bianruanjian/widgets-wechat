@@ -1,4 +1,5 @@
 import Component from '../../index';
+
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
 let component;
