@@ -1,0 +1,8 @@
+.d-flex {
+    display: flex!important;
+}
+
+.d-inline-flex {
+    display: -ms-inline-flexbox!important;
+    display: inline-flex!important;
+}

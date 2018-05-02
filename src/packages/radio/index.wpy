@@ -1,0 +1,117 @@
+<style lang='less'>
+  @import '../../common/assets/style/packages/form.wxss';
+  .form-check-input {
+    margin-top: 0rem;
+  }
+  .form-radio-block-label {
+    margin-left: 0.3125rem;
+  }
+</style>
+<!-- radio 必须在 radio-group 组件中，考虑到radio-group 只能配合 radio 组件才能使用，因此直接在这里实现了radio-group 逻辑 -->
+<template>
+  <radio-group class="radio-group">
+    <db-label>{{label}}</db-label>
+    <view class="{{fluid ? 'form-check' : 'form-check-inline'}}" wx:for="{{options}}" wx:for-item="option">
+      <radio id='{{widgetId}}--{{index}}' name='{{name}}' value="{{option.value}}" checked="{{option.checked}}" class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' />
+      <label for='{{widgetId}}--{{index}}' class="{{fluid ? 'form-radio-block-label' : ''}}">{{labelAfter ? option.label : ''}}</label>
+    </view>
+  </radio-group>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FlexMixin from '../../mixins/flex'
+  import FloatMixin from '../../mixins/float'
+  import BaseComponent from '../baseComponent'
+  import DbLabel from '../label/index'
+  const sizeMap = {
+    small: 'sm',
+    large: 'lg'
+  }
+  export default class Radio extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
+    components = {
+      'db-label': DbLabel
+    }
+    props = this.mixinProps({
+      name: {
+        type: String,
+        value: ''
+      },
+      type: {
+        type: String,
+        value: ''
+      },
+      value: {
+        type: String,
+        value: ''
+      },
+      checked: {
+        type: Boolean | String,
+        value: false
+      },
+      label: {
+        type: String,
+        value: ''
+      },
+      labelAfter: {
+        type: Boolean | String,
+        value: false
+      },
+      disabled: {
+        type: Boolean | String,
+        value: false
+      },
+      readOnly: {
+        type: Boolean | String,
+        value: false
+      },
+      fluid: {
+        type: Boolean | String,
+        value: false
+      },
+      size: {
+        type: String,
+        value: ''
+      },
+      options: {
+        type: String | Array,
+        value: ''
+      },
+      labelField: {
+        type: String,
+        value: ''
+      },
+      valueField: {
+        type: String,
+        value: ''
+      },
+      dataPath: {
+        type: String,
+        value: ''
+      },
+      invalidMessage: {
+        type: String,
+        value: ''
+      },
+      validMessage: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['form-check-input', this._getSize()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getSize() {
+      if (this.data.size && sizeMap[this.data.size]) {
+        return 'form-control-' + sizeMap[this.data.size]
+      }
+      return ''
+    }
+  }
+</script>

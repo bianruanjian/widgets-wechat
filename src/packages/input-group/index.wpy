@@ -1,0 +1,63 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/input-group.wxss';
+  @import '../../common/assets/style/packages/form.wxss';
+  .input-group-text {
+    padding: 0.2rem 0.45rem;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 0.2rem;
+  }
+  .input-group-prepend .btn,
+  .input-group-append .btn {
+    font-size: 14px;
+    line-height: 1;
+  }
+</style>
+
+<template>
+  <db-label :forId='widgetId'>{{label}}</db-label>
+  <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FloatMixin from '../../mixins/float'
+  import FlexMixin from '../../mixins/flex'
+  import BaseComponent from '../baseComponent'
+  import DbLabel from '../label/index'
+  const sizeMap = {
+    'small': 'sm',
+    'large': 'lg'
+  }
+  export default class InputGroup extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FloatMixin, FlexMixin.item]
+    components = {
+      'db-label': DbLabel
+    }
+    props = this.mixinProps({
+      label: {
+        type: String,
+        value: ''
+      },
+      size: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['input-group', this._getSize()]
+      return cssClasses.join(' ').trim()
+    }
+    _getSize() {
+      let size = ''
+      if (this.data.size) {
+        size = sizeMap[this.data.size]
+        size = size ? 'input-group-' + size : 'input-group-' + this.data.size
+      }
+      return size
+    }
+  }
+</script>

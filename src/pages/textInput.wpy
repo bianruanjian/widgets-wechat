@@ -1,0 +1,71 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <!-- <view hidden='{{showPage?false:true}}'> -->
+    <view>
+    <example title='text-input' desc='输入框'>
+      <example-demo-default title='默认用法' desc=''>
+        <db-text-input-default name='username' type='text' placeholder='I am placeholder' label='用户名' />
+      </example-demo-default>
+      <example-demo-focus title='focus' desc=''>
+        <db-text-input-focus name='username' type='text' placeholder='自动聚焦' focus='true' label='文本' />
+      </example-demo-focus>
+      <example-demo-type title='type' desc=''>
+        <db-text-input-type-text name='text' type='text' placeholder='输入文字' label='文本' />
+        <db-text-input-type-number name='number' type='number' placeholder='只能输入数字' label='数字' />
+        <db-text-input-type-email name='email' type='email' placeholder='输入邮箱' label='邮箱' />
+        <db-text-input-type-idCard name='idCard' type='idCard' placeholder='输入身份证' label='身份证' />
+        <db-text-input-type-digit name='digit' type='digit' placeholder='数字带小数点' label='小数' />
+        <db-text-input-password name='password' password='true' placeholder='密码' label='密码' />
+      </example-demo-type>
+      <example-demo-disabled title='disabled' desc=''>
+        <db-text-input-disabled name='username' type='text' value='输入框已禁用' disabled='true' label='文本' />
+      </example-demo-disabled>
+      <example-demo-plainText title='plainText' desc=''>
+        <db-text-input-plainText name='username' type='text' readOnly='true' plainText='true' placeholder='显示为普通为本' label='文本' value='显示为普通为本'/>
+      </example-demo-plainText>
+      <example-demo-maxLength title='maxLength' desc=''>
+        <db-text-input-maxLength name='username' type='text' maxLength='6' placeholder='最多只能输入6位' label='文本' />
+      </example-demo-maxLength>
+    </example>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbTextInput from '../packages/text-input/index'
+  export default class TextInputPage extends wepy.page {
+    data = {
+      showPage: false
+    }
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-type': BrjExampleDemo,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-disabled': BrjExampleDemo,
+      'example-demo-focus': BrjExampleDemo,
+      'example-demo-plainText': BrjExampleDemo,
+      'example-demo-maxLength': BrjExampleDemo,
+      'db-text-input-default': DbTextInput,
+      'db-text-input-type-text': DbTextInput,
+      'db-text-input-type-number': DbTextInput,
+      'db-text-input-type-email': DbTextInput,
+      'db-text-input-type-idCard': DbTextInput,
+      'db-text-input-type-digit': DbTextInput,
+      'db-text-input-password': DbTextInput,
+      'db-text-input-disabled': DbTextInput,
+      'db-text-input-focus': DbTextInput,
+      'db-text-input-plainText': DbTextInput,
+      'db-text-input-maxLength': DbTextInput
+    }
+    onReady() {
+      console.log('页面初次渲染完成')
+      console.log('延时加载')
+      // this.showPage = true
+    }
+  }
+</script>

@@ -9,6 +9,10 @@ export default class BaseMixin extends wepy.mixin {
       customClass: {
         type: String,
         value: ''
+      },
+      customStyle: {
+        type: String,
+        value: ''
       }
     }
   }
@@ -16,16 +20,15 @@ export default class BaseMixin extends wepy.mixin {
   data = {
     _system_: '',
     cssStyles: '',
-    cssClasses: ''
+    cssClasses: '',
+    widgetId: Math.random().toString(36).substring(2)
   }
 
   _setSystem() {
     let host = this
     wx.getSystemInfo && wx.getSystemInfo({
       success: function (res) {
-        host.setData({
-          _system_: !!~res.system.indexOf('Android') ? 'android' : 'ios'
-        })
+        host._system_ = !!~res.system.indexOf('Android') ? 'android' : 'ios'
       }
     })
   }
@@ -75,8 +78,32 @@ export default class BaseMixin extends wepy.mixin {
     return mixinStyles.join(';').trim()
   }
 
+  // computed = {
+  //   cssClasses(){
+  //     let cssClasses = this.getCssClasses()
+  //     let mixinClasses = this._getMixinClasses()
+  //     if (mixinClasses) {
+  //       cssClasses = cssClasses + " " + mixinClasses
+  //     }
+  //     if (this.customClass) {
+  //       cssClasses = cssClasses + " " + this.customClass
+  //     }
+  //     return cssClasses?cssClasses:''
+  //   },
+  //   cssStyles(){
+  //     let cssStyles = this.getCssStyles()
+  //     let mixinStyles = this._getMixinStyles()
+  //     if (mixinStyles) {
+  //       cssStyles = cssStyles + ";" + mixinStyles
+  //     }
+  //     if (this.customStyle) {
+  //       cssStyles = cssStyles + ";" + this.customStyle
+  //     }
+  //     return cssStyles?cssStyles:''
+  //   }
+  // }
+
   onLoad() {
-    this._setSystem()
     let cssClasses = this.getCssClasses()
     let cssStyles = this.getCssStyles()
     let mixinClasses = this._getMixinClasses()
@@ -90,6 +117,9 @@ export default class BaseMixin extends wepy.mixin {
     if (mixinStyles) {
       cssStyles = cssStyles + ";" + mixinStyles
     }
+    if (this.customStyle) {
+      cssStyles = cssStyles + ";" + this.customStyle
+    }
 
     if (cssClasses) {
       this.cssClasses = cssClasses
@@ -97,6 +127,7 @@ export default class BaseMixin extends wepy.mixin {
     if (cssStyles) {
       this.cssStyles = cssStyles
     }
+    this._setSystem()
   }
 }
 

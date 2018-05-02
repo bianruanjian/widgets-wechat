@@ -1,14 +1,7 @@
 <style lang='less'>
-  .container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .container-fluid {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
+  @import '../../vendor/bootstrap/grid.wxss';
+  @import '../../common/assets/style/packages/container.wxss';
+  @import '../../common/assets/style/packages/grid.wxss';
 </style>
 
 <template>

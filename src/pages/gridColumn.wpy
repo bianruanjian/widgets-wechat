@@ -1,0 +1,166 @@
+<style lang='less'>
+  .row .col {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+  }
+  .exmple.row {
+    min-height: 10rem;
+    background-color: rgba(255, 0, 0, .1);
+  }
+  .exmple.col {
+    // width: 10rem;
+    min-height: 2rem;
+    background-color: rgba(255, 0, 0, .1);
+  }
+</style>
+
+<template>
+  <example title='grid-column' desc='网格列'>
+    <example-demo-default title='默认用法' desc=''>
+      <db-container>
+        <db-grid-row-default>
+          <db-grid-column-default>col-1</db-grid-column-default>
+          <db-grid-column-default>col-1</db-grid-column-default>
+          <db-grid-column-default>col-1</db-grid-column-default>
+        </db-grid-row-default>
+      </db-container>
+    </example-demo-default>
+    <example-demo-colspan title='colsPan' desc=''>
+      <db-container>
+        <db-grid-row-colspan>
+          <db-grid-column-colspan-1 colSpan='1'>col-1</db-grid-column-colspan-1>
+          <db-grid-column-colspan-2 colSpan='2'>col-2</db-grid-column-colspan-2>
+          <db-grid-column-colspan-3 colSpan='3'>col-3</db-grid-column-colspan-3>
+        </db-grid-row-colspan>
+      </db-container>
+    </example-demo-colspan>
+    <example-demo-align-items title='alignItems' desc='start, end, center, baseline, stretch'>
+      <db-container>
+        <db-grid-row-align-items-start alignItems='start' customClass='exmple row'>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+        </db-grid-row-align-items-start>
+        <db-grid-row-align-items-center alignItems='center' customClass='exmple row bg-warning'>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+        </db-grid-row-align-items-center>
+        <db-grid-row-align-items-end alignItems='end' customClass='exmple row'>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+          <db-grid-column-align-items>col-1</db-grid-column-align-items>
+        </db-grid-row-align-items-end>
+      </db-container>
+    </example-demo-align-items>
+    <example-demo-align-self title='alignSelf' desc='start, end, center, baseline, stretch, default'>
+      <db-container>
+        <db-grid-row-align-self alignItems='start' customClass='exmple row'>
+          <db-grid-column-align-self-start alignSelf='start'>col-1</db-grid-column-align-self-start>
+          <db-grid-column-align-self-center alignSelf='center'>col-1</db-grid-column-align-self-center>
+          <db-grid-column-align-self-end alignSelf='end'>col-1</db-grid-column-align-self-end>
+        </db-grid-row-align-self>
+      </db-container>
+    </example-demo-align-self>
+    <example-demo-justify-items title='justifyItems' desc='start, end, center, between, around, default'>
+      <db-container>
+        <db-grid-row-justify-items-start justifyItems='start'>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+        </db-grid-row-justify-items-start>
+        <db-grid-row-justify-items-center justifyItems='center'>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+        </db-grid-row-justify-items-center>
+        <db-grid-row-justify-items-end justifyItems='end'>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+        </db-grid-row-justify-items-end>
+      </db-container>
+    </example-demo-justify-items>
+    <example-demo-gutters title='gutters' desc=''>
+      <db-container>
+        <db-grid-row-gutters gutters='false'>
+          <db-grid-column-gutters>col-1</db-grid-column-gutters>
+          <db-grid-column-gutters>col-1</db-grid-column-gutters>
+          <db-grid-column-gutters>col-1</db-grid-column-gutters>
+        </db-grid-row-gutters>
+      </db-container>
+    </example-demo-gutters>
+    <example-demo-order title='order' desc=''>
+      <db-container>
+        <db-grid-row-order>
+          <db-grid-column-order-1>First, but unordered</db-grid-column-order-1>
+          <db-grid-column-order-2 order='12'>Second, but last</db-grid-column-order-2>
+          <db-grid-column-order-3 order='1'>Third, but first</db-grid-column-order-3>
+        </db-grid-row-order>
+      </db-container>
+    </example-demo-order>
+    <example-demo-offset title='offset' desc=''>
+      <db-container>
+        <db-grid-row-offset customClass='bg-success'>
+          <db-grid-column-offset-1 customClass='col-3'>.col-4</db-grid-column-offset-1>
+          <db-grid-column-offset-2 customClass='col-3'>offset-4</db-grid-column-offset-2>
+          <db-grid-column-offset-2 customClass='col-3'>offset-4</db-grid-column-offset-2>
+          <db-grid-column-offset-2 customClass='col-3'>offset-4</db-grid-column-offset-2>
+        </db-grid-row-offset>
+      </db-container>
+    </example-demo-offset>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbContaier from '../packages/container/index'
+  import DbGridRow from '../packages/grid-row/index'
+  import DbGridColumn from '../packages/grid-column/index'
+  export default class GridColumnPage extends wepy.page {
+    mixins = []
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-align-items': BrjExampleDemo,
+      'example-demo-align-self': BrjExampleDemo,
+      'example-demo-justify-items': BrjExampleDemo,
+      'example-demo-gutters': BrjExampleDemo,
+      'example-demo-order': BrjExampleDemo,
+      'example-demo-offset': BrjExampleDemo,
+      'example-demo-colspan': BrjExampleDemo,
+      'db-container': DbContaier,
+      'db-grid-row-default': DbGridRow,
+      'db-grid-row-colspan': DbGridRow,
+      'db-grid-row-align-items-start': DbGridRow,
+      'db-grid-row-align-items-center': DbGridRow,
+      'db-grid-row-align-items-end': DbGridRow,
+      'db-grid-row-align-self': DbGridRow,
+      'db-grid-row-justify-items-start': DbGridRow,
+      'db-grid-row-justify-items-center': DbGridRow,
+      'db-grid-row-justify-items-end': DbGridRow,
+      'db-grid-row-gutters': DbGridRow,
+      'db-grid-row-order': DbGridRow,
+      'db-grid-row-offset': DbGridRow,
+      'db-grid-column-default': DbGridColumn,
+      'db-grid-column-colspan-1': DbGridColumn,
+      'db-grid-column-colspan-2': DbGridColumn,
+      'db-grid-column-colspan-3': DbGridColumn,
+      'db-grid-column-align-items': DbGridColumn,
+      'db-grid-column-align-self-start': DbGridColumn,
+      'db-grid-column-align-self-center': DbGridColumn,
+      'db-grid-column-align-self-end': DbGridColumn,
+      'db-grid-column-justify-items': DbGridColumn,
+      'db-grid-column-gutters': DbGridColumn,
+      'db-grid-column-order-1': DbGridColumn,
+      'db-grid-column-order-2': DbGridColumn,
+      'db-grid-column-order-3': DbGridColumn,
+      'db-grid-column-offset-1': DbGridColumn,
+      'db-grid-column-offset-2': DbGridColumn
+    }
+    methods = {}
+  }
+</script>

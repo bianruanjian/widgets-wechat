@@ -1,0 +1,61 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/utilities/spacing.wxss';
+  @import '../../vendor/bootstrap/utilities/text.wxss';
+  @import '../../vendor/bootstrap/utilities/colors.wxss';
+  @import '../../vendor/bootstrap/text.wxss';
+</style>
+
+<template>
+  <view class='{{cssClasses}}' styles='{{cssStyles}}'>
+    <slot></slot>
+    {{value ? value: ''}}
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import TextMixin from '../../mixins/text'
+  import ColorsMixin from '../../mixins/colors'
+  import BaseComponent from '../baseComponent'
+  export default class Text extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, TextMixin, ColorsMixin]
+    props = this.mixinProps({
+      value: {
+        type: String,
+        value: ''
+      },
+      type: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = [this._getType()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getType() {
+      let typeClass = ''
+      let types = {
+        'h1': 'h1',
+        'h2': 'h2',
+        'h3': 'h3',
+        'h4': 'h4',
+        'h5': 'h5',
+        'h6': 'h6',
+        'p': 'p',
+        'text': 'text',
+        'lead': 'lead',
+        'small': 'small'
+      }
+      typeClass = types[this.data.type]
+      if (typeClass === undefined) {
+        typeClass = ''
+      }
+      return typeClass
+    }
+  }
+</script>

@@ -1,0 +1,31 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/list-group.wxss';
+</style>
+
+<template>
+  <view class="{{cssClasses}}" style='{{cssStyles}}' id='{{widgetId}}' >
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import BaseComponent from '../baseComponent'
+  export default class ListGroup extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin]
+    props = this.mixinProps({
+      flush: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['list-group', this._getFlush()]
+      return cssClasses.join(' ').trim()
+    }
+    _getFlush() {
+      return this.data.flush ? 'list-group-flush' : ''
+    }
+  }
+</script>

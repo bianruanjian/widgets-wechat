@@ -1,7 +1,7 @@
 <style lang='less'>
-  @import '../../common/assets/style/components/embed.wxss';
-  @import '../../common/assets/style/components/border.wxss';
-  @import '../../common/assets/style/components/spacing.wxss';
+  @import '../../vendor/bootstrap/utilities/embed.wxss';
+  @import '../../vendor/bootstrap/utilities/border.wxss';
+  @import '../../vendor/bootstrap/utilities/spacing.wxss';
   image {
     display: block; // vertical-align: middle;
     border-style: none;
@@ -22,8 +22,8 @@
 </style>
 
 <template>
-  <!-- <img style="{{cssStyles}}" class="{{cssClasses}}" alt="{{alt}}" src="{{src}}" /> -->
-  <image style="{{cssStyles}}" class="{{cssClasses}}" src="{{src}}" />
+  <!-- <img style='{{cssStyles}}' class='{{cssClasses}}' alt='{{alt}}' src='{{src}}' /> -->
+  <image style='{{cssStyles}}' class='{{cssClasses}}' src='{{src}}'  id='{{widgetId}}'/>
   <!-- <view>{{alt}}</view> -->
 </template>
 
@@ -78,7 +78,7 @@
     getCssStyles() {
       let cssStyles = []
       if (this.data.fluid) {
-        cssStyles.push("width:  100%")
+        cssStyles.push('width:  100%')
       } else {
         cssStyles.push(this._getWidth())
       }

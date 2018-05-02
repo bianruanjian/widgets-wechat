@@ -1,0 +1,137 @@
+<style lang='less'>
+  @import '../../common/assets/style/packages/form.wxss';
+</style>
+
+<template>
+  <view class='form-cell'>
+    <db-label :forId='widgetId'>{{label}}</db-label>
+    <picker value='{{value}}' bindchange='onChange' range='{{options}}' id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
+      <slot></slot>
+      {{options[value]}}
+    </picker>
+  </view>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FlexMixin from '../../mixins/flex'
+  import FloatMixin from '../../mixins/float'
+  import BaseComponent from '../baseComponent'
+  import DbLabel from '../label/index'
+  const sizeMap = {
+    small: 'sm',
+    large: 'lg'
+  }
+  export default class Select extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
+    components = {
+      'db-label': DbLabel
+    }
+    props = this.mixinProps({
+      name: {
+        type: String,
+        value: ''
+      },
+      password: {
+        type: Boolean | String,
+        value: false
+      },
+      value: {
+        type: String,
+        value: ''
+      },
+      label: {
+        type: String,
+        value: ''
+      },
+      required: {
+        type: Boolean | String,
+        value: false
+      },
+      disabled: {
+        type: Boolean | String,
+        value: false
+      },
+      readOnly: {
+        type: Boolean | String,
+        value: false
+      },
+      size: {
+        type: String,
+        value: ''
+      },
+      focus: {
+        type: Boolean | String,
+        value: false
+      },
+      plainText: {
+        type: Boolean | String,
+        value: false
+      },
+      options: {
+        type: String | Array,
+        value: ''
+      },
+      labelField: {
+        type: String,
+        value: ''
+      },
+      valueField: {
+        type: String,
+        value: ''
+      },
+      dataPath: {
+        type: String,
+        value: ''
+      },
+      invalidMessage: {
+        type: String,
+        value: ''
+      },
+      validMessage: {
+        type: String,
+        value: ''
+      },
+      bindchange: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = [this._getPlaintext(), this._getSize()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getPlaintext() {
+      if (this.data.plainText === true || this.data.plainText === 'true') {
+        return 'form-control-plaintext'
+      }
+      return 'form-control'
+    }
+    _getSize() {
+      if (this.data.size && sizeMap[this.data.size]) {
+        return 'form-control-' + sizeMap[this.data.size]
+      }
+      return ''
+    }
+    computed = {
+      options() {
+        let objectOptions = []
+        for (let key in this.data.options) {
+          objectOptions.push(this.data.options[key].name)
+        }
+        this.objectOptions = this.data.options
+        this.options = objectOptions
+        return objectOptions
+      }
+    }
+    methods = {
+      onChange(e) {
+        this.value = e.detail.value
+      }
+    }
+  }
+</script>

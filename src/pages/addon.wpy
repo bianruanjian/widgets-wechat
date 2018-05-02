@@ -1,0 +1,47 @@
+<style lang='less'>
+</style>
+
+<template>
+  <example title='addon' desc='前缀/后缀插件'>
+    <example-demo-default title='默认用法' desc=''>
+      <view class='input-group'>
+        <db-addon-default value='@'></db-addon-default>
+        <input type='text' class='form-control' />
+      </view>
+    </example-demo-default>
+    <example-demo-position title='position' desc='prepend, append'>
+      <view class='input-group'>
+        <db-addon-position-prepend value='@' position='prepend'></db-addon-position-prepend>
+        <input type='text' class='form-control' />
+        <input type='text' class='form-control' />
+        <db-addon-position-append value='$' position='append'></db-addon-position-append>
+      </view>
+    </example-demo-position>
+    <example-demo-button title='button' desc=''>
+      <view class='input-group'>
+        <db-addon-button value='' position='prepend'>
+          <button class='btn bg-success'>Button</button>
+        </db-addon-button>
+        <input type='text' class='form-control' />
+      </view>
+    </example-demo-button>
+  </example>
+</template>
+<script>
+  import wepy from 'wepy'
+  import BrjExample from '../components/brj-example'
+  import BrjExampleDemo from '../components/brj-example-demo'
+  import DbAddon from '../packages/addon/index'
+  export default class AddonPage extends wepy.page {
+    components = {
+      'example': BrjExample,
+      'example-demo-default': BrjExampleDemo,
+      'example-demo-position': BrjExampleDemo,
+      'example-demo-button': BrjExampleDemo,
+      'db-addon-default': DbAddon,
+      'db-addon-position-prepend': DbAddon,
+      'db-addon-position-append': DbAddon,
+      'db-addon-button': DbAddon
+    }
+  }
+</script>

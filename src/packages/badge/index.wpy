@@ -1,0 +1,66 @@
+<style lang='less'>
+  @import '../../vendor/bootstrap/badge.wxss';
+</style>
+
+<template>
+  <!-- <block wx:if="{{href}}">
+       不支持a标签 
+       <a class='{{cssClasses}}' style='{{cssStyles}}' href='{{href}}'>
+        <slot></slot>
+        {{value?value:''}}
+      </a>
+    </block>
+    <block wx:else>
+      <span class='{{cssClasses}}' style='{{cssStyles}}'>
+          <slot></slot>
+          {{value?value:''}}
+      </span>
+    </block> -->
+  <span class='{{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}<slot></slot>
+  </span>
+</template>
+
+<script>
+  import BaseMixin from '../../mixins/base'
+  import SpacingMixin from '../../mixins/spacing'
+  import FlexMixin from '../../mixins/flex'
+  import BaseComponent from '../baseComponent'
+  export default class Badge extends BaseComponent {
+    mixins = [BaseMixin, SpacingMixin, FlexMixin.item]
+    props = this.mixinProps({
+      value: {
+        type: String,
+        value: ''
+      },
+      appearance: {
+        type: String,
+        value: ''
+      },
+      pill: {
+        type: Boolean | String,
+        value: false
+      },
+      href: {
+        type: String,
+        value: ''
+      },
+      target: {
+        type: String,
+        value: ''
+      }
+    })
+    getCssClasses() {
+      let cssClasses = ['badge', this._getAppearance(), this._getPill()]
+      cssClasses = cssClasses.filter(function(item, index, array) {
+        return item !== ''
+      })
+      return cssClasses.join(' ').trim()
+    }
+    _getAppearance() {
+      return this.data.appearance ? 'badge-' + this.data.appearance : ''
+    }
+    _getPill() {
+      return this.data.pill ? 'badge-pill' : ''
+    }
+  }
+</script>
