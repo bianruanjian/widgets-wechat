@@ -1,1 +1,0 @@
-1. 微信小程序的 input 组件没有 readOnly 属性
