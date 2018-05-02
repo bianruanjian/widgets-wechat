@@ -12,7 +12,8 @@
   <radio-group class="radio-group">
     <db-label>{{label}}</db-label>
     <view class="{{fluid ? 'form-check' : 'form-check-inline'}}" wx:for="{{options}}" wx:for-item="option">
-      <radio id='{{widgetId}}--{{index}}' name='{{name}}' value="{{option.value}}" checked="{{option.checked}}" class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' /><label for='{{widgetId}}--{{index}}' class="{{fluid ? 'form-radio-block-label' : ''}}">{{labelAfter ? option.label : ''}}</label>
+      <radio id='{{widgetId}}--{{index}}' name='{{name}}' value="{{option.value}}" checked="{{option.checked}}" class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' />
+      <label for='{{widgetId}}--{{index}}' class="{{fluid ? 'form-radio-block-label' : ''}}">{{labelAfter ? option.label : ''}}</label>
     </view>
   </radio-group>
 </template>

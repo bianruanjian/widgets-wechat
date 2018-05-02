@@ -28,8 +28,7 @@ registerSuite('Select', {
                 placeholder: '请输入数字',
                 required: true,
                 size: 'small',
-                options: ['美国', '中国', '巴西', '日本'],
-                objectOptions: [{
+                options: [{
                   id: 0,
                   name: '美国'
                 }, {
