@@ -1,6 +1,7 @@
 <style lang='less'>
-  @import '../../vendor/bootstrap/input-group.wxss';
   @import '../../common/assets/style/packages/form.wxss';
+  @import '../../vendor/bootstrap/input-group.wxss';
+
   .input-group-text {
     padding: 0.2rem 0.45rem;
     font-size: 14px;
