@@ -6,7 +6,7 @@
   <db-label :forId='widgetId'>
     {{label}}</db-label>
   <block wx:if='{{plainText}}'>
-    <view id='{{widgetId}}' name='{{name}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}' class='{{cssClasses}}'
+    <view id='{{widgetId}}' name='{{name}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}' class='readonly {{cssClasses}}'
       style='{{cssStyles}}'>{{value ? value : ''}}</view>
   </block>
   <block wx:else>
@@ -22,7 +22,7 @@
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
   import DbLabel from '../label/index'
-  let sizeMap = {
+  const sizeMap = {
     small: 'sm',
     large: 'lg'
   }

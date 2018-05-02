@@ -28,7 +28,7 @@
   import FlexMixin from '../../mixins/flex'
   import BaseComponent from '../baseComponent'
   import DbLabel from '../label/index'
-  let sizeMap = {
+  const sizeMap = {
     'small': 'sm',
     'large': 'lg'
   }

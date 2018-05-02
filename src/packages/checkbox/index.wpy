@@ -21,7 +21,7 @@
   import FlexMixin from '../../mixins/flex'
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
-  let sizeMap = {
+  const sizeMap = {
     small: 'sm',
     large: 'lg'
   }

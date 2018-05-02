@@ -15,7 +15,7 @@
   import ColorsMixin from '../../mixins/colors'
   import FlexMixin from '../../mixins/flex'
   import BaseComponent from '../baseComponent'
-  let sizeMap = {
+  const sizeMap = {
     'extraSmall': 'xs',
     'small': 'sm',
     'large': 'lg'

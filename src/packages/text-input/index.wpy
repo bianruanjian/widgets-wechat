@@ -6,7 +6,7 @@
   <view class='form-cell'>
     <db-label :forId='widgetId'>{{label}}</db-label>
     <block wx:if='{{plainText}}'>
-      <view id='{{widgetId}}' readonly='{{readOnly}}' name='{{name}}' disabled='{{disabled}}' class='{{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
+      <view id='{{widgetId}}' readonly='{{readOnly}}' name='{{name}}' disabled='{{disabled}}' class='readonly {{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
     </block>
     <block wx:elif="{{password == 'true'}}">
       <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' password='true' placeholder-class='{{placeholderAppearance}}' disabled='{{disabled}}' maxlength="{{maxLength ? maxLength : '-1'}}"
@@ -26,11 +26,11 @@
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
   import DbLabel from '../label/index'
-  let sizeMap = {
+  const sizeMap = {
     small: 'sm',
     large: 'lg'
   }
-  let typeMap = {
+  const typeMap = {
     'text': 'text',
     'email': 'email',
     'number': 'number',

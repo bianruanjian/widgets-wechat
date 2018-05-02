@@ -16,7 +16,7 @@
       <db-textarea-focus name='text' type='text' placeholder='自动聚焦' focus='true'  label='聚焦文本'  />
     </example-demo-focus>
     <example-demo-plainText title='plainText' desc=''>
-      <db-textarea-plainText name='text' type='text' readOnly='true' plainText='true' placeholder='显示为普通为本'  label='只读文本' />
+      <db-textarea-plainText name='text' type='text' readOnly='true' plainText='true' label='只读文本' value='显示为普通为本,不可编辑'/>
     </example-demo-plainText>
     <example-demo-maxLength title='maxLength' desc=''>
       <db-textarea-maxLength name='text' type='text' maxLength='32' placeholder='最多只能输入32位'  label='有限长度'  />

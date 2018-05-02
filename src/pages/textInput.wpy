@@ -9,6 +9,9 @@
       <example-demo-default title='默认用法' desc=''>
         <db-text-input-default name='username' type='text' placeholder='I am placeholder' label='用户名' />
       </example-demo-default>
+      <example-demo-focus title='focus' desc=''>
+        <db-text-input-focus name='username' type='text' placeholder='自动聚焦' focus='true' label='文本' />
+      </example-demo-focus>
       <example-demo-type title='type' desc=''>
         <db-text-input-type-text name='text' type='text' placeholder='输入文字' label='文本' />
         <db-text-input-type-number name='number' type='number' placeholder='只能输入数字' label='数字' />
@@ -20,9 +23,6 @@
       <example-demo-disabled title='disabled' desc=''>
         <db-text-input-disabled name='username' type='text' value='输入框已禁用' disabled='true' label='文本' />
       </example-demo-disabled>
-      <example-demo-focus title='focus' desc=''>
-        <db-text-input-focus name='username' type='text' placeholder='自动聚焦' label='文本' />
-      </example-demo-focus>
       <example-demo-plainText title='plainText' desc=''>
         <db-text-input-plainText name='username' type='text' readOnly='true' plainText='true' placeholder='显示为普通为本' label='文本' value='显示为普通为本'/>
       </example-demo-plainText>
