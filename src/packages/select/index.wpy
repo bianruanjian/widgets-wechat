@@ -1,12 +1,15 @@
 <style lang='less'>
-
+  @import '../../common/assets/style/packages/form.wxss';
 </style>
 
 <template>
-  <picker value="{{value}}" range="{{options}}" id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
-    <slot></slot>
-    {{options[value]}}
-  </picker>
+  <view class='form-cell'>
+    <db-label :forId='widgetId'>{{label}}</db-label>
+    <picker value='{{value}}' bindchange='onChange' range='{{options}}' id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
+      <slot></slot>
+      {{options[value]}}
+    </picker>
+  </view>
 </template>
 
 <script>
@@ -15,8 +18,16 @@
   import FlexMixin from '../../mixins/flex'
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
+  import DbLabel from '../label/index'
+  let sizeMap = {
+    small: 'sm',
+    large: 'lg'
+  }
   export default class Select extends BaseComponent {
     mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
+    components = {
+      'db-label': DbLabel
+    }
     props = this.mixinProps({
       name: {
         type: String,
@@ -81,6 +92,10 @@
       validMessage: {
         type: String,
         value: ''
+      },
+      bindchange: {
+        type: String,
+        value: ''
       }
     })
     getCssClasses() {
@@ -97,14 +112,26 @@
       return 'form-control'
     }
     _getSize() {
-      let sizeMap = {
-        small: 'sm',
-        large: 'lg'
-      }
       if (this.data.size && sizeMap[this.data.size]) {
         return 'form-control-' + sizeMap[this.data.size]
       }
       return ''
+    }
+    computed = {
+      options() {
+        let objectOptions = []
+        for (let key in this.data.options) {
+          objectOptions.push(this.data.options[key].name)
+        }
+        this.objectOptions = this.data.options
+        this.options = objectOptions
+        return objectOptions
+      }
+    }
+    methods = {
+      onChange(e) {
+        this.value = e.detail.value
+      }
     }
   }
 </script>

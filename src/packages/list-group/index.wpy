@@ -3,9 +3,9 @@
 </style>
 
 <template>
-  <ul class="{{cssClasses}}" style='{{cssStyles}}' id='{{widgetId}}' >
+  <view class="{{cssClasses}}" style='{{cssStyles}}' id='{{widgetId}}' >
     <slot></slot>
-  </ul>
+  </view>
 </template>
 
 <script>

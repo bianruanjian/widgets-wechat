@@ -2,7 +2,7 @@ import wepy from 'wepy'
 import container from './flex-container'
 import item from './flex-item'
 
-let FlexMixin = {
+const FlexMixin = {
     container: container,
     item: item
 }

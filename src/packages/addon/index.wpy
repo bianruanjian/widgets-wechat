@@ -1,11 +1,12 @@
 <style lang='less'>
   @import '../../vendor/bootstrap/input-group.wxss';
+  @import '../../common/assets/style/packages/input-group.wxss';
 </style>
 
 <template>
   <view class='{{cssClasses}}' style='{{cssStyles}}'>
     <block wx:if="{{value}}">
-      <span class="input-group-text">{{value}}</span>
+      <view class="input-group-text">{{value}}</view>
     </block>
     <slot></slot>
   </view>

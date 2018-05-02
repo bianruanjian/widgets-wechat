@@ -2,24 +2,20 @@
   input {
     border: 1rpx solid #e9e9e9;
   }
-
 </style>
 
 <template>
   <example title='select' desc='普通下拉框'>
     <example-demo-default title='默认用法' desc=''>
-      <db-select-default name='nation' :options='options' value='1'>
-        <span class="picker">国家：</span>
+      <db-select-default name='nation' :options='options' value='1' label='国家：'>
       </db-select-default>
     </example-demo-default>
     <example-demo-disabled title='disabled' desc=''>
-      <db-select-disabled name='nation' :options='options' value='1' disabled='true'>
-        <span class="picker">国家：</span>
+      <db-select-disabled name='nation' :options='options' value='1' disabled='true' label='国家：'>
       </db-select-disabled>
     </example-demo-disabled>
     <example-demo-plainText title='plainText' desc=''>
-      <db-select-plainText name='nation' :options='options' value='1' plainText='true'>
-        <span class="picker">国家：</span>
+      <db-select-plainText name='nation' :options='options' value='1' plainText='true' label='国家：'>
       </db-select-plainText>
     </example-demo-plainText>
   </example>
@@ -42,8 +38,7 @@
       'db-select-plainText': DbSelect
     }
     data = {
-      options: ['美国', '中国', '巴西', '日本'],
-      objectOptions: [{
+      options: [{
         id: 0,
         name: '美国'
       }, {

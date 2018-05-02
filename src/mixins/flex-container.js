@@ -4,7 +4,7 @@ export default class FlexContainerMixin extends wepy.mixin {
         return {
             flexDirection: {
                 type: String,
-                value: false
+                value: ''
             },
             reverse: {
                 type: Boolean | String,
@@ -12,19 +12,19 @@ export default class FlexContainerMixin extends wepy.mixin {
             },
             justifyItems: {
                 type: String,
-                value: false
+                value: ''
             },
             alignItems: {
                 type: String,
-                value: false
+                value: ''
             },
             flexWrap: {
                 type: String,
-                value: false
+                value: ''
             },
             alignContent: {
                 type: String,
-                value: false
+                value: ''
             }
         }
     }

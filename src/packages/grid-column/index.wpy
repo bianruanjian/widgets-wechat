@@ -17,19 +17,26 @@
   import FlexMixin from '../../mixins/flex'
   import BaseComponent from '../baseComponent'
   export default class GridColumn extends BaseComponent {
-    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, FlexMixin.container, FlexMixin.item]
+    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, ...FlexMixin]
     props = this.mixinProps({
       offset: {
         type: Number | String,
-        value: ''
+        value: null
+      },
+      colSpan: {
+        type: Number | String,
+        value: null
       }
     })
     getCssClasses() {
-      let cssClasses = ['col', 'gutters-col', this._getOffset()]
+      let cssClasses = ['col', 'gutters-col', this._getOffset(), this._getColSpan()]
       return cssClasses.join(' ').trim()
     }
     _getOffset() {
       return (this.data.offset !== undefined) ? 'offset-' + this.data.offset : ''
+    }
+    _getColSpan() {
+      return (this.data.colSpan !== undefined) ? 'col-' + this.data.colSpan : ''
     }
   }
 </script>

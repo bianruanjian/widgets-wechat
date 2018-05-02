@@ -16,9 +16,7 @@
           {{value?value:''}}
       </span>
     </block> -->
-  <span class='{{cssClasses}}' style='{{cssStyles}}'>
-      <slot></slot>
-      {{value?value:''}}
+  <span class='{{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}<slot></slot>
   </span>
 </template>
 
@@ -39,7 +37,7 @@
         value: ''
       },
       pill: {
-        type: String | Boolean,
+        type: Boolean | String,
         value: false
       },
       href: {

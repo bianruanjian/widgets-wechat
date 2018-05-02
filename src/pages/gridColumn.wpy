@@ -27,6 +27,15 @@
         </db-grid-row-default>
       </db-container>
     </example-demo-default>
+    <example-demo-colspan title='colsPan' desc=''>
+      <db-container>
+        <db-grid-row-colspan>
+          <db-grid-column-colspan-1 colSpan='1'>col-1</db-grid-column-colspan-1>
+          <db-grid-column-colspan-2 colSpan='2'>col-2</db-grid-column-colspan-2>
+          <db-grid-column-colspan-3 colSpan='3'>col-3</db-grid-column-colspan-3>
+        </db-grid-row-colspan>
+      </db-container>
+    </example-demo-colspan>
     <example-demo-align-items title='alignItems' desc='start, end, center, baseline, stretch'>
       <db-container>
         <db-grid-row-align-items-start alignItems='start' customClass='exmple row'>
@@ -55,22 +64,22 @@
         </db-grid-row-align-self>
       </db-container>
     </example-demo-align-self>
-    <example-demo-justify-items title='justifyItems' desc='	start, end, center, between, around, default'>
+    <example-demo-justify-items title='justifyItems' desc='start, end, center, between, around, default'>
       <db-container>
         <db-grid-row-justify-items-start justifyItems='start'>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
         </db-grid-row-justify-items-start>
         <db-grid-row-justify-items-center justifyItems='center'>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
         </db-grid-row-justify-items-center>
         <db-grid-row-justify-items-end justifyItems='end'>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
-          <db-grid-column-justify-items customClass='col-2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
+          <db-grid-column-justify-items colSpan='2'>col-1</db-grid-column-justify-items>
         </db-grid-row-justify-items-end>
       </db-container>
     </example-demo-justify-items>
@@ -122,8 +131,10 @@
       'example-demo-gutters': BrjExampleDemo,
       'example-demo-order': BrjExampleDemo,
       'example-demo-offset': BrjExampleDemo,
+      'example-demo-colspan': BrjExampleDemo,
       'db-container': DbContaier,
       'db-grid-row-default': DbGridRow,
+      'db-grid-row-colspan': DbGridRow,
       'db-grid-row-align-items-start': DbGridRow,
       'db-grid-row-align-items-center': DbGridRow,
       'db-grid-row-align-items-end': DbGridRow,
@@ -135,6 +146,9 @@
       'db-grid-row-order': DbGridRow,
       'db-grid-row-offset': DbGridRow,
       'db-grid-column-default': DbGridColumn,
+      'db-grid-column-colspan-1': DbGridColumn,
+      'db-grid-column-colspan-2': DbGridColumn,
+      'db-grid-column-colspan-3': DbGridColumn,
       'db-grid-column-align-items': DbGridColumn,
       'db-grid-column-align-self-start': DbGridColumn,
       'db-grid-column-align-self-center': DbGridColumn,

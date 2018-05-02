@@ -18,6 +18,14 @@
       <db-checkbox-fluid-1 name='item3' value='3' label='item3' fluid='true' labelAfter='true'/>
       <db-checkbox-fluid-2 name='item4' value='4' label='item4' fluid='true' labelAfter='true'/>
     </example-demo-fluid>
+
+    <example-demo-label title='input-group label' desc=''>
+      <view class='input-group'>
+        <label class='form-label'>请选择</label>
+        <db-checkbox-label-1 name='item3' value='3' label='item3'  labelAfter='true'/>
+        <db-checkbox-label-2 name='item4' value='4' label='item4'  labelAfter='true'/>
+      </view>
+    </example-demo-label>
   </example>
 </template>
 <script>
@@ -33,28 +41,15 @@
       'example-demo-labelAfter': BrjExampleDemo,
       'example-demo-disabled': BrjExampleDemo,
       'example-demo-fluid': BrjExampleDemo,
+      'example-demo-label': BrjExampleDemo,
       'db-checkbox-default-1': DbCheckbox,
       'db-checkbox-default-2': DbCheckbox,
       'db-checkbox-labelAfter-1': DbCheckbox,
       'db-checkbox-disabled': DbCheckbox,
       'db-checkbox-fluid-1': DbCheckbox,
-      'db-checkbox-fluid-2': DbCheckbox
-    }
-    data = {
-      options: ['美国', '中国', '巴西', '日本'],
-      objectOptions: [{
-        id: 0,
-        name: '美国'
-      }, {
-        id: 1,
-        name: '中国'
-      }, {
-        id: 2,
-        name: '巴西'
-      }, {
-        id: 3,
-        name: '日本'
-      }]
+      'db-checkbox-fluid-2': DbCheckbox,
+      'db-checkbox-label-1': DbCheckbox,
+      'db-checkbox-label-2': DbCheckbox
     }
   }
 </script>

@@ -1,4 +1,5 @@
 import Component from '../../index';
+
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
 let component;
@@ -26,7 +27,6 @@ registerSuite('Addon', {
             }
             component.data = customProperties
             assert.equal("input-group-append", component.getCssClasses())
-            
         }
     }
 

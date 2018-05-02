@@ -5,16 +5,16 @@
 <template>
   <example title='radio' desc='单选框'>
     <example-demo-default title='默认用法' desc=''>
-      <db-radio-default name='item1' label='item1' value='1' :options='options' />
+      <db-radio-default name='item1' label='国家' value='1' :options='options' />
     </example-demo-default>
     <example-demo-labelAfter title='labelAfter' desc=''>
-      <db-radio-labelAfter name='item2' label='item2' value='1' checked='true' labelAfter='true' :options='options' />
+      <db-radio-labelAfter name='item2' label='国家' value='1' checked='true' labelAfter='true' :options='options' />
     </example-demo-labelAfter>
     <example-demo-disabled title='disabled' desc=''>
-      <db-radio-disabled name='item3' label='item3' disabled='true' value='2' checked='true' labelAfter='true' :options='options' />
+      <db-radio-disabled name='item3' label='国家' disabled='true' value='2' checked='true' labelAfter='true' :options='options' />
     </example-demo-disabled>
     <example-demo-fluid title='fluid' desc=''>
-      <db-radio-fluid name='item4' value='3' label='item4' fluid='true' labelAfter='true' :options='options' />
+      <db-radio-fluid name='item4' value='3' label='国家' fluid='true' labelAfter='true' :options='options' />
     </example-demo-fluid>
   </example>
 </template>

@@ -4,11 +4,10 @@ export default class FlexItemMixin extends wepy.mixin {
         return {
             alignSelf: {
                 type: String,
-                value: false
+                value: ''
             },
             order: {
-                type: Number | String,
-                value: false
+                type: Number | String
             }
         }
     }

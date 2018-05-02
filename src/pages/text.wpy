@@ -10,12 +10,12 @@
       <db-text-default value='我是文本'></db-text-default>
     </example-demo-default>
     <example-demo-type title='h1~h6,p,lead,small' desc=''>
-      <db-text-type-h1 value='我是文本' type='h1'></db-text-type-h1>
-      <db-text-type-h2 value='我是文本' type='h2'></db-text-type-h2>
-      <db-text-type-h3 value='我是文本' type='h3'></db-text-type-h3>
-      <db-text-type-h4 value='我是文本' type='h4'></db-text-type-h4>
-      <db-text-type-h5 value='我是文本' type='h5'></db-text-type-h5>
-      <db-text-type-h6 value='我是文本' type='h6'></db-text-type-h6>
+      <db-text-type-h1 value='我是标题' type='h1'></db-text-type-h1>
+      <db-text-type-h2 value='我是标题' type='h2'></db-text-type-h2>
+      <db-text-type-h3 value='我是标题' type='h3'></db-text-type-h3>
+      <db-text-type-h4 value='我是标题' type='h4'></db-text-type-h4>
+      <db-text-type-h5 value='我是标题' type='h5'></db-text-type-h5>
+      <db-text-type-h6 value='我是标题' type='h6'></db-text-type-h6>
       <db-text-type-p value='我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落' type='p' ></db-text-type-p>
       <db-text-type-lead value='我是突出式段落我是突出式段落我是突出式段落我是突出式段落我是突出式段落我是突出' type='lead'></db-text-type-lead>
       <db-text-type-small value='我是小文本' type='small'></db-text-type-small>

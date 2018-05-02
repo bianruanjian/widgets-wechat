@@ -1,4 +1,5 @@
 import Component from '../../index';
+
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
 let component;
@@ -21,10 +22,11 @@ registerSuite('GridColumn', {
 
         'custom properties'() {
             let customProperties = {
-                offset: 2
+                offset: 2,
+                colSpan: 2
             }
             component.data = customProperties
-            assert.equal('col gutters-col offset-2', component.getCssClasses())
+            assert.equal('col gutters-col offset-2 col-2', component.getCssClasses())
         }
     }
 

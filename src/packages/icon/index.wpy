@@ -4,8 +4,8 @@
 
 <template>
   <i class="{{cssClasses}}" style='{{cssStyles}}'>
-    <slot></slot>
-  </i>
+      <slot></slot>
+    </i>
 </template>
 
 
@@ -15,6 +15,11 @@
   import ColorsMixin from '../../mixins/colors'
   import FlexMixin from '../../mixins/flex'
   import BaseComponent from '../baseComponent'
+  let sizeMap = {
+    'extraSmall': 'xs',
+    'small': 'sm',
+    'large': 'lg'
+  }
   export default class Icon extends BaseComponent {
     mixins = [BaseMixin, SpacingMixin, ColorsMixin, FlexMixin.item]
     props = this.mixinProps({
@@ -42,19 +47,14 @@
       })
       return cssClasses.join(' ').trim()
     }
-
     _getValue() {
       return this.data.value ? this.data.value : ''
     }
     _getSize() {
-      let sizeMap = {
-        'extraSmall': 'xs',
-        'small': 'sm',
-        'large': 'lg'
-      }
       let size = ''
       if (this.data.size) {
         size = sizeMap[this.data.size]
+        //  extraSmall, small, large, 2x-10x, default
         size = size ? 'fa-' + size : 'fa-' + this.data.size
       }
       return size

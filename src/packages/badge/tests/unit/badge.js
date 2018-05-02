@@ -1,4 +1,5 @@
 import Component from '../../index';
+
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getInterface('object');
 let component;
@@ -15,6 +16,7 @@ registerSuite('Badge', {
         },
 
         'default properties'() {
+            assert.equal('badge', component.getCssClasses())
             assert.deepEqual({}, component.data)
         },
 

@@ -9,10 +9,6 @@
   <example title='icon' desc='图标'>
     <example-demo-default title='默认用法' desc=''>
       <view class='d-flex'>
-        <db-icon-default value='fas fa-user'></db-icon-default>
-        <view class='px-2'> fas fa-user</view>
-      </view>
-      <view class='d-flex'>
         <db-icon-fas value='fas fa-user'></db-icon-fas>
         <view class='px-2'> fas fa-user</view>
       </view>

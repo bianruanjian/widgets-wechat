@@ -3,13 +3,15 @@
   .form-check-input {
     margin-top: 0rem;
   }
+  .form-check-block-label {
+    margin-left: 0.3125rem;
+  }
 </style>
 
 <template>
-  <view class="{{fluid?'form-check':'form-check-inline'}}">
-    <checkbox id='{{widgetId}}' name='{{name}}' value="{{name}}" checked="{{checked}}" 
-    class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' /> 
-    {{labelAfter?label:''}}
+  <view class="{{fluid ? 'form-check' : 'form-check-inline'}}">
+    <checkbox id='{{widgetId}}' name='{{name}}' value="{{name}}" checked="{{checked}}" class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' />
+    <label for='{{widgetId}}' class="{{fluid ? 'form-check-block-label' : ''}}">{{labelAfter ? label : ''}}</label>
   </view>
 </template>
 
@@ -19,6 +21,10 @@
   import FlexMixin from '../../mixins/flex'
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
+  let sizeMap = {
+    small: 'sm',
+    large: 'lg'
+  }
   export default class Checkbox extends BaseComponent {
     mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
     props = this.mixinProps({
@@ -83,10 +89,6 @@
       return cssClasses.join(' ').trim()
     }
     _getSize() {
-      let sizeMap = {
-        small: 'sm',
-        large: 'lg'
-      }
       if (this.data.size && sizeMap[this.data.size]) {
         return 'form-control-' + sizeMap[this.data.size]
       }

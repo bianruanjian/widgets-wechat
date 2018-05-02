@@ -3,9 +3,7 @@
 </style>
 
 <template>
-  <label class='{{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>
-        {{value?value:''}}
-        <slot></slot>
+  <label class='form-label {{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>{{value?value:''}}<slot></slot>
     </label>
 </template>
 

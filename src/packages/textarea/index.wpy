@@ -3,8 +3,16 @@
 </style>
 
 <template>
-  <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength?maxLength:'-1'}}" disabled='{{disabled}}'
-    class='{{cssClasses}}' style='{{cssStyles}}' />
+  <db-label :forId='widgetId'>
+    {{label}}</db-label>
+  <block wx:if='{{plainText}}'>
+    <view id='{{widgetId}}' name='{{name}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}' class='{{cssClasses}}'
+      style='{{cssStyles}}'>{{value ? value : ''}}</view>
+  </block>
+  <block wx:else>
+    <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}'
+      class='{{cssClasses}}' style='{{cssStyles}}' />
+  </block>
 </template>
 
 <script>
@@ -13,8 +21,16 @@
   import FlexMixin from '../../mixins/flex'
   import FloatMixin from '../../mixins/float'
   import BaseComponent from '../baseComponent'
+  import DbLabel from '../label/index'
+  let sizeMap = {
+    small: 'sm',
+    large: 'lg'
+  }
   export default class Textarea extends BaseComponent {
     mixins = [BaseMixin, SpacingMixin, FlexMixin.item, FloatMixin]
+    components = {
+      'db-label': DbLabel
+    }
     props = this.mixinProps({
       name: {
         type: String,
@@ -102,10 +118,6 @@
       return 'form-control'
     }
     _getSize() {
-      let sizeMap = {
-        small: 'sm',
-        large: 'lg'
-      }
       if (this.data.size && sizeMap[this.data.size]) {
         return 'form-control-' + sizeMap[this.data.size]
       }

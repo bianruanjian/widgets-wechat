@@ -9,15 +9,19 @@
 
 <template>
   <button id="{{widgetId}}" class="{{cssClasses}}" style="{{cssStyles}}" disabled="{{disabled}}">
-        <slot></slot>
-        {{value?value:''}}
+    <slot></slot>
+    {{value ? value : ''}}
   </button>
 </template>
 
 <script>
   import BaseMixin from '../../mixins/base'
   import BaseComponent from '../baseComponent'
-  import zanui from '../../vendor/zanui/zanui'
+  let btnSize = {
+    small: 'zan-btn--small',
+    large: 'zan-btn--large',
+    mini: 'zan-btn--mini'
+  }
   export default class Button extends BaseComponent {
     mixins = [BaseMixin]
     props = this.mixinProps({
@@ -80,7 +84,7 @@
     }
     _getSize() {
       if (this.data.size) {
-        return zanui.btnSize[this.data.size]
+        return btnSize[this.data.size]
       }
       return ''
     }
