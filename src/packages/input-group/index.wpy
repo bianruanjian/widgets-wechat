@@ -16,7 +16,7 @@
 </style>
 
 <template>
-  <db-label :forId='widgetId'>{{label}}</db-label>
+  <db-label :forId='widgetId' :value='label'></db-label>
   <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
     <slot></slot>
   </view>

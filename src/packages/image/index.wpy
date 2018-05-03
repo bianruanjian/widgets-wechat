@@ -1,6 +1,7 @@
 <style lang='less'>
   @import '../../vendor/bootstrap/utilities/embed.wxss';
   @import '../../vendor/bootstrap/utilities/border.wxss';
+  @import '../../common/assets/style/packages/utilities/border.wxss';
   @import '../../vendor/bootstrap/utilities/spacing.wxss';
   image {
     display: block; // vertical-align: middle;

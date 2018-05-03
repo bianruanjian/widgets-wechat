@@ -4,7 +4,7 @@
 
 <template>
   <view class='form-cell'>
-    <db-label :forId='widgetId'>{{label}}</db-label>
+    <db-label :forId='widgetId' :value='label'></db-label>
     <block wx:if='{{plainText}}'>
       <view id='{{widgetId}}' readonly='{{readOnly}}' name='{{name}}' disabled='{{disabled}}' class='readonly {{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
     </block>

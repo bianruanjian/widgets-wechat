@@ -73,7 +73,7 @@ export default class BaseMixin extends wepy.mixin {
       }
     }
     mixinStyles = mixinStyles.filter(function (item, index, array) {
-      return item !== ';'
+      return item !== ';' && item !== ''
     })
     return mixinStyles.join(';').trim()
   }
@@ -103,30 +103,25 @@ export default class BaseMixin extends wepy.mixin {
   //   }
   // }
 
-  onLoad() {
-    let cssClasses = this.getCssClasses()
-    let cssStyles = this.getCssStyles()
-    let mixinClasses = this._getMixinClasses()
-    let mixinStyles = this._getMixinStyles()
-    if (mixinClasses) {
-      cssClasses = cssClasses + " " + mixinClasses
+  _renderApperarance() {
+    let cssClasses = [this.getCssClasses(), this._getMixinClasses(), this.customClass]
+    let cssStyles = [this.getCssStyles(), this._getMixinStyles(), this.customStyle]
+    cssClasses = cssClasses.filter(function (item, index, array) {
+      return item != undefined && item !== ''
+    })
+    cssStyles = cssStyles.filter(function (item, index, array) {
+      return item != undefined && item !== '' && item !== ';'
+    })
+    if (cssClasses.length > 0) {
+      this.cssClasses = cssClasses.join(' ').trim()
     }
-    if (this.customClass) {
-      cssClasses = cssClasses + " " + this.customClass
+    if (cssStyles.length > 0) {
+      this.cssStyles = cssStyles.join(';').trim()
     }
-    if (mixinStyles) {
-      cssStyles = cssStyles + ";" + mixinStyles
-    }
-    if (this.customStyle) {
-      cssStyles = cssStyles + ";" + this.customStyle
-    }
+  }
 
-    if (cssClasses) {
-      this.cssClasses = cssClasses
-    }
-    if (cssStyles) {
-      this.cssStyles = cssStyles
-    }
+  onLoad() {
+    this._renderApperarance()
     this._setSystem()
   }
 }

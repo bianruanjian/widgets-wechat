@@ -3,7 +3,7 @@
 </style>
 
 <template>
-  <label class='form-label {{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>{{value?value:''}}<slot></slot>
+  <label wx:if='{{value}}' class='form-label {{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>{{value?value:''}}<slot></slot>
     </label>
 </template>
 

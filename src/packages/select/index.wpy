@@ -4,7 +4,7 @@
 
 <template>
   <view class='form-cell'>
-    <db-label :forId='widgetId'>{{label}}</db-label>
+    <db-label :forId='widgetId' :value='label'></db-label>
     <picker value='{{value}}' bindchange='onChange' range='{{options}}' id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
       <slot></slot>
       {{options[value]}}

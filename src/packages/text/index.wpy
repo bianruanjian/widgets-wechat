@@ -6,7 +6,7 @@
 </style>
 
 <template>
-  <view class='{{cssClasses}}' styles='{{cssStyles}}'>
+  <view class='{{cssClasses}}' style='{{cssStyles}}'>
     <slot></slot>
     {{value ? value: ''}}
   </view>
