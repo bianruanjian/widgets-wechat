@@ -17,7 +17,7 @@
   import FlexMixin from '../../mixins/flex'
   import BaseComponent from '../baseComponent'
   export default class GridColumn extends BaseComponent {
-    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, ...FlexMixin]
+    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, FlexMixin.container, FlexMixin.item]
     props = this.mixinProps({
       offset: {
         type: Number | String,
