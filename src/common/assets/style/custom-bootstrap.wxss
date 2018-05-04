@@ -2,6 +2,7 @@
 @import '../../../vendor/bootstrap/utilities/spacing.wxss';
 @import '../../../vendor/bootstrap/utilities/text.wxss';
 @import '../../../vendor/bootstrap/utilities/colors.wxss';
+@import '../../../vendor/bootstrap/utilities/flex.wxss';
 @import '../../../vendor/bootstrap/utilities/display.wxss';
 
 @import '../../../vendor/zanui/button.wxss';
@@ -16,4 +17,5 @@
 @import './packages/grid.wxss';
 @import './packages/form.wxss';
 @import './packages/input-group.wxss';
+@import './packages/utilities/border.wxss';
 

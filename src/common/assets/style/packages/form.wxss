@@ -1,10 +1,11 @@
   .form-cell{
     position:relative;
-    padding:7px 15px;
+    padding:7px 7px;
     display:flex;
     align-items:center;
     line-height:1.5;
     font-size:0.875rem;
+    flex:1;
   }
 
   .form-label{
@@ -17,6 +18,7 @@
     /* width: auto; */
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
+    /* border:0px; */
   }
   .form-control-plaintext {
     /* width: auto; */

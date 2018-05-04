@@ -1,0 +1,38 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <db-container>
+    <db-view-header class='d-flex' marginBottom="3" paddingRight="1" paddingLeft="1" paddingTop="1" paddingBottom="1" alignItems='center'>
+      <db-image src='../examples/assets/plus.png' width='21' height='21' marginRight='20' ></db-image>
+      <db-text-input placeholder='Anything here...' focus='true'></db-text-input>
+    </db-view-header>
+    <block>
+      <db-view-empty class='d-flex' flexDirection='column' alignItems='center'>
+        <db-text-title marginTop="5"  marginBottom="3" type='h3' textColor='#444'>Congratulations!</db-text-title>
+        <db-text-content alignment="center" textColor='#666'>There's no more work left.</db-text-content>
+      </db-view-empty>
+    </block>
+  </db-container>
+</template>
+<script>
+  import wepy from 'wepy'
+  import DbContainer from '../packages/container/index'
+  import DbView from '../packages/view/index'
+  import DbImage from '../packages/image/index'
+  import DbTextInput from '../packages/text-input/index'
+  import DbText from '../packages/text/index'
+  export default class TextInputPage extends wepy.page {
+    mixins = []
+    components = {
+      'db-container': DbContainer,
+      'db-view-header': DbView,
+      'db-image': DbImage,
+      'db-text-input': DbTextInput,
+      'db-view-empty': DbView,
+      'db-text-title': DbText,
+      'db-text-content': DbText
+    }
+  }
+</script>

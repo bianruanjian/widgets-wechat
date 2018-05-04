@@ -1,8 +1,10 @@
 <style lang='less'>
   @import '../../vendor/bootstrap/utilities/border.wxss';
+  @import '../../common/assets/style/packages/utilities/border.wxss';
   @import '../../vendor/bootstrap/utilities/spacing.wxss';
   @import '../../vendor/bootstrap/utilities/text.wxss';
   @import '../../vendor/bootstrap/utilities/colors.wxss';
+  @import '../../vendor/bootstrap/utilities/flex.wxss';
 </style>
 
 <template>
@@ -18,8 +20,9 @@
   import SpacingMixin from '../../mixins/spacing'
   import TextMixin from '../../mixins/text'
   import ColorsMixin from '../../mixins/colors'
+  import FlexMixin from '../../mixins/flex'
   export default class View extends BaseComponent {
-    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, ColorsMixin]
+    mixins = [BaseMixin, BorderMixin, SpacingMixin, TextMixin, ColorsMixin, FlexMixin.container, FlexMixin.item]
     props = this.mixinProps({
       maxWidth: {
         type: String | Number,

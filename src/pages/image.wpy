@@ -15,8 +15,8 @@
     <example-demo-thumbnail title='thumbnail' desc='缩略图效果'>
       <db-image-thumbnail src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' thumbnail='true'></db-image-thumbnail>
     </example-demo-thumbnail>
-    <example-demo-alt title='alt' desc='替代文本'>
-      <db-image-alt src='http://image.jpg' alt='图片不存在'></db-image-alt>
+    <example-demo-alt title='alt' desc='替代文本(图片不存在)'>
+      <db-image-alt src='' alt='图片不存在'></db-image-alt>
     </example-demo-alt>
     <example-demo-width title='width' desc='宽度'>
       <db-image-width src='https://developers.weixin.qq.com/miniprogram/dev/image/cat/0.jpg?t=2018413' width='200'></db-image-width>

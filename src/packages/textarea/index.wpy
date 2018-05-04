@@ -3,8 +3,7 @@
 </style>
 
 <template>
-  <db-label :forId='widgetId'>
-    {{label}}</db-label>
+  <db-label :forId='widgetId' :value='label'></db-label>
   <block wx:if='{{plainText}}'>
     <view id='{{widgetId}}' name='{{name}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}' class='readonly {{cssClasses}}'
       style='{{cssStyles}}'>{{value ? value : ''}}</view>

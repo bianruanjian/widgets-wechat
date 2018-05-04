@@ -118,5 +118,16 @@ module.exports = {
       "icon": "",
       "code": ""
     }]
+  },{
+    id: 'demo',
+    name: 'demo示例',
+    open: false,
+    icon: '../common/assets/images/demo-menu-demo_68x68.png',
+    pages: [{
+      "id": "todos",
+      "name": "todos",
+      "icon": "",
+      "code": ""
+    }]
   }]
 };
