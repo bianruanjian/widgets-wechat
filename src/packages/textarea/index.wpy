@@ -11,7 +11,7 @@
       style='{{cssStyles}}'>{{value ? value : ''}}</view>
   </block>
   <block wx:else>
-    <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}'
+    <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{shouldFocus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}'
       class='{{cssClasses}}' style='{{cssStyles}}' />
   </block>
 </template>
@@ -81,7 +81,7 @@
         type: String,
         value: ''
       },
-      focus: {
+      shouldFocus: {
         type: Boolean | String,
         value: false
       },

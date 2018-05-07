@@ -11,11 +11,11 @@
       <view id='{{widgetId}}' readonly='{{readOnly}}' name='{{name}}' disabled='{{disabled}}' class='readonly {{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
     </block>
     <block wx:elif="{{password == 'true'}}">
-      <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' password='true' placeholder-class='{{placeholderAppearance}}' disabled='{{disabled}}' maxlength="{{maxLength ? maxLength : '-1'}}"
+      <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{shouldFocus}}' password='true' placeholder-class='{{placeholderAppearance}}' disabled='{{disabled}}' maxlength="{{maxLength ? maxLength : '-1'}}"
         class='{{cssClasses}}' style='{{cssStyles}}' />
     </block>
     <block wx:else>
-      <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{focus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}'
+      <input id='{{widgetId}}' type='{{type}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{shouldFocus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}'
         class='{{cssClasses}}' style='{{cssStyles}}' />
     </block>
   </view>
@@ -89,7 +89,7 @@
         type: String,
         value: ''
       },
-      focus: {
+      shouldFocus: {
         type: Boolean | String,
         value: false
       },

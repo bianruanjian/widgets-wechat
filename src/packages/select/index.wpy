@@ -63,7 +63,7 @@
         type: String,
         value: ''
       },
-      focus: {
+      shouldFocus: {
         type: Boolean | String,
         value: false
       },
