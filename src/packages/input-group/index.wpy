@@ -2,21 +2,23 @@
   @import '../../common/assets/style/packages/form.wxss';
   @import '../../vendor/bootstrap/input-group.wxss';
 
-  .input-group-text {
-    padding: 0.2rem 0.45rem;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 0.2rem;
-  }
-  .input-group-prepend .btn,
-  .input-group-append .btn {
-    font-size: 14px;
-    line-height: 1;
-  }
+  // .input-group-text {
+  //   padding: 0.2rem 0.45rem;
+  //   font-size: 14px;
+  //   line-height: 1;
+  //   border-radius: 0.2rem;
+  // }
+  // .input-group-prepend .btn,
+  // .input-group-append .btn {
+  //   font-size: 14px;
+  //   line-height: 1;
+  // }
 </style>
 
 <template>
-  <db-label :forId='widgetId' :value='label'></db-label>
+    <block wx:if='{{label}}'>
+      <db-label :forId='widgetId' :value='label'></db-label>
+    </block>
   <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
     <slot></slot>
   </view>

@@ -6,12 +6,12 @@
   }
   .input-group-prepend .btn, .input-group-append .btn {
     line-height: 1.4;
-    padding-top:0.1rem;
+    padding-top:0.25rem;
     padding-bottom:0.1rem;
     font-size:0.875rem;
   }
   .form-control {
-    padding:0;
+    padding:0.1rem 0.1rem;
   }
 
   .form-control-sm, .input-group-sm > .form-control, .input-group-sm > .input-group-prepend > .input-group-text, .input-group-sm > .input-group-append > .input-group-text, .input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-append > .btn {

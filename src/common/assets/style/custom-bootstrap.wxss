@@ -5,13 +5,13 @@
 @import '../../../vendor/bootstrap/utilities/flex.wxss';
 @import '../../../vendor/bootstrap/utilities/display.wxss';
 
-@import '../../../vendor/zanui/button.wxss';
 @import '../../../vendor/bootstrap/button.wxss';
 @import '../../../vendor/bootstrap/grid.wxss';
 @import '../../../vendor/bootstrap/text.wxss';
 @import '../../../vendor/bootstrap/badge.wxss';
 @import '../../../vendor/bootstrap/form.wxss';
 @import '../../../vendor/bootstrap/input-group.wxss';
+@import '../../../vendor/bootstrap/card.wxss';
 
 @import './packages/container.wxss';
 @import './packages/grid.wxss';

@@ -1,4 +1,6 @@
 import wepy from 'wepy'
+import uuid from '../utils/uuid';
+
 export default class BaseMixin extends wepy.mixin {
   getProps() {
     return {
@@ -21,7 +23,7 @@ export default class BaseMixin extends wepy.mixin {
     _system_: '',
     cssStyles: '',
     cssClasses: '',
-    widgetId: Math.random().toString(36).substring(2)
+    widgetId: uuid()
   }
 
   _setSystem() {
@@ -73,7 +75,7 @@ export default class BaseMixin extends wepy.mixin {
       }
     }
     mixinStyles = mixinStyles.filter(function (item, index, array) {
-      return item !== ';' && item !== ''
+      return item !== ''
     })
     return mixinStyles.join(';').trim()
   }

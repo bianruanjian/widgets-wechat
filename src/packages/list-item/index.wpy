@@ -12,9 +12,10 @@
   import BaseMixin from '../../mixins/base'
   import FlexMixin from '../../mixins/flex'
   import TextMixin from '../../mixins/text'
+  import ColorsMixin from '../../mixins/colors'
   import BaseComponent from '../baseComponent'
   export default class ListItem extends BaseComponent {
-    mixins = [BaseMixin, TextMixin, FlexMixin.container]
+    mixins = [BaseMixin, TextMixin, ColorsMixin, FlexMixin.container]
     props = this.mixinProps({
       active: {
         type: Boolean | String,

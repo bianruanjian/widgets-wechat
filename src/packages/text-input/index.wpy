@@ -3,8 +3,10 @@
 </style>
 
 <template>
-  <view class='form-cell'>
-    <db-label :forId='widgetId' :value='label'></db-label>
+  <view class="{{label ? 'form-cell' : 'form-simple-cell'}}">
+    <block wx:if='{{label}}'>
+      <db-label :forId='widgetId' :value='label'></db-label>
+    </block>
     <block wx:if='{{plainText}}'>
       <view id='{{widgetId}}' readonly='{{readOnly}}' name='{{name}}' disabled='{{disabled}}' class='readonly {{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
     </block>
