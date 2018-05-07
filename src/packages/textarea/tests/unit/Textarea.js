@@ -21,7 +21,7 @@ registerSuite('Textarea', {
             assert.deepEqual(false, component.props.disabled.value)
             assert.deepEqual(false, component.props.plainText.value)
             assert.deepEqual(false, component.props.noResize.value)
-            assert.deepEqual(false, component.props.focus.value)
+            assert.deepEqual(false, component.props.shouldFocus.value)
         },
 
         "custom properties"() {
@@ -30,7 +30,7 @@ registerSuite('Textarea', {
                 placeholder: '请输入',
                 required: true,
                 size: 'small',
-                focus: true,
+                shouldFocus: true,
                 maxLength: 32
             }
             component.data = customProperties

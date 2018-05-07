@@ -120,12 +120,17 @@ module.exports = {
     }]
   },{
     id: 'demo',
-    name: 'demo示例',
+    name: '示例',
     open: false,
     icon: '../common/assets/images/demo-menu-demo_68x68.png',
     pages: [{
       "id": "todos",
       "name": "todos",
+      "icon": "",
+      "code": ""
+    },{
+      "id": "checkout",
+      "name": "checkout",
       "icon": "",
       "code": ""
     }]

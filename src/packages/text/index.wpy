@@ -27,7 +27,7 @@
       },
       type: {
         type: String,
-        value: ''
+        value: 'span'
       }
     })
     getCssClasses() {

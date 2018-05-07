@@ -6,7 +6,7 @@
   <db-container>
     <db-view-header class='d-flex' marginBottom="3" paddingRight="1" paddingLeft="1" paddingTop="1" paddingBottom="1" alignItems='center'>
       <db-image src='../examples/assets/plus.png' width='21' height='21' marginRight='20' ></db-image>
-      <db-text-input placeholder='Anything here...' focus='true'></db-text-input>
+      <db-text-input placeholder='Anything here...' shouldFocus='true'></db-text-input>
     </db-view-header>
     <block>
       <db-view-empty class='d-flex' flexDirection='column' alignItems='center'>
@@ -23,7 +23,7 @@
   import DbImage from '../packages/image/index'
   import DbTextInput from '../packages/text-input/index'
   import DbText from '../packages/text/index'
-  export default class TextInputPage extends wepy.page {
+  export default class TodosPage extends wepy.page {
     mixins = []
     components = {
       'db-container': DbContainer,

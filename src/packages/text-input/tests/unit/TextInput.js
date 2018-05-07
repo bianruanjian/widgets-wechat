@@ -21,7 +21,7 @@ registerSuite('TextInput', {
             assert.deepEqual(false, component.props.password.value)
             assert.deepEqual(false, component.props.disabled.value)
             assert.deepEqual(false, component.props.plainText.value)
-            assert.deepEqual(false, component.props.focus.value)
+            assert.deepEqual(false, component.props.shouldFocus.value)
         },
 
         "custom properties"() {
@@ -32,7 +32,7 @@ registerSuite('TextInput', {
                 placeholder: '请输入数字',
                 required: true,
                 size: 'small',
-                focus: true,
+                shouldFocus: true,
                 maxLength: 18
             }
             component.data = customProperties

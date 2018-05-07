@@ -1,4 +1,14 @@
 import wepy from 'wepy'
+const spacingNameMap = {
+    ml: 'margin-left',
+    mt: 'margin-top',
+    mr: 'margin-right',
+    mb: 'margin-bottom',
+    pl: 'padding-left',
+    pt: 'padding-top',
+    pr: 'padding-right',
+    pb: 'padding-bottom'
+}
 export default class SpacingMixin extends wepy.mixin {
     getProps() {
         return {
@@ -42,9 +52,60 @@ export default class SpacingMixin extends wepy.mixin {
         return spacingClass.join(' ')
     }
 
+    getStyle() {
+        //  支持自定义设置 padding 和 margin 间距，但没有采用 bootstrap 的计算，这里直接把自定义设置的值写入到样式里面。
+        let spacingStyle = []
+
+        let marginMap = this._computeMargin()
+        
+        for (let key in marginMap) {
+            if (marginMap[key] && marginMap[key] > 5) {
+                spacingStyle.push(spacingNameMap[key] + ":" + marginMap[key] + 'px')
+            }
+        }
+
+        let paddingMap = this._computePadding()
+
+        for (let key in paddingMap) {
+            if (paddingMap[key] && paddingMap[key] > 5) {
+                spacingStyle.push(spacingNameMap[key] + ":" + paddingMap[key] + 'px')
+            }
+        }
+
+        return spacingStyle.length > 0 ? spacingStyle.join(';') : ''
+    }
+
     _getMargin() {
         let data = this.data
         let margin = []
+        let marginMap = this._computeMargin()
+
+        for (let key in marginMap) {
+            if (marginMap[key] && (marginMap[key] <= 5 || marginMap[key] === 'auto')) {
+                margin.push(key + "-" + marginMap[key])
+            }
+        }
+
+        return margin
+
+    }
+
+    _getPadding() {
+        let data = this.data
+        let padding = []
+        let paddingMap = this._computePadding()
+
+        for (let key in paddingMap) {
+            if (paddingMap[key] && (paddingMap[key] <= 5 || paddingMap[key] === 'auto')) {
+                padding.push(key + "-" + paddingMap[key])
+            }
+        }
+        return padding
+    }
+
+
+    _computeMargin() {
+        let data = this.data
         let marginMap = {}
 
         marginMap.ml = data.marginLeft
@@ -68,18 +129,10 @@ export default class SpacingMixin extends wepy.mixin {
             marginMap = {}
             marginMap.m = data.marginLeft
         }
-
-        for (let key in marginMap) {
-            if (marginMap[key]) {
-                margin.push(key + "-" + marginMap[key])
-            }
-        }
-
-        return margin
-
+        return marginMap
     }
 
-    _getPadding() {
+    _computePadding() {
         let data = this.data
         let padding = []
         let paddingMap = {}
@@ -105,14 +158,9 @@ export default class SpacingMixin extends wepy.mixin {
             paddingMap = {}
             paddingMap.p = data.paddingLeft
         }
-
-        for (let key in paddingMap) {
-            if (paddingMap[key]) {
-                padding.push(key + "-" + paddingMap[key])
-            }
-        }
-        return padding
+        return paddingMap
     }
+
 
 }
 

@@ -8,6 +8,11 @@
     flex:1;
   }
 
+  .form-simple-cell{
+    display:flex;
+    flex:1;
+  }
+
   .form-label{
     color:#333;
     min-width:65px;

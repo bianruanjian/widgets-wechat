@@ -30,7 +30,8 @@ export default class extends wepy.app {
       'pages/checkbox',
       'pages/radio',
       'pages/textarea',
-      'pages/todos'
+      'pages/todos',
+      'pages/checkout'
     ],
     window: {
       backgroundTextStyle: 'light',

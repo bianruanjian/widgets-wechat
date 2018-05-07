@@ -1,0 +1,147 @@
+<style lang='less'>
+
+</style>
+
+<template>
+  <db-container>
+    <db-view-header marginBottom="3" alignment="center" alignItems='center' paddingBottom='5' paddingTop='5'>
+      <db-image src='../examples/assets/bootstrap-solid.svg' width='72' height='72' paddingBottom="4" marginRight='auto' marginLeft='auto'></db-image>
+      <db-text-title type='h2'>Checkout form</db-text-title>
+      <db-text-content type='lead' textColor='#666'>
+        Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.
+      </db-text-content>
+    </db-view-header>
+    <db-grid-row>
+      <db-grid-column-1 marginBottom='4' colSpan='12'>
+        <db-text-cart type='h4' class='d-flex justify-content-between align-items-center' alignItems='center' justifyItems='between' marginBottom='3'>
+          <db-text-cart-content textColor='muted'>Your cart</db-text-cart-content>
+          <db-badge appearance='secondary' pill='true'>3</db-badge>
+        </db-text-cart>
+        <db-list-group marginBottm='3'>
+          <db-list-item-1 class='d-flex' alignItems='center' justifyItems='between'>
+            <db-view-item-1>
+              <db-text-item-1-name type='h6' marginBottm='0' marginTop='0'>Product name</db-text-item-1-name>
+              <db-text-item-1-desc type='small' textColor='muted'>Brief description</db-text-item-1-desc>
+            </db-view-item-1>
+            <db-text-item-1-price>$12</db-text-item-1-price>
+          </db-list-item-1>
+          <db-list-item-2 class='d-flex' alignItems='center' justifyItems='between'>
+            <db-view-item-2>
+              <db-text-item-2-name type='h6' marginBottm='0' marginTop='0'>Second product</db-text-item-2-name>
+              <db-text-item-2-desc type='small' textColor='muted'>Brief description</db-text-item-2-desc>
+            </db-view-item-2>
+            <db-text-item-2-price>$8</db-text-item-2-price>
+          </db-list-item-2>
+          <db-list-item-3 class='d-flex' alignItems='center' justifyItems='between'>
+            <db-view-item-3>
+              <db-text-item-3-name type='h6' marginBottm='0' marginTop='0'>Third item</db-text-item-3-name>
+              <db-text-item-3-desc type='small' textColor='muted'>Brief description</db-text-item-3-desc>
+            </db-view-item-3>
+            <db-text-item-3-price>$5</db-text-item-3-price>
+          </db-list-item-3>
+          <db-list-item-4 class='d-flex' alignItems='center' justifyItems='between' backgroundColor='light'>
+            <db-view-item-4 textColor='success'>
+              <db-text-item-4-name type='h6' marginBottm='0' marginTop='0'>Promo code</db-text-item-4-name>
+              <db-text-item-4-desc type='small' textColor='muted'>Brief description</db-text-item-4-desc>
+            </db-view-item-4>
+            <db-text-item-4-price>-$5</db-text-item-4-price>
+          </db-list-item-4>
+          <db-list-item-5 class='d-flex' alignItems='center' justifyItems='between'>
+            <db-text-item-5-name type='h6' marginBottm='0' marginTop='0'>Total (USD)</db-text-item-5-name>
+            <db-text-item-5-price fontWeight='bold'>$20</db-text-item-5-price>
+          </db-list-item-5>
+        </db-list-group>
+        <form class='card p-2' paddingLeft='2' paddingTop='2' paddingRight='2' paddingBottom='2'>
+          <db-input-group>
+            <!-- <db-text-input-1 type='text' placeholder='Promo code'></db-text-input-1> -->
+            <input type='text' placeholder='Promo code'  class='form-control' />
+            <db-addon position='append'>
+              <db-button-1 type='submit' appearance='secondary'>Redeem</db-button-1>
+            </db-addon>
+          </db-input-group>
+        </form>
+      </db-grid-column-1>
+      <db-grid-column-2 colSpan='12'>
+        <db-text-address type='h4' marginBottom='3'>
+          Billing address
+        </db-text-address>
+        <db-grid-row-2>
+          <db-grid-column-3 marginBottom='3' colSpan='12'>
+            <db-text-input-2 widgetId='firstName' label='First name'></db-text-input-2>
+          </db-grid-column-3>
+          <db-grid-column-4 marginBottom='3' colSpan='12'>
+            <db-text-input-3 widgetId='lastName' label='Last name'></db-text-input-3>
+          </db-grid-column-4>
+        </db-grid-row-2>
+      </db-grid-column-2>
+    </db-grid-row>
+  </db-container>
+</template>
+<script>
+  import wepy from 'wepy'
+  import DbContainer from '../packages/container/index'
+  import DbView from '../packages/view/index'
+  import DbImage from '../packages/image/index'
+  import DbTextInput from '../packages/text-input/index'
+  import DbText from '../packages/text/index'
+  import DbGridRow from '../packages/grid-row/index'
+  import DbGridColumn from '../packages/grid-column/index'
+  import DbBadge from '../packages/badge/index'
+  import DbListGroup from '../packages/list-group/index'
+  import DbListItem from '../packages/list-item/index'
+  import DbInputGroup from '../packages/input-group/index'
+  import DbAddon from '../packages/addon/index'
+  import DbButton from '../packages/button/index'
+  export default class CheckoutPage extends wepy.page {
+    mixins = []
+    components = {
+      'db-container': DbContainer,
+      'db-view-header': DbView,
+      'db-image': DbImage,
+      'db-text-input': DbTextInput,
+      'db-view-empty': DbView,
+      'db-text-title': DbText,
+      'db-text-content': DbText,
+      'db-grid-row': DbGridRow,
+      'db-grid-column-1': DbGridColumn,
+      'db-grid-column-2': DbGridColumn,
+      'db-text-cart': DbText,
+      'db-text-cart-content': DbText,
+      'db-badge': DbBadge,
+      'db-list-group': DbListGroup,
+      'db-list-item-1': DbListItem,
+      'db-view-item-1': DbView,
+      'db-text-item-1-name': DbText,
+      'db-text-item-1-desc': DbText,
+      'db-text-item-1-price': DbText,
+      'db-list-item-2': DbListItem,
+      'db-view-item-2': DbView,
+      'db-text-item-2-name': DbText,
+      'db-text-item-2-desc': DbText,
+      'db-text-item-2-price': DbText,
+      'db-list-item-3': DbListItem,
+      'db-view-item-3': DbView,
+      'db-text-item-3-name': DbText,
+      'db-text-item-3-desc': DbText,
+      'db-text-item-3-price': DbText,
+      'db-list-item-4': DbListItem,
+      'db-view-item-4': DbView,
+      'db-text-item-4-name': DbText,
+      'db-text-item-4-desc': DbText,
+      'db-text-item-4-price': DbText,
+      'db-list-item-5': DbListItem,
+      'db-text-item-5-name': DbText,
+      'db-text-item-5-price': DbText,
+      'db-input-group': DbInputGroup,
+      'db-text-input-1': DbTextInput,
+      'db-addon': DbAddon,
+      'db-button-1': DbButton,
+      'db-text-address': DbText,
+      'db-grid-row-2': DbGridRow,
+      'db-grid-column-3': DbGridColumn,
+      'db-grid-column-4': DbGridColumn,
+      'db-text-input-2': DbTextInput,
+      'db-text-input-3': DbTextInput
+    }
+  }
+</script>

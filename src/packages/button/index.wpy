@@ -17,10 +17,9 @@
 <script>
   import BaseMixin from '../../mixins/base'
   import BaseComponent from '../baseComponent'
-  let btnSize = {
-    small: 'zan-btn--small',
-    large: 'zan-btn--large',
-    mini: 'zan-btn--mini'
+  const sizeMap = {
+    small: 'sm',
+    large: 'lg'
   }
   export default class Button extends BaseComponent {
     mixins = [BaseMixin]
@@ -76,15 +75,13 @@
         if (appearance.indexOf('outline') > -1) {
           appearanceClasses.push('btn-outline')
         }
-        appearanceClasses.push('zan-btn--' + appearance)
-        //  因为 zanui 样式不全，因此我们单独补充了不全的样式，但不以 zan 开头，不以 zan 的风格来写
         appearanceClasses.push('btn btn-' + appearance)
       }
       return appearanceClasses.join(' ').trim()
     }
     _getSize() {
-      if (this.data.size) {
-        return btnSize[this.data.size]
+      if (this.data.size && sizeMap[this.data.size]) {
+        return 'btn-' + sizeMap[this.data.size]
       }
       return ''
     }

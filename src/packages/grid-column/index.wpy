@@ -29,14 +29,14 @@
       }
     })
     getCssClasses() {
-      let cssClasses = ['col', 'gutters-col', this._getOffset(), this._getColSpan()]
+      let cssClasses = [this._getColSpan(), 'gutters-col', this._getOffset()]
       return cssClasses.join(' ').trim()
     }
     _getOffset() {
       return (this.data.offset !== undefined) ? 'offset-' + this.data.offset : ''
     }
     _getColSpan() {
-      return (this.data.colSpan !== undefined) ? 'col-' + this.data.colSpan : ''
+      return (this.data.colSpan !== undefined) ? 'col-' + this.data.colSpan : 'col'
     }
   }
 </script>

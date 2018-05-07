@@ -4,7 +4,7 @@
 
 <template>
   <view class='form-cell'>
-    <db-label :forId='widgetId' :value='label'></db-label>
+    <db-label wx:if='{{label}}' :forId='widgetId' :value='label'></db-label>
     <picker value='{{value}}' bindchange='onChange' range='{{options}}' id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
       <slot></slot>
       {{options[value]}}
@@ -61,7 +61,7 @@
         type: String,
         value: ''
       },
-      focus: {
+      shouldFocus: {
         type: Boolean | String,
         value: false
       },

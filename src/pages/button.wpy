@@ -3,6 +3,9 @@
     margin-top: 30rpx;
     margin-bottom: 30rpx;
   }
+  .btn {
+    display: block;
+  }
 </style>
 
 <template>
@@ -17,20 +20,16 @@
         <db-button-apperance-secondary value='secondary' appearance='secondary' custom-class='mt-1'></db-button-apperance-secondary>
         <db-button-apperance-success value='success' appearance='success' custom-class='mt-1'></db-button-apperance-success>
         <db-button-apperance-danger value='danger' appearance='danger' custom-class='mt-1'></db-button-apperance-danger>
-        <db-button-apperance-warn value='warn' appearance='warn' custom-class='mt-1'></db-button-apperance-warn>
+        <db-button-apperance-warn value='warn' appearance='warning' custom-class='mt-1'></db-button-apperance-warn>
         <db-button-apperance-info value='info' appearance='info' custom-class='mt-1'></db-button-apperance-info>
         <db-button-apperance-light value='light' appearance='light' custom-class='mt-1'></db-button-apperance-light>
         <db-button-apperance-dark value='dark' appearance='dark' custom-class='mt-1'></db-button-apperance-dark>
         <db-button-apperance-link value='link' appearance='link' custom-class='mt-1'></db-button-apperance-link>
       </example-demo-appearance>
       <example-demo-size title="size" desc="">
-        <view>
-          <db-button-size-mini value='mini' appearance='primary' size="mini"></db-button-size-mini>
-        </view>
-        <db-button-size-small value='small' appearance='primary' size="small">
-        </db-button-size-small>
-        <db-button-size-large value='large' appearance='primary' size="large"></db-button-size-large>
+        <db-button-size-small value='small' appearance='primary' size="small"></db-button-size-small>
         <db-button-size-default value='default' appearance='primary' size="default"></db-button-size-default>
+        <db-button-size-large value='large' appearance='primary' size="large"></db-button-size-large>
       </example-demo-size>
       <example-demo-outline title="outline" desc="">
         <db-button-outline-primary value='镂空' appearance='outline-primary' custom-class='mt-1'></db-button-outline-primary>
@@ -60,7 +59,7 @@
       'example-demo-outline': BrjExampleDemo,
       'example-demo-active': BrjExampleDemo,
       'db-button': Button,
-      'db-button-apperance-defualt': Button,
+      'db-button-apperance-default': Button,
       'db-button-apperance-primary': Button,
       'db-button-apperance-secondary': Button,
       'db-button-apperance-success': Button,

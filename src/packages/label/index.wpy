@@ -3,8 +3,8 @@
 </style>
 
 <template>
-  <label wx:if='{{value}}' class='form-label {{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>{{value?value:''}}<slot></slot>
-    </label>
+  <label class='form-label {{cssClasses}}' style='{{cssStyles}}' for='{{forId}}'>{{value ? value : ''}}<slot></slot>
+  </label>
 </template>
 
 <script>
