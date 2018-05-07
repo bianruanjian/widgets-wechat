@@ -17,7 +17,7 @@
     mixins = [BaseMixin]
     props = this.mixinProps({
       fluid: {
-        type: Boolean,
+        type: Boolean | String,
         value: false
       }
     })
