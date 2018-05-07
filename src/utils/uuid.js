@@ -1,4 +1,6 @@
 /**
+ * 参考自 https://github.com/dojo/core 的 uuid 模块
+ * 
  * Returns a v4 compliant UUID.
  *
  * @returns {string}

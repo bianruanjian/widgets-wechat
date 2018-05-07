@@ -16,9 +16,7 @@
 </style>
 
 <template>
-    <block wx:if='{{label}}'>
-      <db-label :forId='widgetId' :value='label'></db-label>
-    </block>
+  <db-label wx:if='{{label}}' :forId='widgetId' :value='label'></db-label>
   <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
     <slot></slot>
   </view>

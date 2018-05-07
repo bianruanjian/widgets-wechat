@@ -53,10 +53,11 @@ export default class SpacingMixin extends wepy.mixin {
     }
 
     getStyle() {
+        //  支持自定义设置 padding 和 margin 间距，但没有采用 bootstrap 的计算，这里直接把自定义设置的值写入到样式里面。
         let spacingStyle = []
 
         let marginMap = this._computeMargin()
-
+        
         for (let key in marginMap) {
             if (marginMap[key] && marginMap[key] > 5) {
                 spacingStyle.push(spacingNameMap[key] + ":" + marginMap[key] + 'px')

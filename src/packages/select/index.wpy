@@ -4,9 +4,7 @@
 
 <template>
   <view class='form-cell'>
-    <block wx:if='{{label}}'>
-      <db-label :forId='widgetId' :value='label'></db-label>
-    </block>
+    <db-label wx:if='{{label}}' :forId='widgetId' :value='label'></db-label>
     <picker value='{{value}}' bindchange='onChange' range='{{options}}' id='{{widgetId}}' class='{{cssClasses}}' style='{{cssStyles}}' disabled='{{disabled}}'>
       <slot></slot>
       {{options[value]}}
