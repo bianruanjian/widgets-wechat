@@ -1,5 +1,5 @@
 {
-  "description": "brj-widgets-wechat",
+  "description": "widgets-wechat",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -8,6 +8,6 @@
   },
   "compileType": "miniprogram",
   "appid": "wx309d43f4e9ec8578",
-  "projectname": "brj-widgets-wechat",
+  "projectname": "widgets-wechat",
   "miniprogramRoot": "./dist"
 }

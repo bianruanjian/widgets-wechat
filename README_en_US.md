@@ -1,3 +1,3 @@
-# brj-widgets-wechat
+# widgets-wechat
 
 bianruanjian widgets for wechat

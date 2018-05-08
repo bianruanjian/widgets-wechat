@@ -31,7 +31,7 @@
       </view>
       <view class="index-ft">
         <image class="github__icon" mode="aspectFit" src="https://s10.mogucdn.com/mlcdn/c45406/171109_6k95i4l5lfcl458a4i7a37jd84598_64x64.png" />
-        <text class="github__url">https://github.com/bianruanjian/brj-widgets-wechat</text>
+        <text class="github__url">https://github.com/bianruanjian/widgets-wechat</text>
       </view>
     </view>
   </view>
