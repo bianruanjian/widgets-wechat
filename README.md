@@ -2,7 +2,7 @@
 
 ### [中文](https://github.com/bianruanjian/widgets-wechat/blob/master/README.md)&nbsp;&nbsp;&nbsp;&nbsp;[English](https://github.com/bianruanjian/widgets-wechat/blob/master/README_en_US.md)
 
-widgets-wechat 是编软件 UI 组件的小程序实现版本，结合微信和 bootstrap ，为用户提供 bootstrap 版的小程序体验。
+widgets-wechat 是编软件 UI 组件的小程序实现版本，基于 [wepy](https://github.com/Tencent/wepy) 和 [bootstrap](https://github.com/twbs/bootstrap) ，为用户提供 bootstrap 版的小程序体验。
 
 ## 在线体验
 
@@ -30,14 +30,19 @@ widgets-wechat 是编软件 UI 组件的小程序实现版本，结合微信和 
     npm run dev
     ```
 
+4. 运行测试
+    ```bash
+    npm test
+    ```
+
 4. 效果预览。打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'小程序项目 - 添加项目'，项目目录设置为 widgets-wechat/dist 。
 
 
 
-## Links
+## 相关链接
 
-[Documentation](https://bianruanjian.github.io/widgets-web/)
+[帮助文档](https://bianruanjian.github.io/widgets-web/)
 
-[Changelog](https://github.com/bianruanjian/widgets-wechat/blob/master/CHANGELOG.md)
+[更新记录](https://github.com/bianruanjian/widgets-wechat/blob/master/CHANGELOG.md)
 
-[Contributing](https://github.com/bianruanjian/widgets-wechat/blob/master/CONTRIBUTING.md)
+[参与贡献](https://github.com/bianruanjian/widgets-wechat/blob/master/CONTRIBUTING.md)
