@@ -3,7 +3,7 @@
 </style>
 
 <template>
-  <view class="{{!label ? 'form-cell-simple' : labelPosition == 'top' ? 'form-cell-block' : 'form-cell'}}">
+  <view class="{{!label ? 'form-group-simple' :labelPosition != 'top' ? 'form-group row' : 'form-group'}}">
     <block wx:if='{{label}}' >
       <view wx:if="{{labelPosition == 'top'}}" class='form-label-top'>
         <db-label :forId='widgetId' :value='label'></db-label>

@@ -35,6 +35,28 @@
   border-width: 1px 0;
 }
 
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 .form-check {
   position: relative;
   display: block;

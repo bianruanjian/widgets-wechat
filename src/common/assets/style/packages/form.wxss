@@ -1,21 +1,14 @@
-  .form-cell{
+  .form-group{
     position:relative;
     padding:7px 7px;
-    display:flex;
     align-items:center;
     line-height:1.5;
     font-size:0.875rem;
-    flex:1;
   }
-
-  .form-cell-simple{
+ 
+  .form-group-simple{
     display:flex;
     flex:1;
-  }
-
-  .form-cell-block{
-    padding:7px 7px;
-    display:block;
   }
 
   .form-label{
@@ -40,8 +33,14 @@
     border:0px; 
   }
 
-  .form-cell-fluid .form-control{
+  .form-group .form-control{
     width:auto;
+    flex:1;
+  }
+
+  .form-group-simple .form-control{
+    width:auto;
+    flex:1;
   }
 
   .form-control-plaintext {
@@ -51,13 +50,13 @@
   }
 
   .form-control-sm, .input-group-sm > .form-control, .input-group-sm > .input-group-prepend > .input-group-text, .input-group-sm > .input-group-append > .input-group-text, .input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-append > .btn {
-    padding:0.25rem 0.5rem;
+    padding:0.15rem 0.15rem;
     font-size: 0.875rem;
     line-height: 1.5;
   }
 
   .form-control-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-prepend > .input-group-text, .input-group-lg > .input-group-append > .input-group-text, .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-append > .btn {
-    padding:0.25rem 0.5rem;
+    padding:0.15rem 0.15rem;
     font-size: 0.875rem;
     line-height: 1.5;
   }
