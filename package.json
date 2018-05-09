@@ -1,7 +1,7 @@
 {
-  "name": "brj-widgets-wechat",
+  "name": "widgets-wechat",
   "version": "0.0.1",
-  "description": "brj-widgets-wechat",
+  "description": "widgets-wechat",
   "main": "dist/app.js",
   "scripts": {
     "dev": "wepy build --watch",
