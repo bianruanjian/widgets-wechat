@@ -2,16 +2,26 @@
   @import '../../common/assets/style/packages/form.wxss';
   .form-check-input {
     margin-top: 0rem;
+    margin-left:-0.75rem;
   }
-  .form-check-block-label {
-    margin-left: 0.78rem;
+  .form-check-label-after {
+    margin-left: 0.25rem;
+  }
+
+  .form-check, .form-check-inline{
+     padding-left:0.75rem;
+  }
+
+  .from-label-fluid{
+    padding-left:1rem;
   }
 </style>
 
 <template>
   <view class="{{fluid ? 'form-check' : 'form-check-inline'}}">
+    <label wx:if="{{labelAfter != null && labelAfter != 'true' && labelAfter != true}}" for='{{widgetId}}' class="form-label">{{label}}</label>
     <checkbox id='{{widgetId}}' name='{{name}}' value="{{name}}" checked="{{checked}}" class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' />
-    <label for='{{widgetId}}' class="{{fluid ? 'form-check-block-label' : ''}}">{{labelAfter ? label : ''}}</label>
+    <label wx:if="{{labelAfter == null || labelAfter =='true' || labelAfter == true}}" for='{{widgetId}}' class="{{fluid ? 'from-label-fluid' : ''}} form-check-label-after">{{label}}</label>
   </view>
 </template>
 
@@ -50,7 +60,7 @@
       },
       labelAfter: {
         type: Boolean | String,
-        value: false
+        value: true
       },
       required: {
         type: Boolean | String,

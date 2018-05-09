@@ -1,9 +1,12 @@
 <style>
   @import '../../vendor/bootstrap/button.wxss';
+  @import '../../common/assets/style/packages/button.wxss';
+  
   .btn-outline {
     border-width: 1px;
     border-style: solid;
   }
+
 </style>
 
 <template>
@@ -36,7 +39,7 @@
         value: ''
       },
       disabled: {
-        type: Boolean,
+        type: Boolean | String,
         value: false
       },
       type: {
@@ -44,11 +47,11 @@
         value: ''
       },
       fluid: {
-        type: Boolean,
+        type: Boolean | String,
         value: false
       },
       active: {
-        type: Boolean,
+        type: Boolean | String,
         value: false
       },
       href: {

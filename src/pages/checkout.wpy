@@ -54,7 +54,7 @@
         <form class='card p-2' paddingLeft='2' paddingTop='2' paddingRight='2' paddingBottom='2'>
           <db-input-group>
             <!-- <db-text-input-1 type='text' placeholder='Promo code'></db-text-input-1> -->
-            <input type='text' placeholder='Promo code'  class='form-control' />
+            <input type='text' placeholder='Promo code' class='form-control' />
             <db-addon position='append'>
               <db-button-1 type='submit' appearance='secondary'>Redeem</db-button-1>
             </db-addon>
@@ -67,11 +67,22 @@
         </db-text-address>
         <db-grid-row-2>
           <db-grid-column-3 marginBottom='3' colSpan='12'>
-            <db-text-input-2 widgetId='firstName' label='First name'></db-text-input-2>
+            <db-text-input-2 widgetId='firstName' label='First name' labelPosition='top'></db-text-input-2>
           </db-grid-column-3>
           <db-grid-column-4 marginBottom='3' colSpan='12'>
-            <db-text-input-3 widgetId='lastName' label='Last name'></db-text-input-3>
+            <db-text-input-3 widgetId='lastName' label='Last name' labelPosition='top'></db-text-input-3>
           </db-grid-column-4>
+          <form>
+            <db-checkbox-address label='Shipping address is the same as my billing address' labelAfter='true'></db-checkbox-address>
+            <db-checkbox-memory label='Save this information for next time' labelAfter='true'></db-checkbox-memory>
+            <view class='mb-4'></view>
+            <view class='my-3'>
+              <db-radio-payment label='Payment' :options='payment' labelAfter='true' fluid='true'></db-radio-payment>
+              <view class='mb-4'></view>
+              <db-button-submit type='submit' value='Conitnue to checkout' appearance='primary' fluid='true'></db-button-submit>
+            </view>
+            <view class='my-4'>footer</view>
+          </form>
         </db-grid-row-2>
       </db-grid-column-2>
     </db-grid-row>
@@ -92,6 +103,8 @@
   import DbInputGroup from '../packages/input-group/index'
   import DbAddon from '../packages/addon/index'
   import DbButton from '../packages/button/index'
+  import DbCheckbox from '../packages/checkbox/index'
+  import DbRadio from '../packages/radio/index'
   export default class CheckoutPage extends wepy.page {
     mixins = []
     components = {
@@ -141,7 +154,27 @@
       'db-grid-column-3': DbGridColumn,
       'db-grid-column-4': DbGridColumn,
       'db-text-input-2': DbTextInput,
-      'db-text-input-3': DbTextInput
+      'db-text-input-3': DbTextInput,
+      'db-checkbox-address': DbCheckbox,
+      'db-checkbox-memory': DbCheckbox,
+      'db-radio-payment': DbRadio,
+      'db-button-submit': DbButton
+    }
+    data = {
+      payment: [
+        {
+          value: 0,
+          label: 'Credit card'
+        },
+        {
+          value: 1,
+          label: 'Debit card'
+        },
+        {
+          value: 2,
+          label: 'PayPal'
+        }
+      ]
     }
   }
 </script>

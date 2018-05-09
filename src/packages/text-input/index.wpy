@@ -3,8 +3,13 @@
 </style>
 
 <template>
-  <view class="{{label ? 'form-cell' : 'form-simple-cell'}}">
-    <db-label wx:if='{{label}}' :forId='widgetId' :value='label'></db-label>
+  <view class="{{!label ? 'form-cell-simple' : labelPosition == 'top' ? 'form-cell-block' : 'form-cell'}}">
+    <block wx:if='{{label}}' >
+      <view wx:if="{{labelPosition == 'top'}}" class='form-label-top'>
+        <db-label :forId='widgetId' :value='label'></db-label>
+      </view>
+      <db-label wx:else :forId='widgetId' :value='label'></db-label>
+    </block>
     <block wx:if='{{plainText}}'>
       <view id='{{widgetId}}' readonly='{{readOnly}}' name='{{name}}' disabled='{{disabled}}' class='readonly {{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
     </block>
@@ -62,6 +67,10 @@
       label: {
         type: String,
         value: ''
+      },
+      labelPosition: {
+        type: String,
+        value: 'left'
       },
       placeholder: {
         type: String,

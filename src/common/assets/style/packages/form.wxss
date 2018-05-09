@@ -8,9 +8,14 @@
     flex:1;
   }
 
-  .form-simple-cell{
+  .form-cell-simple{
     display:flex;
     flex:1;
+  }
+
+  .form-cell-block{
+    padding:7px 7px;
+    display:block;
   }
 
   .form-label{
@@ -19,12 +24,26 @@
     padding-right:10px;
   }
 
+  .form-label-top{
+    display: block;
+    padding-bottom:7px;
+  }
+
   .form-control {
     /* width: auto; */
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     /* border:0px; */
   }
+
+  .form-control-plain{
+    border:0px; 
+  }
+
+  .form-cell-fluid .form-control{
+    width:auto;
+  }
+
   .form-control-plaintext {
     /* width: auto; */
     padding: 0.25rem 0.5rem;

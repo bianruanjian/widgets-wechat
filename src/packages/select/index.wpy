@@ -65,10 +65,6 @@
         type: Boolean | String,
         value: false
       },
-      plainText: {
-        type: Boolean | String,
-        value: false
-      },
       options: {
         type: String | Array,
         value: ''
@@ -99,17 +95,11 @@
       }
     })
     getCssClasses() {
-      let cssClasses = [this._getPlaintext(), this._getSize()]
+      let cssClasses = [this._getSize()]
       cssClasses = cssClasses.filter(function(item, index, array) {
         return item !== ''
       })
       return cssClasses.join(' ').trim()
-    }
-    _getPlaintext() {
-      if (this.data.plainText === true || this.data.plainText === 'true') {
-        return 'form-control-plaintext'
-      }
-      return 'form-control'
     }
     _getSize() {
       if (this.data.size && sizeMap[this.data.size]) {
