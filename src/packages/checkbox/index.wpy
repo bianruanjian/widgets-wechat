@@ -4,6 +4,11 @@
     margin-top: 0rem;
     margin-left:-0.75rem;
   }
+
+  .form-check-label {
+    margin-right: 0.75em;
+  }
+
   .form-check-label-after {
     margin-left: 0.16rem;
   }
@@ -12,16 +17,20 @@
      padding-left:0.75rem;
   }
 
-  .from-label-fluid{
-    padding-left:1rem;
+  .form-label-fluid{
+    padding-left:0.4rem;
+  }
+
+  .form-check .form-check-input {
+    position:static;
   }
 </style>
 
 <template>
   <view class="{{fluid ? 'form-check' : 'form-check-inline'}}">
-    <label wx:if="{{labelAfter != null && labelAfter != 'true' && labelAfter != true}}" for='{{widgetId}}' class="form-label">{{label}}</label>
+    <label wx:if="{{labelAfter != null && labelAfter != 'true' && labelAfter != true}}" for='{{widgetId}}' class="{{fluid ? 'form-label-fluid' : ''}} form-check-label">{{label}}</label>
     <checkbox id='{{widgetId}}' name='{{name}}' value="{{name}}" checked="{{checked}}" class='{{cssClasses}}' style='{{cssStyles}}' readonly='{{readOnly}}' disabled='{{disabled}}' />
-    <label wx:if="{{labelAfter == null || labelAfter =='true' || labelAfter == true}}" for='{{widgetId}}' class="{{fluid ? 'from-label-fluid' : ''}} form-check-label-after">{{label}}</label>
+    <label wx:if="{{labelAfter == null || labelAfter =='true' || labelAfter == true}}" for='{{widgetId}}' class="{{fluid ? 'form-label-fluid' : ''}} form-check-label-after">{{label}}</label>
   </view>
 </template>
 

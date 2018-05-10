@@ -1,6 +1,6 @@
 <style lang='less'>
 .form-radio-block-label {
-  margin-left: 0.75rem;
+  margin-left: 0.45rem;
 }
 
 </style>

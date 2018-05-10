@@ -4,7 +4,7 @@
     margin-top: 0rem;
   }
   .form-radio-block-label {
-    margin-left: 1.25rem;
+    margin-left: 0.45rem;
   }
   .radio-group{
     margin-left:0.75rem;
