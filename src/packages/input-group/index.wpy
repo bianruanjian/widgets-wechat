@@ -1,24 +1,22 @@
 <style lang='less'>
   @import '../../common/assets/style/packages/form.wxss';
-  @import '../../vendor/bootstrap/input-group.wxss';
+  @import '../../vendor/bootstrap/input-group.wxss'; 
+  @import '../../common/assets/style/packages/form.wxss';
+  @import '../../common/assets/style/packages/input-group.wxss';
 
-  // .input-group-text {
-  //   padding: 0.2rem 0.45rem;
-  //   font-size: 14px;
-  //   line-height: 1;
-  //   border-radius: 0.2rem;
-  // }
-  // .input-group-prepend .btn,
-  // .input-group-append .btn {
-  //   font-size: 14px;
-  //   line-height: 1;
-  // }
 </style>
 
 <template>
-  <db-label wx:if='{{label}}' :forId='widgetId' :value='label'></db-label>
-  <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
-    <slot></slot>
+  <view class="{{!label ? 'form-group-simple' :labelPosition != 'top' ? 'form-group row' : 'form-group'}}">
+    <block wx:if='{{label}}'>
+      <view wx:if="{{labelPosition == 'top'}}" class='form-label-top'>
+        <db-label :forId='widgetId' :value='label'></db-label>
+      </view>
+      <db-label wx:else :forId='widgetId' :value='label'></db-label>
+    </block>
+    <view class='{{cssClasses}}' style='{{cssStyles}}' id='{{widgetId}}'>
+      <slot></slot>
+    </view>
   </view>
 </template>
 
@@ -42,6 +40,10 @@
       label: {
         type: String,
         value: ''
+      },
+      labelPosition: {
+        type: String,
+        value: 'left'
       },
       size: {
         type: String,

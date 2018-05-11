@@ -14,10 +14,6 @@
       <db-select-disabled name='nation' :options='options' value='1' disabled='true' label='国家：'>
       </db-select-disabled>
     </example-demo-disabled>
-    <example-demo-plainText title='plainText' desc=''>
-      <db-select-plainText name='nation' :options='options' value='1' plainText='true' label='国家：'>
-      </db-select-plainText>
-    </example-demo-plainText>
   </example>
 </template>
 <script>
@@ -31,11 +27,9 @@
       'example': BrjExample,
       'example-demo-default': BrjExampleDemo,
       'example-demo-disabled': BrjExampleDemo,
-      'example-demo-plainText': BrjExampleDemo,
       'example-demo-maxLength': BrjExampleDemo,
       'db-select-default': DbSelect,
-      'db-select-disabled': DbSelect,
-      'db-select-plainText': DbSelect
+      'db-select-disabled': DbSelect
     }
     data = {
       options: [{

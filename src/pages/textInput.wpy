@@ -7,7 +7,7 @@
     <view>
     <example title='text-input' desc='输入框'>
       <example-demo-default title='默认用法' desc=''>
-        <db-text-input-default name='username' type='text' placeholder='I am placeholder' label='用户名' />
+        <db-text-input-default name='username' type='text' placeholder='I am placeholder' label='用户名'/>
       </example-demo-default>
       <example-demo-focus title='focus' desc=''>
         <db-text-input-focus name='username' type='text' placeholder='自动聚焦' shouldFocus='true' label='文本' />
@@ -29,6 +29,9 @@
       <example-demo-maxLength title='maxLength' desc=''>
         <db-text-input-maxLength name='username' type='text' maxLength='6' placeholder='最多只能输入6位' label='文本' />
       </example-demo-maxLength>
+      <example-demo-label-labelPosition title='labelPosition' desc=''>
+        <db-text-input-labelPosition name='username' type='text' placeholder='top' label='用户名' labelPosition='top'/>
+      </example-demo-label-labelPosition>
     </example>
   </view>
 </template>
@@ -50,6 +53,7 @@
       'example-demo-focus': BrjExampleDemo,
       'example-demo-plainText': BrjExampleDemo,
       'example-demo-maxLength': BrjExampleDemo,
+      'example-demo-label-labelPosition': BrjExampleDemo,
       'db-text-input-default': DbTextInput,
       'db-text-input-type-text': DbTextInput,
       'db-text-input-type-number': DbTextInput,
@@ -60,7 +64,8 @@
       'db-text-input-disabled': DbTextInput,
       'db-text-input-focus': DbTextInput,
       'db-text-input-plainText': DbTextInput,
-      'db-text-input-maxLength': DbTextInput
+      'db-text-input-maxLength': DbTextInput,
+      'db-text-input-labelPosition': DbTextInput
     }
     onReady() {
       console.log('页面初次渲染完成')

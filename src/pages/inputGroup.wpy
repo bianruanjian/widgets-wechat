@@ -7,18 +7,18 @@
     <example-demo-default title='默认用法' desc=''>
       <db-input-group label='网址'>
         <view class='input-group-prepend'><span class='input-group-text'>@</span></view>
-        <input type='text' class='form-control zan-field__input zan-cell__bd ' />
+        <input type='text' class='form-control' />
       </db-input-group>
     </example-demo-default>
     <example-demo-size title='size' desc=''>
-        <db-input-group label='网址'>
+      <db-input-group label='网址'>
         <view class='input-group-prepend'><span class='input-group-text'>http://www.</span></view>
-        <input type='text' class='form-control zan-field__input zan-cell__bd '  placeholder='default'/>
+        <input type='text' class='form-control'  placeholder='default'/>
         <view class='input-group-append'><span class='input-group-text'>.com</span></view>
       </db-input-group>
       <db-input-group-size-large size='large' label='网址'>
         <view class='input-group-prepend'><span class='input-group-text'>http://www.</span></view>
-        <input type='text' class='zan-field__input zan-cell__bd form-control' placeholder='large'/>
+        <input type='text' class='form-control' placeholder='large'/>
         <view class='input-group-append'><span class='input-group-text'>.com</span></view>
       </db-input-group-size-large>
     </example-demo-size>

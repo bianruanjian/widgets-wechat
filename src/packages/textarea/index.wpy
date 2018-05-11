@@ -3,17 +3,21 @@
 </style>
 
 <template>
-  <block wx:if='{{label}}'>
-    <db-label :forId='widgetId' :value='label'></db-label>
-  </block>
-  <block wx:if='{{plainText}}'>
-    <view id='{{widgetId}}' name='{{name}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}' class='readonly {{cssClasses}}'
-      style='{{cssStyles}}'>{{value ? value : ''}}</view>
-  </block>
-  <block wx:else>
-    <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{shouldFocus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}'
-      class='{{cssClasses}}' style='{{cssStyles}}' />
-  </block>
+  <view class="{{!label ? 'form-group-simple' :labelPosition != 'top' ? 'form-group row' : 'form-group'}}">
+    <block wx:if='{{label}}'>
+      <view wx:if="{{labelPosition == 'top'}}" class='form-label-top'>
+        <db-label :forId='widgetId' :value='label'></db-label>
+      </view>
+      <db-label wx:else :forId='widgetId' :value='label'></db-label>
+    </block>
+    <block wx:if='{{plainText}}'>
+      <view id='{{widgetId}}' name='{{name}}' maxlength="{{maxLength ? maxLength : '-1'}}" disabled='{{disabled}}' class='readonly {{cssClasses}}' style='{{cssStyles}}'>{{value ? value : ''}}</view>
+    </block>
+    <block wx:else>
+      <textarea id='{{widgetId}}' auto-height='{{autoAeight}}' placeholder='{{placeholder}}' readonly='{{readOnly}}' name='{{name}}' value='{{value}}' focus='{{shouldFocus}}' placeholder-class='{{placeholderAppearance}}' maxlength="{{maxLength ? maxLength : '-1'}}"
+        disabled='{{disabled}}' class='{{cssClasses}}' style='{{cssStyles}}' />
+    </block>
+  </view>
 </template>
 
 <script>
@@ -44,6 +48,10 @@
       label: {
         type: String,
         value: ''
+      },
+      labelPosition: {
+        type: String,
+        value: 'left'
       },
       rows: {
         type: Number | String,

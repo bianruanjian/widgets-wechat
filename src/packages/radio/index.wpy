@@ -4,7 +4,10 @@
     margin-top: 0rem;
   }
   .form-radio-block-label {
-    margin-left: 0.78rem;
+    margin-left: 0.45rem;
+  }
+  .radio-group{
+    margin-left:0.75rem;
   }
 </style>
 <!-- radio 必须在 radio-group 组件中，考虑到radio-group 只能配合 radio 组件才能使用，因此直接在这里实现了radio-group 逻辑 -->

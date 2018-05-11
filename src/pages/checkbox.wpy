@@ -1,5 +1,7 @@
 <style lang='less'>
-
+  .form-check{
+    padding-left:1.45rem;
+  }
 </style>
 
 <template>
@@ -8,22 +10,22 @@
       <db-checkbox-default-1 name='item1' label='item1' value='1' />
       <db-checkbox-default-2 name='item2' label='item2' value='2' checked='true' />
     </example-demo-default>
-    <example-demo-labelAfter title='labelAfter' desc=''>
-      <db-checkbox-labelAfter-1 name='item1' label='item1' value='1' checked='true' labelAfter='true' />
+    <example-demo-labelAfter title='labelAfter 为 false' desc=''>
+      <db-checkbox-labelAfter-1 name='item1' label='item1' value='1' checked='true' labelAfter='false' />
     </example-demo-labelAfter>
     <example-demo-disabled title='disabled' desc=''>
-      <db-checkbox-disabled name='item2' label='item2' disabled='true' value='2' checked='true' labelAfter='true'/>
+      <db-checkbox-disabled name='item2' label='item2' disabled='true' value='2' checked='true'/>
     </example-demo-disabled>
     <example-demo-fluid title='fluid' desc=''>
-      <db-checkbox-fluid-1 name='item3' value='3' label='item3' fluid='true' labelAfter='true'/>
-      <db-checkbox-fluid-2 name='item4' value='4' label='item4' fluid='true' labelAfter='true'/>
+      <db-checkbox-fluid-1 name='item3' value='3' label='item3' fluid='true'/>
+      <db-checkbox-fluid-2 name='item4' value='4' label='item4' fluid='true'/>
     </example-demo-fluid>
 
     <example-demo-label title='input-group label' desc=''>
       <view class='input-group'>
         <label class='form-label'>请选择</label>
-        <db-checkbox-label-1 name='item3' value='3' label='item3'  labelAfter='true'/>
-        <db-checkbox-label-2 name='item4' value='4' label='item4'  labelAfter='true'/>
+        <db-checkbox-label-1 name='item3' value='3' label='item3'/>
+        <db-checkbox-label-2 name='item4' value='4' label='item4'/>
       </view>
     </example-demo-label>
   </example>

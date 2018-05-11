@@ -10,16 +10,16 @@
       <db-textarea-default name='text' type='text' placeholder='I am placeholder'  label='文本' />
     </example-demo-default>
     <example-demo-disabled title='disabled' desc=''>
-      <db-textarea-disabled name='text' type='text' value='我是不可编辑的文本' disabled='true'  label='失效文本' />
+      <db-textarea-disabled name='text' type='text' value='我是不可编辑的文本' disabled='true'  label='失效文本' labelPosition='top'/>
     </example-demo-disabled>
     <example-demo-focus title='focus' desc=''>
-      <db-textarea-focus name='text' type='text' placeholder='自动聚焦' shouldFocus='true'  label='聚焦文本'  />
+      <db-textarea-focus name='text' type='text' placeholder='自动聚焦' shouldFocus='true'  label='聚焦文本'  labelPosition='top'/>
     </example-demo-focus>
     <example-demo-plainText title='plainText' desc=''>
-      <db-textarea-plainText name='text' type='text' readOnly='true' plainText='true' label='只读文本' value='显示为普通为本,不可编辑'/>
+      <db-textarea-plainText name='text' type='text' readOnly='true' plainText='true' label='只读文本' value='显示为普通为本,不可编辑'  labelPosition='top'/>
     </example-demo-plainText>
     <example-demo-maxLength title='maxLength' desc=''>
-      <db-textarea-maxLength name='text' type='text' maxLength='32' placeholder='最多只能输入32位'  label='有限长度'  />
+      <db-textarea-maxLength name='text' type='text' maxLength='32' placeholder='最多只能输入32位'  label='有限长度'  labelPosition='top' />
     </example-demo-maxLength>
   </example>
 </template>
